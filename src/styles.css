@@ -1,0 +1,109 @@
+nav#navbar {
+  background-color: rgba(6, 16, 105, 0.7);
+  height: 90px;
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: "Nunito";
+  color: white;
+}
+
+h2 {
+  font-family: "Nunito";
+  font-size: 50px;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+nav#footer {
+  background-color: rgb(50, 50, 50);
+  height: 100px;
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: "Nunito";
+  color: white;
+}
+body {
+  background-color: white;
+  font-family: "Nunito";
+}
+a#navname {
+  font-size: 30px;
+  color: white;
+  font-family: "Nunito";
+}
+a#linkname {
+  font-size: 17px;
+  color: white;
+  font-family: "Nunito";
+}
+a {
+  color: white;
+  font-family: "Nunito";
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+div.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+
+  background-clip: border-box;
+  border-radius: 20px;
+  box-shadow: 5px 15px 15px 5px rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.containered {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: "Nunito";
+  background-color: black;
+}
+
+.round {
+  border-radius: 20px;
+}
+
+.shaded {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.darkened {
+  filter: brightness(70%);
+}
+
+.border {
+  border: 20px;
+  border-radius: 20px;
+}
+
+.scroll {
+  margin: 4px, 4px;
+  padding: 20px;
+  width: 500px;
+  height: 700px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.progresss {
+  width: 25%;
+}
+
+.side {
+  display: inline-block;
+}
