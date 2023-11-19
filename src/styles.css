@@ -1,9 +1,8 @@
 nav#navbar {
-  background-color: rgba(6, 16, 105, 0.7);
+  background-color: rgba(90, 27, 199, 0.5);
   height: 90px;
   box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: "Nunito";
-  color: white;
 }
 
 h2 {
@@ -14,18 +13,28 @@ h2 {
 }
 
 nav#footer {
-  background-color: rgb(50, 50, 50);
+  background-color: rgba(90, 27, 199, 0.5);
   height: 100px;
   box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: "Nunito";
   color: white;
 }
 body {
-  background-color: white;
   font-family: "Nunito";
+  color: white;
+}
+
+.main {
+  background-image: url('./pages/img/about.jpg');
+  filter: brightness(80%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 a#navname {
   font-size: 30px;
+
   color: white;
   font-family: "Nunito";
 }
@@ -62,7 +71,7 @@ div.card {
 }
 .centered {
   position: absolute;
-  top: 50%;
+  top: 59%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -71,15 +80,21 @@ div.card {
   text-align: center;
   color: white;
   font-family: "Nunito";
-  background-color: black;
+}
+.padded {
+  padding: 450px;
 }
 
+.padd {
+  padding: 20px;
+}
 .round {
   border-radius: 20px;
 }
 
 .shaded {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
 }
 .darkened {
   filter: brightness(70%);
@@ -93,7 +108,6 @@ div.card {
 .scroll {
   margin: 4px, 4px;
   padding: 20px;
-  width: 500px;
   height: 700px;
   overflow-x: hidden;
   overflow-y: auto;

@@ -11,19 +11,19 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <NavBarLinks name="Listings" link="/jobListings" />
-            <NavBarLinks name="About Us" link="/about" />
-            <button
-              class="btn btn-primary"
+            <NavBarLinks name="Explore" link="/jobListings" />
+            <NavBarLinks name="Dashboard" link="/profile" />
+          </ul>
+          
+        </div>
+        <button
+              class="btn btn-primary d-flex justify-content-end"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#demo"
             >
-              Open Offcanvas Sidebar
+              help
             </button>
-            <NavBarLinks name="Profile" link="/profile" />
-          </ul>
-        </div>
         <div class="col-1"></div>
       </div>
     </nav>
