@@ -7,9 +7,10 @@ nav#navbar {
 
 h2 {
   font-family: "Nunito";
-  font-size: 50px;
+  font-size: 70px;
   border-radius: 30px;
   padding: 20px;
+  color: rgb(170, 120, 255)
 }
 
 nav#footer {
@@ -25,7 +26,16 @@ body {
 }
 
 .main {
-  background-image: url('./pages/img/about.jpg');
+  background-image: url('./pages/img/home.jpg');
+  filter: brightness(80%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.joblist {
+  background-image: url('./pages/img/joblist.jpg');
   filter: brightness(80%);
   background-size: cover;
   background-position: center;
@@ -71,7 +81,7 @@ div.card {
 }
 .centered {
   position: absolute;
-  top: 59%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -93,7 +103,7 @@ div.card {
 }
 
 .shaded {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
 }
 .darkened {

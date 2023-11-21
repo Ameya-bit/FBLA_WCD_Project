@@ -5,23 +5,23 @@ import { JobPush } from "../components/jobs";
 
 const jobListings = () => {
   return (
-    <div>
-      <SpacingCont amount="7" />
-      <h1 class="d-flex justify-content-center">Search for Jobs</h1>
-      <hr class="col-2" />
+    <div class="joblist">
+      <SpacingCont amount="5" />
+      <h2 class="d-flex justify-content-center">Search for Jobs</h2>
       <SpacingCont amount="1" />
-      <div class="card-columns d-flex justify-content-center">
-        <div id="filters" class="col-3 container border">
+      <div class="card-columns d-flex justify-content-center ">
+        <div id="filters" class="col-3 container border shaded">
           <SpacingCont amount="1" />
-          <h3 class="d-flex justify-content-center">Filters</h3>
+          <h1 class="d-flex justify-content-center">Filters</h1>
           <Inputs name="Category" />
           <Inputs name="Location" />
           <Inputs name="Type" />
         </div>
-        <div id="jobslist" class="col-8 container border scroll">
+        <div id="jobslist" class="col-8 container border scroll shaded">
           <JobPush />
         </div>
       </div>
+      <SpacingCont amount="5" />
     </div>
   );
 };
