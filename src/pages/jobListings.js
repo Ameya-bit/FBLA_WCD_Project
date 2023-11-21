@@ -18,7 +18,7 @@ const jobListings = () => {
           <Inputs name="Type" />
         </div>
         <div id="jobslist" class="col-8 container border scroll shaded">
-          <JobPush />
+          <JobPush num="12"/>
         </div>
       </div>
       <SpacingCont amount="5" />

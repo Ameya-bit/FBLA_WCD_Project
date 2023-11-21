@@ -1,3 +1,5 @@
+import { SpacingCont } from "./qualityOfLife";
+
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
     <nav id={id} class={clas}>
@@ -62,17 +64,31 @@ function NavBarLinks({ name, link }) {
   );
 }
 
-function Card({ title, loc, emp, desc, clas }) {
+function Card({ title, loc, emp, desc, clas, link, height }) {
   return (
-    <div class={"card " + clas} style={{ width: "100%" }}>
+    <div class={"card " + clas} style={{ width: "100%", height: height }}>
       <div class="card-body">
-        <h1 class="card-title">{title}</h1>
+        <h1 class="card-title d-flex justify-content-center">{title}</h1>
         <p class="card-text">{loc}</p>
         <p class="card-text">{emp}</p>
         <p class="card-text">{desc}</p>
+        <div class="card-columns d-flex justify-content-center padd">
+          <Button link={"/Apply?applicationNumber=" + link} name="Apply Now"/>
+          <Button link={link} name="Learn More"/>
+        </div>
+        
       </div>
     </div>
   );
+}
+
+function Button({link, name }){
+  return (
+    <div class="d-grid gap-2 col-4 mx-auto ">
+      <a href={link} class="btn btn-primary">{name}</a>
+
+    </div>
+  )
 }
 
 function Image({ pic1, text, clas, imgclas, textclas }) {
@@ -86,13 +102,12 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
   );
 }
 
-function Inputs({ name }) {
+function Inputs({ name, clas}) {
   return (
-    <div class="input-group mb-3">
-      <span class="input-group-text">{name}</span>
-      <input type="text" class="form-control" />
+  <div class={"input-group mb-3 round " + clas}>
+      <input type="text" class="form-control" placeholder={name}/>
     </div>
   );
 }
 
-export { Card, Image, Inputs, OffCanvas };
+export { Card, Image, Inputs, OffCanvas, Button };

@@ -1,9 +1,8 @@
-import data from "../data/db";
+import data from "../data/jobs";
 import { Card } from "../components/navbar";
 
 function JobPush({ num }) {
   let send = [];
-  let dataHead = data["jobs"];
   let amount;
   if (num == undefined) {
     amount = dataHead.length;
@@ -13,10 +12,12 @@ function JobPush({ num }) {
   for (var i = 0; i < amount; i++) {
     send.push(
       <Card
-        title={dataHead[i]["title"]}
-        loc={"Location: " + dataHead[i]["location"]}
-        emp={"Job Type: " + dataHead[i]["employment_type"]}
-        desc={"Description: " + dataHead[i]["description"]}
+        title={data[i]["job_title"]}
+        loc={"Location: " + data[i]["location"]}
+        emp={"Job Type: " + data[i]["employment_type"]}
+        desc={"Description: " + data[i]["job_desc"]}
+        link={i}
+
       />
     );
   }
