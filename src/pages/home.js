@@ -10,28 +10,28 @@ import resumeCheck from "./img/resumeCheck.jpg";
 
 const Home = () => {
   return (
-    <div class="main">
+    <div class="main ">
       <Image
 
-        text="johb"
+        text="Welcome to our Offices!"
         clas="containered padded"
         imgclas="round darkened"
         textclas="shaded padd"
       />
-      <SpacingCont amount="3" />
-      <div class="container shaded round ">
+      <SpacingCont amount="12" />
+      <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center">
+        <h1 class="d-flex justify-content-center">
         We are with You
-        </h2>
+        </h1>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round " clas="padd" />
           <div class="col-6 ">
             <SpacingCont amount="1" />
-            <h1 class="d-flex justify-content-center padd">
+            <h3 class="d-flex justify-content-center padd">
               - We are proud of our immense workforce, and they share the same pride about their jobs
-            </h1>
+            </h3>
             <h3 class="d-flex justify-content-center padd"><em>
               Working at (insert company) is so gratifying! The people are nice, the projects are groundbreaking, and yet I never feel overworked!  
               </em></h3>
@@ -50,12 +50,12 @@ const Home = () => {
         <SpacingCont amount="2"/>
         <div class="d-flex justify-content-center padd">
           <div id="cards" class="card-columns col-12">
-            <JobPush num="3" />
+            <JobPush end="4" />
           </div>
         </div>
       </div>
       <SpacingCont amount="7" />
-      <div class=" shaded round">
+      <div class=" shaded round ">
         <div class="card-columns col-12 d-flex justify-content-center">
           <Image
             pic1={resumeCheck}
@@ -79,7 +79,7 @@ const Home = () => {
         </div>
       </div>
       <SpacingCont amount="7" />
-      <div class="container shaded round">
+      <div class="container shaded round col-8">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">Personalized Profile</h2>
         <SpacingCont amount="2" />

@@ -13,7 +13,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <NavBarLinks name="Explore" link="/jobListings" />
+            <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
           
@@ -66,15 +66,15 @@ function NavBarLinks({ name, link }) {
 
 function Card({ title, loc, emp, desc, clas, link, height }) {
   return (
-    <div class={"card " + clas} style={{ width: "100%", height: height }}>
+    <div class={"card " + clas} style={{ height: height }}>
       <div class="card-body">
-        <h1 class="card-title d-flex justify-content-center">{title}</h1>
+        <h3 class="card-title d-flex justify-content-center">{title}</h3>
         <p class="card-text">{loc}</p>
         <p class="card-text">{emp}</p>
         <p class="card-text">{desc}</p>
         <div class="card-columns d-flex justify-content-center padd">
           <Button link={"/Apply?applicationNumber=" + link} name="Apply Now"/>
-          <Button link={link} name="Learn More"/>
+          <Button link={"/jobListings?jobNum=" + link} name="Learn More"/>
         </div>
         
       </div>
@@ -95,19 +95,34 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
   return (
     <div class={"  " + clas}>
       <img class={"card-img-top " + imgclas} src={pic1} alt="" />
-      <div id="textcont" class="card-img-overlay d-flex ">
-        <h2 class={"card-text centered " + textclas}>{text}</h2>
+      <div id="textcont" class="card-img-overlay">
+        <h2 class={"card-text leftbottom  " + textclas}>{text}</h2>
       </div>
     </div>
   );
 }
 
-function Inputs({ name, clas}) {
+function Inputs({ name, clas, type}) {
   return (
   <div class={"input-group mb-3 round " + clas}>
-      <input type="text" class="form-control" placeholder={name}/>
+      <input type={type} class="form-control" placeholder={name}/>
     </div>
   );
 }
 
-export { Card, Image, Inputs, OffCanvas, Button };
+function Footer(){
+  return (
+    <footer class="text-center gold">
+
+      <div class="container pt-4 ">
+
+      
+      </div>
+      <div class="text-center p-3 black gold" >
+        Webstie
+      </div>
+    </footer>
+  );
+}
+
+export { Card, Image, Inputs, OffCanvas, Button, Footer };

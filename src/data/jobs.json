@@ -1,5 +1,17 @@
 [
   {
+    "job_title": "Please select a card",
+    "company_name": "",
+    "company_desc": "",
+    "job_desc": "",
+    "job_requirement": "",
+    "salary": "",
+    "location": "",
+    "employment_type": "",
+    "department": "",
+    "label": 0
+  },
+  {
     "job_title": "Accountant",
     "company_name": "Equity Model Limited",
     "company_desc": "Accounting, Auditing & Finance",
