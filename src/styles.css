@@ -10,7 +10,7 @@ h2 {
   font-size: 70px;
   border-radius: 30px;
   padding: 20px;
-  color: rgb(170, 120, 255)
+  color: blue
 }
 
 nav#footer {
@@ -50,7 +50,7 @@ a#navname {
 }
 a#linkname {
   font-size: 17px;
-  color: black;
+  color: white;
   font-family: "Nunito";
 }
 a {
@@ -103,7 +103,7 @@ div.card {
 }
 
 .shaded {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 10px;
 }
 .darkened {

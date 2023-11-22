@@ -12,7 +12,7 @@ const Apply = () => {
     const queryParameters = new URLSearchParams(window.location.search)
     const i = queryParameters.get("applicationNumber")
     return (
-        <div class="joblist">
+        <div class="main">
             <SpacingCont amount="7" />
             <div class="container shaded round col-8">
                 <SpacingCont amount="2" />
