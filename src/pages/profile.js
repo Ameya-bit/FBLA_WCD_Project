@@ -7,7 +7,7 @@ import User from "./img/user.jpg";
 
 const jobListings = () => {
   return (
-    <div>
+    <div class="main">
       <SpacingCont amount="7" />
       <h1 class="d-flex justify-content-center">idk</h1>
       <hr class="col-2" />

@@ -13,10 +13,10 @@ const Home = () => {
     <div class="main">
       <Image
 
-        text="Welcome to our world, one that we hope you share!"
+        text="johb"
         clas="containered padded"
         imgclas="round darkened"
-        textclas="shaded"
+        textclas="shaded padd"
       />
       <SpacingCont amount="3" />
       <div class="container shaded round ">
@@ -62,7 +62,7 @@ const Home = () => {
             text=""
             clas="container padd"
             imgclas="round"
-            textclas="shaded"
+            textclas=""
           />
           <div>
             <SpacingCont amount="1" />

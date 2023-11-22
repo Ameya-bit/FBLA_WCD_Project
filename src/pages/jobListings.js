@@ -5,7 +5,7 @@ import { JobPush } from "../components/jobs";
 
 const jobListings = () => {
   return (
-    <div class="joblist">
+    <div class="main">
       <SpacingCont amount="5" />
       <h2 class="d-flex justify-content-center">Search for Jobs</h2>
       <SpacingCont amount="1" />
