@@ -14,7 +14,7 @@ const Apply = () => {
     return (
         <div class="main">
             <SpacingCont amount="7" />
-            <div class="container shaded round col-8">
+            <div class="container shaded round col-8 ">
                 <SpacingCont amount="2" />
                 <h2 class="d-flex justify-content-center">
                     Congratulations! You are almost there!
@@ -30,10 +30,15 @@ const Apply = () => {
                     />
                 </div>  
                 <SpacingCont amount="2" /> 
-                <div class="padd">
-                    <Inputs name="First Name" clas="col-6"/>
-                    <Inputs name="Last Name" clas="col-6"/>
-                    <Inputs name="Email " clas="col-6"/>
+                <div class="padd ">
+                    <h3 class="padd">Personal Information: </h3>
+                    <Inputs name="First Name" clas="col-6 padd" type="text"/>
+                    <Inputs name="Last Name" clas="col-6 padd" type="text"/>
+                    <Inputs name="Email " clas="col-6 padd" type="text"/>
+                    <h3 class="padd">Enter Your Resume: </h3>
+                    <Inputs name="Email " clas="col-6 padd" type="file"/>
+                    <h3 class="padd">Anything You Want To Highlight For Our Team: </h3>
+                    <Inputs name="100 Word Limit" clas="col-6 padd" type="text"/>
                 </div>
                 
                 <SpacingCont amount="2" />

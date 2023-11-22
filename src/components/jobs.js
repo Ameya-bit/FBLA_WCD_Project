@@ -1,25 +1,40 @@
 import data from "../data/jobs";
 import { Card } from "../components/navbar";
 
-function JobPush({ num }) {
+function JobPush({ start, end, moreInfo }) {
   let send = [];
   let amount;
-  if (num == undefined) {
-    amount = dataHead.length;
-  } else {
-    amount = num;
+  if (start == undefined) {
+    start = 1;
   }
-  for (var i = 0; i < amount; i++) {
-    send.push(
-      <Card
-        title={data[i]["job_title"]}
-        loc={"Location: " + data[i]["location"]}
-        emp={"Job Type: " + data[i]["employment_type"]}
-        desc={"Description: " + data[i]["job_desc"]}
-        link={i}
-
-      />
-    );
+  if (moreInfo == undefined) {
+    moreInfo = true;
+  }
+  if (end == undefined) {
+    end = dataHead.length;
+  }
+  for (var i = start; i < end; i++) {
+    console.log(i)
+    if(moreInfo == true){
+      send.push(
+        <Card
+          title={data[i]["job_title"]}
+          loc={"Location: " + data[i]["location"]}
+          emp={"Job Type: " + data[i]["employment_type"]}
+          desc={"Description: " + data[i]["job_desc"]}
+          link={i}
+  
+        />
+      );
+    }
+    else{
+      send.push(
+        <Card
+          title={data[i]["job_title"]}
+          link={i}
+        />
+      );
+    }
   }
   return send;
 }

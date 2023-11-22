@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-import NavBar from "./components/navbar";
+import NavBar, {Footer} from "./components/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home.js";
 import JobListing from "./pages/jobListings";
@@ -24,7 +24,7 @@ ReactDOM.render(
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Apply" element={<Apply />} />
       </Routes>
-      <NavBar id="footer" clas="navbar navbar-expand-lg navbar-dark" />
+      <Footer/>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
