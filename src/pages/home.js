@@ -50,7 +50,7 @@ const Home = () => {
         <SpacingCont amount="2"/>
         <div class="d-flex justify-content-center padd">
           <div id="cards" class="card-columns col-12">
-            <JobPush end="4" />
+            <JobPush end="4" moreInfo="false"/>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
               class="btn btn-primary d-flex justify-content-end"
               type="button"
               data-bs-toggle="offcanvas"
-              data-bs-target="#demo"
+              data-bs-target="#chatGPTintegrate"
             >
               help
             </button>
@@ -64,30 +64,50 @@ function NavBarLinks({ name, link }) {
   );
 }
 
-function Card({ title, loc, emp, desc, clas, link, height }) {
-  return (
-    <div class={"card " + clas} style={{ height: height }}>
-      <div class="card-body">
-        <h3 class="card-title d-flex justify-content-center">{title}</h3>
-        <p class="card-text">{loc}</p>
-        <p class="card-text">{emp}</p>
-        <p class="card-text">{desc}</p>
-        <div class="card-columns d-flex justify-content-center padd">
-          <Button link={"/Apply?applicationNumber=" + link} name="Apply Now"/>
-          <Button link={"/jobListings?jobNum=" + link} name="Learn More"/>
+function Card({ title, loc, emp, desc, clas, link, height, button }) {
+  if(button == "no")
+  {
+    return(
+      <div class={"card " + clas} style={{ height: height }}>
+        <div class="card-body padd">
+          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
+          <div class="padd">
+            <p class="card-text">{loc}</p>
+            <p class="card-text">{emp}</p>
+            <p class="card-text">{desc}</p>
+          </div>
+          
         </div>
-        
       </div>
-    </div>
-  );
+    )
+  }
+  else
+  {
+    return (
+      <div class={"card " + clas} style={{ height: height }}>
+        <div class="card-body padd">
+          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
+          <div class="padd">
+            <p class="card-text">{loc}</p>
+            <p class="card-text">{emp}</p>
+            <p class="card-text">{desc}</p>
+          </div>
+          
+          <div class="btn-group d-flex justify-content-center padd" role="group" aria-label="Basic example">
+            <Button link={"/Apply?applicationNumber=" + link} clas="-primary col-8" name="Apply Now"/>
+            <Button link={"/jobListings?jobNum=" + link} clas="-outline-success col-4" name="Explore"/>
+          </div>
+          
+        </div>
+      </div>
+    );
+  }
+  
 }
 
-function Button({link, name }){
+function Button({link, name, clas }){
   return (
-    <div class="d-grid gap-2 col-4 mx-auto ">
-      <a href={link} class="btn btn-primary">{name}</a>
-
-    </div>
+      <a href={link} class={"btn btn" + clas}>{name}</a>
   )
 }
 

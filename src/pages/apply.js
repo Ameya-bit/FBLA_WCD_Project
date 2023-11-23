@@ -27,6 +27,7 @@ const Apply = () => {
                         emp={"Job Type: " + data[i]["employment_type"]}
                         desc={"Description: " + data[i]["job_desc"]}
                         clas="padd"
+                        button="no"
                     />
                 </div>  
                 <SpacingCont amount="2" /> 
@@ -49,10 +50,6 @@ const Apply = () => {
     );
 };
 
-function param() {
-    const queryParameters = new URLSearchParams(window.location.search)
-    const type = queryParameters.get("type")
-    const name = queryParameters.get("name")
-}
+
 
 export default Apply;
