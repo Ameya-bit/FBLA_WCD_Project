@@ -132,13 +132,13 @@ function Inputs({ name, clas, type}) {
 
 function Footer(){
   return (
-    <footer class="text-center gold">
+    <footer class="text-center dodgerblue">
 
       <div class="container pt-4 ">
 
       
       </div>
-      <div class="text-center p-3 black gold" >
+      <div class="text-center p-3 black dodgerblue" >
         Webstie
       </div>
     </footer>
