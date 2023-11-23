@@ -50,16 +50,19 @@ function StatusCard({ clas, title, interviewStat, estimatedTime }) {
             title="Upcoming Dates: "
             emp="Resume Deadline, Feb 13"
             desc="Interview, Feb 29"
+            button="no"
           />
           <Card
             title="Current Supervisor: "
             emp="Assistant Manager (Rob Jobs)"
             desc="Contact: robjobs@company.com"
+            button="no"
           />
           <Card
             title="Current Timeline: "
             emp="You applied 3 weeks ago"
             desc=""
+            button="no"
           />
         </div>
         <div class="progress">

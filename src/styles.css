@@ -5,11 +5,22 @@ nav#navbar {
   font-family: "Nunito";
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .gold{
   background-color: gold;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.dodgerblue {
+  background-color: dodgerblue;
+}
+
 .black {
   color: black;
 }
@@ -139,8 +150,10 @@ div.card {
 }
 
 .shaded {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .darkened {
   filter: brightness(70%);
@@ -155,7 +168,7 @@ div.card {
 .scroll {
   margin: 4px, 4px;
   padding: 20px;
-  height: 700px;
+  height: 670px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
