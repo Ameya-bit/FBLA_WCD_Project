@@ -20,7 +20,7 @@ const jobListings = () => {
             <Inputs name="Location" type="text"/>
             <Inputs name="Type" type="text"/>
           </div>
-          <div id="jobslist" class=" container round scroll ">
+          <div id="jobslist" class=" container round border scroll ">
             <JobPush end="12"/>
           </div>
         </div>
@@ -38,7 +38,7 @@ function JobFullData(){
   {
     return(
       <div id="filters" class="col-8 container round shaded">
-        <h1 class="centered">Please select a Job Card on the left</h1>
+        <h1 class="centered">Please select a Job Card from the left</h1>
       </div>
     )
   }
@@ -62,7 +62,6 @@ function JobFullData(){
       </div>
     )
   }
-  
 }
 
 export default jobListings;

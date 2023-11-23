@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
+import {AIintegrate} from "./components/jobs.js"
 import NavBar, {Footer} from "./components/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home.js";
@@ -14,6 +15,7 @@ import { SpacingCont } from "./pages/qualityOfLife";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      
       <NavBar
         id="navbar"
         clas="navbar navbar-expand-lg navbar-dark fixed-top"
@@ -29,3 +31,13 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+    <AIintegrate></AIintegrate>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("chatGPTintegrate")
+);
+

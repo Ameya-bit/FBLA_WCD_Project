@@ -31,6 +31,7 @@ function JobPush({ start, end, moreInfo }) {
       send.push(
         <Card
           title={data[i]["job_title"]}
+          loc={"Department: " + data[i]["department"]}
           link={i}
         />
       );
@@ -76,4 +77,21 @@ function StatusCard({ clas, title, interviewStat, estimatedTime }) {
   );
 }
 
-export { JobPush, StatusCard };
+function AIintegrate(){
+  return(
+    <div>
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">AI</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>fjdkslajfd</p>
+        <p>Some text lorem ipsum.</p>
+        <p>Some text lorem ipsum.</p>
+        <button class="btn btn-secondary" type="button">A Button</button>
+      </div>
+    </div>
+  )
+}
+
+export { JobPush, StatusCard, AIintegrate };
