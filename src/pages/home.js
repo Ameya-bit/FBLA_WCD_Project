@@ -45,7 +45,7 @@ const Home = () => {
         </div>
         <SpacingCont amount="2"/>
         <h2 class="d-flex justify-content-center padd">
-          Sneak a peak at our employee's pride
+          Sneak a peak at our jobs!
         </h2>
         <SpacingCont amount="2"/>
         <div class="d-flex justify-content-center padd">
@@ -89,21 +89,25 @@ const Home = () => {
               - We understand if you feel that your job isn't where you want to be, which is why we implement our Level Up system
             </h3>
             <h3 class="d-flex justify-content-center padd">
-              - We offer salary raises, promotions, and more, frequently to encourage our workers to do their best. These are through our promotion trackers
+              - We offer salary raises, promotions, and more, frequently to encourage our workers to do their best.
             </h3>
           </div>
           <Image pic1={profilePers} imgclas="round" clas="padd" />
         </div>
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">
-          Promotion/Application Trackers
+          View your promotions online
         </h2>
         <div class="d-flex justify-content-center padd">
             <div id="cards" class="col-12">
               <StatusCard
                 clas="col-12"
-                title="Job"
+                title="Senior graphic designer"
                 interviewStat="Upcoming interview on February 29th"
+                supervisor="Assistant Manager: Steve"
+                supercont="steve@company.com"
+                start="January 12"
+                compDates="Resume recieved (Jan 13), Interview complete (Jan 29), "
                 estimatedTime="100 years"
               />
             </div>
