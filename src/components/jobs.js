@@ -40,7 +40,9 @@ function JobPush({ start, end, moreInfo }) {
   return send;
 }
 
-function StatusCard({ clas, title, interviewStat, estimatedTime }) {
+function StatusCard({ clas, title, supervisor, supercont, interviewStat, start, compDates }) {
+  let comp = compDates.replace(/;/g, "\n")
+  console.log(comp)
   return (
     <div class={"card " + clas} style={{ width: "100%" }}>
       <div class="card-body">
@@ -48,20 +50,19 @@ function StatusCard({ clas, title, interviewStat, estimatedTime }) {
         <div class="card-columns">
           <Card
             title="Upcoming Dates: "
-            emp="Resume Deadline, Feb 13"
-            desc="Interview, Feb 29"
+            emp={interviewStat}
             button="no"
           />
           <Card
             title="Current Supervisor: "
-            emp="Assistant Manager (Rob Jobs)"
-            desc="Contact: robjobs@company.com"
+            emp={supervisor}
+            desc={supercont}
             button="no"
           />
           <Card
             title="Current Timeline: "
-            emp="You applied 3 weeks ago"
-            desc=""
+            emp={"You applied on " + start }
+            desc={"Completed: " + comp}
             button="no"
           />
         </div>

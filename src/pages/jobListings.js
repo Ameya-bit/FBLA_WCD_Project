@@ -1,6 +1,6 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
-import { Inputs, Card } from "../components/navbar";
+import { Inputs, Card, Button } from "../components/navbar";
 import { JobPush } from "../components/jobs";
 import data from "../data/jobs.json";
 
@@ -12,8 +12,8 @@ const jobListings = () => {
       <SpacingCont amount="5" />
       <h2 class="d-flex justify-content-center">Search for Jobs</h2>
       <SpacingCont amount="1" />
-      <div class="card-columns container d-flex justify-content-center">
-        <div class="shaded container round col-5 padd">
+      <div class="card-columns d-flex justify-content-center padd">
+        <div class="shaded container round col-4 padd">
           <h1 class="d-flex justify-content-center padd">Filters: </h1>
           <div class="padd card-columns">
             <Inputs name="Category" type="text"/>
@@ -25,8 +25,7 @@ const jobListings = () => {
             <JobPush end="12"/>
           </div>
         </div>
-        <p/>
-        <p/>
+      
         <JobFullData />
         
       </div>
@@ -62,6 +61,11 @@ function JobFullData(){
           <SpacingCont amount="1"/>
           <h3>Requirements: </h3>
           <h3> - {data[i]["job_requirement"]}</h3>
+          <SpacingCont amount="3"/>
+          <div class="d-flex justify-content-center">
+            <Button link={"/Apply?applicationNumber=" + i} clas="-primary btn-lg col-8 " name="Apply Now"/>
+
+          </div>
         </div>
       </div>
     )
