@@ -32,7 +32,6 @@ function JobPush({ start, end, moreInfo, category, location, type }) {
       );
     }
   }
-  console.log(send);
   return send;
 }
 

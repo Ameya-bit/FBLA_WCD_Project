@@ -43,7 +43,7 @@ const jobListings = () => {
             <div class="shaded container round ">
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
-                  end="12"
+                  end="30"
                   category={category}
                   location={location}
                   type={type}
@@ -53,11 +53,48 @@ const jobListings = () => {
           </div>
           <div class="col-8">
             <div class="shaded round padd">
-              <h3 class="d-flex justify-content-center ">Filters: </h3>
+              <h3 class="d-flex justify-content-center padd">Filters: </h3>
               <div class="containerAdd container padd d-flex justify-content-center">
-                <Inputs ids="filtCat" name="Category" type="text" value="" />
-                <Inputs ids="filtLoc" name="Location" type="text" value="" />
-                <Inputs ids="filtType" name="Type" type="text" value="" />
+                <select
+                  name="cars"
+                  class="shaded round shadedWhite"
+                  id="filtCat"
+                >
+                  <Inputs
+                    ids="filtCat"
+                    name="Category"
+                    type="text"
+                    select="true"
+                    selectType="job_title"
+                    value=""
+                  />
+                </select>
+                <select
+                  name="cars"
+                  class="shaded round shadedWhite"
+                  id="filtType"
+                >
+                  <Inputs
+                    ids="filtType"
+                    name="Type"
+                    type="text"
+                    select="true"
+                    selectType="employment_type"
+                  />
+                </select>
+                <select
+                  name="cars"
+                  class="shaded round shadedWhite col-4"
+                  id="filtLoc"
+                >
+                  <Inputs
+                    ids="filtLoc"
+                    name="Location"
+                    type="text"
+                    select="true"
+                    selectType="location"
+                  />
+                </select>
                 <div>
                   <Button name="Save" clas="-success btn-lg" click={getData} />
                 </div>
@@ -67,7 +104,7 @@ const jobListings = () => {
             <JobFullData />
           </div>
         </div>
-        <SpacingCont amount="5" />
+        <SpacingCont amount="15" />
       </div>
     );
   }
