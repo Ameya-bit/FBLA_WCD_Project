@@ -1,7 +1,9 @@
 nav#navbar {
   background-color: rgba(90, 27, 199, 0.2);
   height: 100px;
-  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 15px 40px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: "Nunito";
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -9,7 +11,7 @@ nav#navbar {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.gold{
+.gold {
   background-color: gold;
 }
 
@@ -29,7 +31,7 @@ h2 {
   font-size: 70px;
   border-radius: 30px;
   padding: 20px;
-  color: gold
+  color: gold;
 }
 .shaded-gold {
   background-color: rgba(255, 215, 0, 0.3);
@@ -41,31 +43,32 @@ h1 {
   font-size: 70px;
 }
 
-.horizontal-scrollable { 
-  overflow-x: auto; 
-  white-space: nowrap; 
-} 
+.horizontal-scrollable {
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
-.horizontal-scrollable { 
-  display: inline-block; 
-  float: none; 
-} 
+.horizontal-scrollable {
+  display: inline-block;
+  float: none;
+}
 
 nav#footer {
   background-color: rgba(90, 27, 199, 0.5);
   height: 100px;
-  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 15px 40px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: "Nunito";
   color: white;
 }
 body {
   font-family: "Nunito";
   color: white;
-  
 }
 
 .main {
-  background-image: url('./pages/img/hom.jpg');
+  background-image: url("./pages/img/hom.jpg");
   filter: brightness(80%);
   background-size: cover;
   background-position: center;
@@ -74,7 +77,7 @@ body {
 }
 
 .joblist {
-  background-image: url('./pages/img/joblist.jpg');
+  background-image: url("./pages/img/joblist.jpg");
   filter: brightness(80%);
   background-size: cover;
   background-position: center;
@@ -123,7 +126,8 @@ div.card {
 
   background-clip: border-box;
   border-radius: 20px;
-  box-shadow: 5px 15px 15px 5px rgba(0, 0, 0, 0.2),
+  box-shadow:
+    5px 15px 15px 5px rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .centered {
@@ -162,16 +166,28 @@ div.card {
 .border {
   border: 20px;
   border-radius: 20px;
-
 }
 
 .scroll {
   margin: 4px, 4px;
   padding: 20px;
-  height: 670px;
+  height: 780px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
+}
+
+.side {
+  display: inline-block;
+}
+
+.containerAdd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+i {
+  color: white;
 }
 
 .progresss {

@@ -16,16 +16,15 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
             <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
-          
         </div>
         <button
-              class="btn btn-primary d-flex justify-content-end"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#chatGPTintegrate"
-            >
-              help
-            </button>
+          class="btn btn-primary d-flex justify-content-end"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#chatGPTintegrate"
+        >
+          help
+        </button>
         <div class="col-1"></div>
       </div>
     </nav>
@@ -65,24 +64,7 @@ function NavBarLinks({ name, link }) {
 }
 
 function Card({ title, loc, emp, desc, clas, link, height, button }) {
-  if(button == "no")
-  {
-    return(
-      <div class={"card " + clas} style={{ height: height }}>
-        <div class="card-body padd">
-          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
-          <div class="padd">
-            <p class="card-text">{loc}</p>
-            <p class="card-text">{emp}</p>
-            <p class="card-text">{desc}</p>
-          </div>
-          
-        </div>
-      </div>
-    )
-  }
-  else
-  {
+  if (button == "no") {
     return (
       <div class={"card " + clas} style={{ height: height }}>
         <div class="card-body padd">
@@ -92,23 +74,48 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
             <p class="card-text">{emp}</p>
             <p class="card-text">{desc}</p>
           </div>
-          
-          <div class="btn-group d-flex justify-content-center padd" role="group" aria-label="Basic example">
-            <Button link={"/Apply?applicationNumber=" + link} clas="-primary col-8" name="Apply Now"/>
-            <Button link={"/jobListings?jobNum=" + link} clas="-outline-success col-4" name="Explore"/>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div class={"card " + clas} style={{ height: height }}>
+        <div class="card-body padd">
+          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
+          <div class="padd">
+            <p class="card-text">{loc}</p>
+            <p class="card-text">{emp}</p>
+            <p class="card-text">{desc}</p>
           </div>
-          
+
+          <div
+            class="btn-group d-flex justify-content-center padd"
+            role="group"
+            aria-label="Basic example"
+          >
+            <Button
+              link={"/Apply?applicationNumber=" + link}
+              clas="-primary col-8"
+              name="Apply Now"
+            />
+            <Button
+              link={"/jobListings?jobNum=" + link}
+              clas="-outline-success col-4"
+              name="Explore"
+            />
+          </div>
         </div>
       </div>
     );
   }
-  
 }
 
-function Button({link, name, clas }){
+function Button({ link, name, clas, click }) {
   return (
-      <a href={link} class={"btn btn" + clas}>{name}</a>
-  )
+    <a href={link} onClick={click} class={"btn btn" + clas}>
+      {name}
+    </a>
+  );
 }
 
 function Image({ pic1, text, clas, imgclas, textclas }) {
@@ -122,25 +129,61 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
   );
 }
 
-function Inputs({ name, clas, type}) {
+function Inputs({ name, clas, type, ids }) {
   return (
-  <div class={"input-group mb-3 round " + clas}>
-      <input type={type} class="form-control" placeholder={name}/>
+    <div class={"input-group mb-3 round " + clas}>
+      <input
+        id={ids}
+        type={type}
+        class="form-control shaded form-control-lg"
+        placeholder={name}
+      />
     </div>
   );
 }
 
-function Footer(){
+function Footer() {
   return (
     <footer class="text-center dodgerblue">
-
       <div class="container pt-4 ">
+        <section class="">
+          <form action="">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
+              </div>
 
-      
+              <div class="col-md-5 col-12">
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form5Example26"
+                    class="form-control"
+                  />
+                  <label
+                    class="form-label"
+                    placeholder="Email address"
+                    for="form5Example26"
+                  ></label>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <button
+                  data-mdb-ripple-init
+                  type="submit"
+                  class="btn btn-primary mb-4"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
       </div>
-      <div class="text-center p-3 black dodgerblue" >
-        Webstie
-      </div>
+      <div class="text-center p-3 black dodgerblue">(Insert company name)</div>
     </footer>
   );
 }
