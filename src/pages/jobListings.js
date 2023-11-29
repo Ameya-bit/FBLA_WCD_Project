@@ -4,96 +4,138 @@ import { Inputs, Card, Button } from "../components/navbar";
 import { JobPush } from "../components/jobs";
 import data from "../data/jobs.json";
 
-const queryParameters = new URLSearchParams(window.location.search)
-const i = queryParameters.get("jobNum")
+const queryParameters = new URLSearchParams(window.location.search);
+const i = queryParameters.get("jobNum");
+var category = queryParameters.get("category");
+var location = queryParameters.get("location");
+var type = queryParameters.get("type");
+
 const jobListings = () => {
-  if(i == undefined)
-    {
-        return(
-            <div class="main padd">
-                <SpacingCont amount="14" />
-                <div class="container shaded round col-8  ">
-                    <SpacingCont amount="2" />
-                    <h3 class="d-flex justify-content-center">
-                    How'd you get here?
-                    </h3>
-                    <h2 class="d-flex justify-content-center">
-                    ¯\_(ツ)_/¯
-                    </h2>
-                    <h3 class="d-flex justify-content-center">
-                        Click on the navbar to get back on track
-                    </h3>
-                    <SpacingCont amount="2" />
-                </div>
-                <SpacingCont amount="14" /> 
-            </div>
-        )
-    }
-  else{
+  if (i == undefined) {
+    return (
+      <div class="main padd">
+        <SpacingCont amount="14" />
+        <div class="container shaded round col-8  ">
+          <SpacingCont amount="2" />
+          <h3 class="d-flex justify-content-center">How'd you get here?</h3>
+          <h2 class="d-flex justify-content-center">¯\_(ツ)_/¯</h2>
+          <h3 class="d-flex justify-content-center">
+            Click on the navbar to get back on track
+          </h3>
+          <SpacingCont amount="2" />
+        </div>
+        <SpacingCont amount="14" />
+      </div>
+    );
+  } else {
     return (
       <div class="main ">
         <SpacingCont amount="5" />
-        <h2 class="d-flex justify-content-center">Search for Jobs</h2>
-        <SpacingCont amount="1" />
-        <div class="card-columns d-flex justify-content-center padd">
-          <div class="shaded container round col-4 padd">
-            <h1 class="d-flex justify-content-center padd">Filters: </h1>
-            <div class="padd card-columns">
-              <Inputs name="Category" type="text"/>
-              <Inputs name="Location" type="text"/>
-              <Inputs name="Type" type="text"/>
-            </div>
-            
-            <div id="jobslist" class=" container round border scroll padd">
-              <JobPush end="12"/>
+        <div
+          class="card-columns d-flex justify-content-center padd"
+          style={{ height: 870 }}
+        >
+          <div>
+            <h1 class="d-flex justify-content-center shaded round padd">
+              Search Jobs:
+            </h1>
+            <SpacingCont amount="1" />
+            <div class="shaded container round ">
+              <div id="jobslist" class=" container round scroll padd">
+                <JobPush
+                  end="12"
+                  category={category}
+                  location={location}
+                  type={type}
+                />
+              </div>
             </div>
           </div>
-        
-          <JobFullData />
-          
+          <div class="col-8">
+            <div class="shaded round padd">
+              <h3 class="d-flex justify-content-center ">Filters: </h3>
+              <div class="containerAdd container padd d-flex justify-content-center">
+                <Inputs ids="filtCat" name="Category" type="text" value="" />
+                <Inputs ids="filtLoc" name="Location" type="text" value="" />
+                <Inputs ids="filtType" name="Type" type="text" value="" />
+                <div>
+                  <Button name="Save" clas="-success btn-lg" click={getData} />
+                </div>
+              </div>
+            </div>
+            <SpacingCont amount="1" />
+            <JobFullData />
+          </div>
         </div>
         <SpacingCont amount="5" />
       </div>
     );
   }
-  
 };
 
-function JobFullData(){
-  if(i == 0)
-  {
-    return(
-      <div id="filters" class="col-8 container round shaded padd">
-        <h1 class="centered">Please select a Job Card from the left</h1>
-      </div>
-    )
-  }
-  else{
-    return (
-      <div id="filters" class="col-8 container round shaded">
-        <div class="padd">
-          <h1 class="d-flex justify-content-center padd">{data[i]["job_title"]}</h1>
-          <SpacingCont amount="2"/>
-          <h3>Department: {data[i]["department"]}</h3>
-          <SpacingCont amount="1"/>
-          <h3>Job Description: {data[i]["job_desc"]}</h3>
-          <SpacingCont amount="1"/>
-          <h3>Location: {data[i]["location"]}</h3>
-          <SpacingCont amount="1"/>
-          <h3>Type: {data[i]["employment_type"]}</h3>
-          <SpacingCont amount="1"/>
-          <h3>Salary: {data[i]["salary"]}</h3>
-          <SpacingCont amount="1"/>
-          <h3>Requirements: </h3>
-          <h3> - {data[i]["job_requirement"]}</h3>
-          <SpacingCont amount="3"/>
-          <div class="d-flex justify-content-center">
-            <Button link={"/Apply?applicationNumber=" + i} clas="-primary btn-lg col-8 " name="Apply Now"/>
+const getData = () => {
+  category = document.getElementById("filtCat").value;
+  location = document.getElementById("filtLoc").value;
+  type = document.getElementById("filtType").value;
+  window.location.assign(
+    "https://yyxzgq-3000.csb.app/jobListings?jobNum=" +
+      i +
+      "&category=" +
+      category +
+      "&location=" +
+      location +
+      "&type=" +
+      type,
+  );
+};
 
+function JobFullData() {
+  if (i == 0) {
+    return (
+      <div id="filters" class="container round shaded padd">
+        <h1 class="centered">Please select a Job Card from the left</h1>
+        <SpacingCont amount="30" />
+      </div>
+    );
+  } else {
+    return (
+      <div id="filters" class=" container round shaded padd">
+        <div class="padd">
+          <h1 class="d-flex justify-content-center padd">
+            {data[i]["job_title"]}
+          </h1>
+          <SpacingCont amount="2" />
+          <h3>
+            <u>Department:</u> {data[i]["department"]}
+          </h3>
+          <h3>
+            <u>Job Description:</u> {data[i]["job_desc"]}
+          </h3>
+          <h3>
+            <u>Location:</u> {data[i]["location"]}
+          </h3>
+          <h3>
+            <u>Type:</u> {data[i]["employment_type"]}
+          </h3>
+          <h3>
+            <u>Salary:</u> {data[i]["salary"]}
+          </h3>
+          <SpacingCont amount="1" />
+          <h3>
+            <u>Requirements:</u>{" "}
+          </h3>
+          <h3> - {data[i]["job_requirement"]}</h3>
+          <SpacingCont amount="3" />
+          <div class="d-flex justify-content-center">
+            <Button
+              link={"/Apply?applicationNumber=" + i}
+              clas="-primary btn-lg col-8 "
+              name="Apply Now"
+            />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
