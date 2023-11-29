@@ -1,4 +1,5 @@
 import { SpacingCont } from "./qualityOfLife";
+import data from "../data/jobs.json";
 
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
@@ -17,14 +18,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
         </div>
-        <button
-          class="btn btn-primary d-flex justify-content-end"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#chatGPTintegrate"
-        >
-          help
-        </button>
+
         <div class="col-1"></div>
       </div>
     </nav>
@@ -101,7 +95,7 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
             <Button
               link={"/jobListings?jobNum=" + link}
               clas="-outline-success col-4"
-              name="Explore"
+              name="Select"
             />
           </div>
         </div>
@@ -129,17 +123,38 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
   );
 }
 
-function Inputs({ name, clas, type, ids }) {
-  return (
-    <div class={"input-group mb-3 round " + clas}>
-      <input
-        id={ids}
-        type={type}
-        class="form-control shaded form-control-lg"
-        placeholder={name}
-      />
-    </div>
-  );
+function Inputs({ name, clas, type, ids, select, selectType }) {
+  if (select == "true") {
+    let values = [];
+    let returnVal = [];
+    for (let i = 0; i < data.length; i++) {
+      if (values.includes(data[i][selectType]) == false) {
+        values.push(data[i][selectType]);
+      }
+    }
+    for (let value in values) {
+      if (value == 0) {
+        returnVal.push(
+          <option class="shadeWhite" value="">
+            {name}
+          </option>,
+        );
+      }
+      returnVal.push(<option value={values[value]}>{values[value]}</option>);
+    }
+    return returnVal;
+  } else {
+    return (
+      <div class={"input-group mb-3 shadeWhite round " + clas}>
+        <input
+          id={ids}
+          type={type}
+          class="form-control shaded shadeWhite form-control-lg"
+          placeholder={name}
+        />
+      </div>
+    );
+  }
 }
 
 function Footer() {
