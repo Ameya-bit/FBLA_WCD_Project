@@ -1,4 +1,5 @@
 import data from "../data/jobs.json";
+
 import { Card } from "../components/navbar";
 
 function JobPush({ start, end, moreInfo, category, location, type }) {
