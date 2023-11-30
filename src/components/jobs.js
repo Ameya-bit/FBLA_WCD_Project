@@ -1,13 +1,36 @@
-import data from "../data/jobs.json";
-
+import { useEffect, useState } from "react";
+import supabase from "../components/supabase.js";
 import { Card } from "../components/navbar";
 
 function JobPush({ start, end, moreInfo, category, location, type }) {
+  const [reviews, setReviews] = useState("");
+
+  async function getReviews() {
+    let query = supabase.from("JobLIst").select();
+
+    if (category) {
+      query.eq("job_title", category);
+    }
+    if (location) {
+      query.eq("location", location);
+    }
+    if (type) {
+      query.eq("employment_type", type);
+    }
+    query.range(0, 29);
+    const { data, error } = await query;
+    setReviews(data);
+  }
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+
   let send = [];
   category = isUnd(category, "");
   location = isUnd(location, "");
   type = isUnd(type, "");
-  let dataset = assembleMultList(category, location, type);
+  let dataset = reviews;
   start = isUnd(start, 0);
   moreInfo = isUnd(moreInfo, false);
   end = isUnd2(end, dataset.length, dataset.length);
@@ -52,30 +75,6 @@ function isUnd2(check, addCheck, base) {
   }
 }
 
-function assembleMultList(category, location, type) {
-  let cateFilt = assembleList(category, data);
-  let locFilt = assembleList(location, cateFilt);
-  let typeFilt = assembleList(type, locFilt);
-  return typeFilt;
-}
-
-function assembleList(given, dataset) {
-  if (given == "") {
-    return dataset;
-  }
-  let array = dataset;
-  let filteredArray = [];
-  for (let i = 0; i < dataset.length; i++) {
-    let obj = array[i];
-    for (let j in obj) {
-      if (obj[j] == given) {
-        filteredArray.push(obj);
-      }
-    }
-  }
-  return filteredArray;
-}
-
 function StatusCard({
   clas,
   title,
@@ -86,7 +85,6 @@ function StatusCard({
   compDates,
 }) {
   let comp = compDates.replace(/;/g, "\n");
-  console.log(comp);
   return (
     <div class={"card " + clas} style={{ width: "100%" }}>
       <div class="card-body">

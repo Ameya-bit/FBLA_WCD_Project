@@ -2,7 +2,9 @@ import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
 import { Inputs, Card, Button } from "../components/navbar";
 import { JobPush } from "../components/jobs";
-import data from "../data/jobs.json";
+
+import { useEffect, useState } from "react";
+import supabase from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 const i = queryParameters.get("jobNum");
@@ -104,12 +106,6 @@ const jobListings = () => {
   }
 };
 
-function Test() {
-  data[0]["testAdd"] = "will this work";
-
-  console.log(data[0]);
-}
-
 const getData = () => {
   category = document.getElementById("filtCat").value;
   location = document.getElementById("filtLoc").value;
@@ -127,7 +123,17 @@ const getData = () => {
 };
 
 function JobFullData() {
-  if (i == 0) {
+  const [reviews, setReviews] = useState("");
+
+  async function getReviews() {
+    let { data, error } = await supabase.from("JobLIst").select();
+    setReviews(data);
+  }
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+  if (i == 0 || reviews == []) {
     return (
       <div id="filters" class="standheight container round shaded padd">
         <h1 class="centered">Please select a Job Card from the left</h1>
@@ -139,29 +145,29 @@ function JobFullData() {
       <div id="filters" class="standHeight container round shaded padd">
         <div class="padd">
           <h1 class="d-flex justify-content-center padd">
-            {data[i]["job_title"]}
+            {reviews[i]["job_title"]}
           </h1>
           <SpacingCont amount="2" />
           <h3>
-            <u>Department:</u> {data[i]["department"]}
+            <u>Department:</u> {reviews[i]["department"]}
           </h3>
           <h3>
-            <u>Job Description:</u> {data[i]["job_desc"]}
+            <u>Job Description:</u> {reviews[i]["job_desc"]}
           </h3>
           <h3>
-            <u>Location:</u> {data[i]["location"]}
+            <u>Location:</u> {reviews[i]["location"]}
           </h3>
           <h3>
-            <u>Type:</u> {data[i]["employment_type"]}
+            <u>Type:</u> {reviews[i]["employment_type"]}
           </h3>
           <h3>
-            <u>Salary:</u> {data[i]["salary"]}
+            <u>Salary:</u> {reviews[i]["salary"]}
           </h3>
           <SpacingCont amount="1" />
           <h3>
             <u>Requirements:</u>{" "}
           </h3>
-          <h3> - {data[i]["job_requirement"]}</h3>
+          <h3> - {reviews[i]["job_requirement"]}</h3>
           <SpacingCont amount="3" />
           <div class="d-flex justify-content-center">
             <Button

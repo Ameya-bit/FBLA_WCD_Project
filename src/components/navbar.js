@@ -1,5 +1,6 @@
 import { SpacingCont } from "./qualityOfLife";
-import data from "../data/jobs.json";
+import { useEffect, useState } from "react";
+import supabase from "../components/supabase.js";
 
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
@@ -15,6 +16,8 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
         >
           <ul class="navbar-nav">
             <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
+            <NavBarLinks name="Reviews" link="/Review" />
+
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
         </div>
@@ -72,10 +75,6 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
       </div>
     );
   } else {
-    let beforeLink = window.location.href;
-    let parts = beforeLink.split("=");
-    console.log(parts);
-    let afterLink = parts[0] + link + parts[1] + parts[2];
     return (
       <div class={"card " + clas} style={{ height: height }}>
         <div class="card-body padd">
@@ -128,12 +127,22 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
 }
 
 function Inputs({ name, clas, type, ids, select, selectType }) {
+  const [reviews, setReviews] = useState("");
+
+  async function getReviews() {
+    let { data, error } = await supabase.from("JobLIst").select();
+    setReviews(data);
+  }
+
+  useEffect(() => {
+    getReviews();
+  }, []);
   if (select == "true") {
     let values = [];
     let returnVal = [];
-    for (let i = 0; i < data.length; i++) {
-      if (values.includes(data[i][selectType]) == false) {
-        values.push(data[i][selectType]);
+    for (let i = 0; i < reviews.length; i++) {
+      if (values.includes(reviews[i][selectType]) == false) {
+        values.push(reviews[i][selectType]);
       }
     }
     for (let value in values) {
@@ -143,13 +152,12 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
             {name}
           </option>,
         );
-      } else {
-        returnVal.push(
-          <option class="bluetext" value={values[value]}>
-            {values[value]}
-          </option>,
-        );
       }
+      returnVal.push(
+        <option class="bluetext" value={values[value]}>
+          {values[value]}
+        </option>,
+      );
     }
     return returnVal;
   } else {
