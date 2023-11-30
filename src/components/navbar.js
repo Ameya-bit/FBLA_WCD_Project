@@ -5,8 +5,8 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
     <nav id={id} class={clas}>
       <div class="container-fluid">
-        <a class="navbar-brand col-1" href="/" id="navname">
-          FBLA Jobs
+        <a class="navbar-brand col-1 goldtext" href="/" id="navname">
+          VARIA Jobs
         </a>
 
         <div
@@ -72,6 +72,10 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
       </div>
     );
   } else {
+    let beforeLink = window.location.href;
+    let parts = beforeLink.split("=");
+    console.log(parts);
+    let afterLink = parts[0] + link + parts[1] + parts[2];
     return (
       <div class={"card " + clas} style={{ height: height }}>
         <div class="card-body padd">
@@ -139,8 +143,13 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
             {name}
           </option>,
         );
+      } else {
+        returnVal.push(
+          <option class="bluetext" value={values[value]}>
+            {values[value]}
+          </option>,
+        );
       }
-      returnVal.push(<option value={values[value]}>{values[value]}</option>);
     }
     return returnVal;
   } else {
@@ -198,7 +207,7 @@ function Footer() {
           </form>
         </section>
       </div>
-      <div class="text-center p-3 black dodgerblue">(Insert company name)</div>
+      <div class="text-center p-3 black dodgerblue">VARIA co.</div>
     </footer>
   );
 }

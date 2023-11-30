@@ -1,4 +1,4 @@
-import data from "../data/jobs";
+import data from "../data/jobs.json";
 import { Card } from "../components/navbar";
 
 function JobPush({ start, end, moreInfo, category, location, type }) {
@@ -7,7 +7,7 @@ function JobPush({ start, end, moreInfo, category, location, type }) {
   location = isUnd(location, "");
   type = isUnd(type, "");
   let dataset = assembleMultList(category, location, type);
-  start = isUnd(start, 1);
+  start = isUnd(start, 0);
   moreInfo = isUnd(moreInfo, false);
   end = isUnd2(end, dataset.length, dataset.length);
 
@@ -19,15 +19,15 @@ function JobPush({ start, end, moreInfo, category, location, type }) {
           loc={"Location: " + dataset[i]["location"]}
           emp={"Job Type: " + dataset[i]["employment_type"]}
           desc={"Description: " + dataset[i]["job_desc"]}
-          link={i}
+          link={dataset[i]["job_id"]}
         />,
       );
     } else {
       send.push(
         <Card
-          title={data[i]["job_title"]}
-          loc={"Department: " + data[i]["department"]}
-          link={i}
+          title={dataset[i]["job_title"]}
+          loc={"Department: " + dataset[i]["department"]}
+          link={dataset[i]["job_id"]}
         />,
       );
     }

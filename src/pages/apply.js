@@ -69,7 +69,7 @@ const Apply = () => {
                 ids="password"
                 name="Password "
                 clas=" padd"
-                type="text"
+                type="password"
               />
 
               <h3 class="d-flex justify-content-center padd">
