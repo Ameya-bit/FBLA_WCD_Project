@@ -1,17 +1,23 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
 import { Inputs, Card, Image, Button } from "../components/navbar";
-import { JobPush } from "../components/jobs";
-import data from "../data/jobs.json";
-
-import addedRecom from "./img/addedRecom.jpg";
-import profilePers from "./img/profilePers.jpg";
-import resumeCheck from "./img/resumeCheck.jpg";
+import { useEffect, useState } from "react";
+import supabase from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 const i = queryParameters.get("applicationNumber");
 const Apply = () => {
-  if (i == undefined) {
+  const [reviews, setReviews] = useState("");
+
+  async function getReviews() {
+    let { data, error } = await supabase.from("JobLIst").select().range(0, 9);
+    setReviews(data);
+  }
+
+  useEffect(() => {
+    getReviews();
+  }, []);
+  if (i == undefined || reviews == []) {
     return (
       <div class="main padd">
         <SpacingCont amount="14" />
@@ -40,10 +46,10 @@ const Apply = () => {
           <div class="d-flex justify-content-center">
             <div class="col-10">
               <Card
-                title={data[i]["job_title"]}
-                loc={"Location: " + data[i]["location"]}
-                emp={"Job Type: " + data[i]["employment_type"]}
-                desc={"Description: " + data[i]["job_desc"]}
+                title={reviews[i]["job_title"]}
+                loc={"Location: " + reviews[i]["location"]}
+                emp={"Job Type: " + reviews[i]["employment_type"]}
+                desc={"Description: " + reviews[i]["job_desc"]}
                 clas="padd"
                 button="no"
               />
@@ -120,7 +126,7 @@ function gatherInfo() {
 
   let persInfo = [firstName, lastName, email];
 
-  let application = data[i]["job_title"];
+  let application = reviews[i]["job_title"];
   let resume = document.getElementById("resume").value;
 
   console.log(persInfo);
