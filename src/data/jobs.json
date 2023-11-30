@@ -1,15 +1,16 @@
 [
   {
-    "job_title": "Please select a card",
-    "company_name": "",
-    "company_desc": "",
-    "job_desc": "",
-    "job_requirement": "",
-    "salary": "",
-    "location": "",
-    "employment_type": "",
-    "department": "",
-    "label": 0
+    "job_title": "Accountant",
+    "company_name": "Equity Model Limited",
+    "company_desc": "Accounting, Auditing & Finance",
+    "job_desc": "Compiling, analyzing, and reporting financial data.",
+    "job_requirement": "This position is open preferably to a male candidate,Minimum academic qualification preferably in accounting,Candidates aged between 22 - 30 years,Ability to write clearly and help with word processing when necessary.,A warm personality and strong communication skills.,Ability to work well under limited supervision.,Great communication and writing skills.,Hands-on experience in managing time and personnel.",
+    "salary": "75,000 - 150,000",
+    "location": "Abuja",
+    "employment_type": "Full-Time",
+    "department": "Law & Compliance",
+    "label": 0,
+    "job_id": 1
   },
   {
     "job_title": "Accountant",
@@ -21,7 +22,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Law & Compliance",
-    "label": 0
+    "label": 0,
+    "job_id": 1
   },
   {
     "job_title": "Content Writer",
@@ -33,7 +35,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Content Writing",
-    "label": 1
+    "label": 1,
+    "job_id": 2
   },
   {
     "job_title": "Accountant",
@@ -45,7 +48,8 @@
     "location": "First Floor, Left Wing, No. 49, Olowu Street, Off Moboloji Bank, Anthony Way, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 3
   },
   {
     "job_title": "Sales Executive",
@@ -57,7 +61,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 4
   },
   {
     "job_title": "Bulk/Partnership Marketing Officer",
@@ -69,7 +74,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Shipping & Logistics",
-    "label": 0
+    "label": 0,
+    "job_id": 5
   },
   {
     "job_title": "Marketer/Sales Executive",
@@ -81,7 +87,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 6
   },
   {
     "job_title": "Medical Sales Representative",
@@ -93,7 +100,8 @@
     "location": "Rest of Nigeria (Kogi)",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 7
   },
   {
     "job_title": "Group Sales Lead",
@@ -105,7 +113,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 8
   },
   {
     "job_title": "Real Estate Agent",
@@ -117,7 +126,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Real Estate",
-    "label": 1
+    "label": 1,
+    "job_id": 9
   },
   {
     "job_title": "Medical Sales Representative",
@@ -129,7 +139,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 10
   },
   {
     "job_title": "Accountant",
@@ -141,7 +152,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Finance",
-    "label": 1
+    "label": 1,
+    "job_id": 11
   },
   {
     "job_title": "Medical Sales Representative",
@@ -153,7 +165,8 @@
     "location": "Rest of Nigeria (Delta)",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 12
   },
   {
     "job_title": "Web Designer.",
@@ -165,7 +178,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 13
   },
   {
     "job_title": "Human Resources Manager",
@@ -177,7 +191,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 14
   },
   {
     "job_title": "Personal Assistant",
@@ -189,7 +204,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 15
   },
   {
     "job_title": "Chief Accountant/ Head of Accounts",
@@ -201,7 +217,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 16
   },
   {
     "job_title": "Sales Executive",
@@ -213,7 +230,8 @@
     "location": "No. 90, Awolowo Way, Opposite MAN House, Ikeja,",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 17
   },
   {
     "job_title": "Project Supervisor",
@@ -225,7 +243,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 18
   },
   {
     "job_title": "Operations Specialist",
@@ -237,7 +256,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 19
   },
   {
     "job_title": "Accountant",
@@ -249,7 +269,8 @@
     "location": "1 Babatunde Street, Off Ogunlana Drive",
     "employment_type": "Full-time",
     "department": "Accounting/Finance",
-    "label": 1
+    "label": 1,
+    "job_id": 20
   },
   {
     "job_title": "Receptionist",
@@ -261,7 +282,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 21
   },
   {
     "job_title": "Human Resources Manager",
@@ -273,7 +295,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 22
   },
   {
     "job_title": "Business Development Officer",
@@ -285,7 +308,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Internship & Graduate",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 23
   },
   {
     "job_title": "IT Support Specialist",
@@ -297,7 +321,8 @@
     "location": "House 2, Odegbami crescent, Olorunsogo, Abeokuta, Ogun State",
     "employment_type": "Full-time",
     "department": "Information Technology",
-    "label": 1
+    "label": 1,
+    "job_id": 24
   },
   {
     "job_title": "Telesales Officer",
@@ -309,7 +334,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 25
   },
   {
     "job_title": "Project Safety Officer",
@@ -321,7 +347,8 @@
     "location": "Abeokuta & Ogun State",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 26
   },
   {
     "job_title": "Medical Sales Representative",
@@ -333,7 +360,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 27
   },
   {
     "job_title": "Retail Marketing Officer",
@@ -345,7 +373,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Energy & Utilities",
-    "label": 0
+    "label": 0,
+    "job_id": 28
   },
   {
     "job_title": "Government and History Teacher",
@@ -357,7 +386,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 29
   },
   {
     "job_title": "Telesales Agent",
@@ -369,7 +399,8 @@
     "location": "Lagos",
     "employment_type": "Contract",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 30
   },
   {
     "job_title": "Content Creator",
@@ -381,7 +412,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 31
   },
   {
     "job_title": "Software Developer",
@@ -393,7 +425,8 @@
     "location": "Starlink House, Suite 202, No. 8/10 Salamotu Eniola Street, Illasa, Lagos State",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 1
+    "label": 1,
+    "job_id": 32
   },
   {
     "job_title": "Digital Marketing/Sales Executive",
@@ -405,7 +438,8 @@
     "location": "Lagos",
     "employment_type": "Part Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 33
   },
   {
     "job_title": "Project Manager",
@@ -417,7 +451,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 34
   },
   {
     "job_title": "Supervisor",
@@ -429,7 +464,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 35
   },
   {
     "job_title": "Business Development Executive",
@@ -441,7 +477,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 36
   },
   {
     "job_title": "Customer Service Representative",
@@ -453,7 +490,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Contract",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 37
   },
   {
     "job_title": "POS Agent Support",
@@ -465,7 +503,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 38
   },
   {
     "job_title": "Assistant Researcher",
@@ -477,7 +516,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 39
   },
   {
     "job_title": "Client Service Manager",
@@ -489,7 +529,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 40
   },
   {
     "job_title": "Media Specialist",
@@ -501,7 +542,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 41
   },
   {
     "job_title": "Graphic Designer",
@@ -513,7 +555,8 @@
     "location": "Ille-Ile Bus-Stop, Opposite Skye Bank PLC",
     "employment_type": "Full-time",
     "department": "Creative/Design",
-    "label": 1
+    "label": 1,
+    "job_id": 42
   },
   {
     "job_title": "Account Supervisor/Account Executive",
@@ -525,7 +568,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 43
   },
   {
     "job_title": "Event Housekeeping Supervisor",
@@ -537,7 +581,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 44
   },
   {
     "job_title": "Accountant",
@@ -549,7 +594,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 45
   },
   {
     "job_title": "Architect",
@@ -561,7 +607,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 46
   },
   {
     "job_title": "Sales Representative",
@@ -573,7 +620,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 47
   },
   {
     "job_title": "Sales Representative",
@@ -585,7 +633,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 48
   },
   {
     "job_title": "Software Engineer",
@@ -597,7 +646,8 @@
     "location": "No 2 Rumuola/rumuokuta Road 2nd floor opposite success superstores, Port Harcourt",
     "employment_type": "Full-time",
     "department": "Software Development",
-    "label": 1
+    "label": 1,
+    "job_id": 49
   },
   {
     "job_title": "Marketing Manager",
@@ -609,7 +659,8 @@
     "location": "Obigbo Road, Aba Road, Port Harcourt, Rivers State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 50
   },
   {
     "job_title": "Driver",
@@ -621,7 +672,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 51
   },
   {
     "job_title": "Software Developer",
@@ -633,7 +685,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Information Technology",
-    "label": 1
+    "label": 1,
+    "job_id": 52
   },
   {
     "job_title": "Graphics Designer",
@@ -645,7 +698,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 53
   },
   {
     "job_title": "Social media Manager",
@@ -657,7 +711,8 @@
     "location": "Lagos",
     "employment_type": "Contract",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 54
   },
   {
     "job_title": "Accountant",
@@ -669,7 +724,8 @@
     "location": "L’monarch Towers, No. 65, Opebi Road, Ikeja, Lagos State",
     "employment_type": "Full-Time",
     "department": "Accounting/Finance",
-    "label": 1
+    "label": 1,
+    "job_id": 55
   },
   {
     "job_title": "HR Manager",
@@ -681,7 +737,8 @@
     "location": "Franchise Village, 27 Adeleke Street, Off Allen Avenue, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 56
   },
   {
     "job_title": "Librarian",
@@ -693,7 +750,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 57
   },
   {
     "job_title": "Nurse",
@@ -705,7 +763,8 @@
     "location": "Toyin Street, Ikeja, Lagos State",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 1
+    "label": 1,
+    "job_id": 58
   },
   {
     "job_title": "Chef",
@@ -717,7 +776,8 @@
     "location": "Ibadan & Oyo State",
     "employment_type": "Full-Time",
     "department": "Entertainment, Events & Sport",
-    "label": 0
+    "label": 0,
+    "job_id": 59
   },
   {
     "job_title": "Digital Marketing Strategy",
@@ -729,7 +789,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 60
   },
   {
     "job_title": "Sales Executive",
@@ -741,7 +802,8 @@
     "location": "Starlink House, Suite 202, No. 8/10 Salamotu Eniola Street, Illasa",
     "employment_type": "Full-time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 61
   },
   {
     "job_title": "Marketing Manager",
@@ -753,7 +815,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 62
   },
   {
     "job_title": "Marketer",
@@ -765,7 +828,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 63
   },
   {
     "job_title": "Digital Marketing Specialist",
@@ -777,7 +841,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 64
   },
   {
     "job_title": "HR Manager",
@@ -789,7 +854,8 @@
     "location": "L’monarch Towers, No. 65, Opebi Road, Ikeja, Lagos State",
     "employment_type": "Full-Time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 65
   },
   {
     "job_title": "Human Resources Manager",
@@ -801,7 +867,8 @@
     "location": "Franchise villa, 27 adeleke str off allen ikeja",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 66
   },
   {
     "job_title": "Sales Representative",
@@ -813,7 +880,8 @@
     "location": "Lagos",
     "employment_type": "Part Time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 67
   },
   {
     "job_title": "Financial Analyst",
@@ -825,7 +893,8 @@
     "location": "6, Deji Oyenuga Street Anthony Bus/Stop, Lagos",
     "employment_type": "Full-Time",
     "department": "Accounting/Finance",
-    "label": 1
+    "label": 1,
+    "job_id": 68
   },
   {
     "job_title": "Customer Service Representative",
@@ -837,7 +906,8 @@
     "location": "1 Babatunde Street, Off Ogunlana Drive, Surulere, Lagos State",
     "employment_type": "Full-Time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 69
   },
   {
     "job_title": "Human Resources Manager",
@@ -849,7 +919,8 @@
     "location": "House 2, Odegbami crescent, Olorunsogo, Abeokuta, Ogun State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 70
   },
   {
     "job_title": "Sales/Marketing Executive",
@@ -861,7 +932,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 71
   },
   {
     "job_title": "Farm Manager",
@@ -873,7 +945,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 72
   },
   {
     "job_title": "Financial Analyst",
@@ -885,7 +958,8 @@
     "location": "Lagos",
     "employment_type": "Full-time",
     "department": "Finance",
-    "label": 1
+    "label": 1,
+    "job_id": 73
   },
   {
     "job_title": "Chef",
@@ -897,7 +971,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Automotive & Aviation",
-    "label": 0
+    "label": 0,
+    "job_id": 74
   },
   {
     "job_title": "Marketer",
@@ -909,7 +984,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 75
   },
   {
     "job_title": "Sales Representative",
@@ -921,7 +997,8 @@
     "location": "Lagos Island, Lagos State",
     "employment_type": "Full-time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 76
   },
   {
     "job_title": "Social Media Manager",
@@ -933,7 +1010,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Law & Compliance",
-    "label": 0
+    "label": 0,
+    "job_id": 77
   },
   {
     "job_title": "HR Manager",
@@ -945,7 +1023,8 @@
     "location": "L’monarch Towers, No. 65, Opebi Road, Ikeja",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 78
   },
   {
     "job_title": "Driver",
@@ -957,7 +1036,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Enforcement & Security",
-    "label": 0
+    "label": 0,
+    "job_id": 79
   },
   {
     "job_title": "Communications Grants & Partnerships Manager",
@@ -969,7 +1049,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 80
   },
   {
     "job_title": "Medical Sales Representative",
@@ -981,7 +1062,8 @@
     "location": "Rest of Nigeria (Edo)",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 81
   },
   {
     "job_title": "Copywriter/Growth Hacker",
@@ -993,7 +1075,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 82
   },
   {
     "job_title": "Real Estate Agent",
@@ -1005,7 +1088,8 @@
     "location": "Lagos",
     "employment_type": "Contract",
     "department": "Real Estate",
-    "label": 1
+    "label": 1,
+    "job_id": 83
   },
   {
     "job_title": "Graphic Artist",
@@ -1017,7 +1101,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 84
   },
   {
     "job_title": "Social Media Manager/VA",
@@ -1029,7 +1114,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 85
   },
   {
     "job_title": "Human Resource Manager",
@@ -1041,7 +1127,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 86
   },
   {
     "job_title": "Procurement Officer",
@@ -1053,7 +1140,8 @@
     "location": "Lagos Island, Lagos State",
     "employment_type": "Full-time",
     "department": "Procurement",
-    "label": 1
+    "label": 1,
+    "job_id": 87
   },
   {
     "job_title": "Civil Engineer",
@@ -1065,7 +1153,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Engineering",
-    "label": 1
+    "label": 1,
+    "job_id": 88
   },
   {
     "job_title": "Customer Service Officer",
@@ -1077,7 +1166,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 89
   },
   {
     "job_title": "Plumber",
@@ -1089,7 +1179,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 90
   },
   {
     "job_title": "Social Media Manager",
@@ -1101,7 +1192,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 91
   },
   {
     "job_title": "Petroleum Engineer",
@@ -1113,7 +1205,8 @@
     "location": "Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Engineering",
-    "label": 1
+    "label": 1,
+    "job_id": 92
   },
   {
     "job_title": "Field Marketing Officer",
@@ -1125,7 +1218,8 @@
     "location": "Rest of Nigeria (Nationwide)",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 93
   },
   {
     "job_title": "Telesales Agent",
@@ -1137,7 +1231,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 94
   },
   {
     "job_title": "Professional Sculptor",
@@ -1149,7 +1244,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Automotive & Aviation",
-    "label": 0
+    "label": 0,
+    "job_id": 95
   },
   {
     "job_title": "Medical Sales Representative",
@@ -1161,7 +1257,8 @@
     "location": "Imo",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 96
   },
   {
     "job_title": "UX Designer",
@@ -1173,7 +1270,8 @@
     "location": "FUTA, Akure",
     "employment_type": "Part Time",
     "department": "Information Technology",
-    "label": 0
+    "label": 0,
+    "job_id": 97
   },
   {
     "job_title": "Marketing Manager",
@@ -1185,7 +1283,8 @@
     "location": "Oba Akran Avenue, behind AP Filling Station, Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 98
   },
   {
     "job_title": "Front Office Manager",
@@ -1197,7 +1296,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 99
   },
   {
     "job_title": "Sales Representative",
@@ -1209,7 +1309,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 100
   },
   {
     "job_title": "Accountant",
@@ -1221,7 +1322,8 @@
     "location": "Ibadan Road, Ibadan South-West, Oyo State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 101
   },
   {
     "job_title": "Human Resources Consultant",
@@ -1233,7 +1335,8 @@
     "location": "Port Harcourt, Rivers State",
     "employment_type": "Full-Time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 102
   },
   {
     "job_title": "Content Creator",
@@ -1245,7 +1348,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 103
   },
   {
     "job_title": "Graphic Designer",
@@ -1257,7 +1361,8 @@
     "location": "Comfort house, Alagomeji Ebute meta, Lagos",
     "employment_type": "Full-time",
     "department": "Design",
-    "label": 1
+    "label": 1,
+    "job_id": 104
   },
   {
     "job_title": "Video Motion Graphic Animation Designer",
@@ -1269,7 +1374,8 @@
     "location": "Rest of Nigeria (Nationwide)",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 105
   },
   {
     "job_title": "AC Technician",
@@ -1281,7 +1387,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 106
   },
   {
     "job_title": "Marketing Executive",
@@ -1293,7 +1400,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 107
   },
   {
     "job_title": "Sales Manager",
@@ -1305,7 +1413,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 108
   },
   {
     "job_title": "Human Resources Manager",
@@ -1317,7 +1426,8 @@
     "location": "No. 1-6, Alhaji Lateef Sulaimon Street, Opposite Owode-Onirin Market, Kosofe, Lagos State",
     "employment_type": "Full-time",
     "department": "Human Resources",
-    "label": 1
+    "label": 1,
+    "job_id": 109
   },
   {
     "job_title": "Customer Service Representative",
@@ -1329,7 +1439,8 @@
     "location": "No. 90, Awolowo Way, Opposite MAN House, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Customer Service",
-    "label": 1
+    "label": 1,
+    "job_id": 110
   },
   {
     "job_title": "Programme Officer I",
@@ -1341,7 +1452,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "NGO, NPO & Charity",
-    "label": 0
+    "label": 0,
+    "job_id": 111
   },
   {
     "job_title": "Front Desk Officer",
@@ -1353,7 +1465,8 @@
     "location": "First Floor, Left Wing, No. 49, Olowu Street, Off Moboloji Bank, Anthony Way, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Administration",
-    "label": 1
+    "label": 1,
+    "job_id": 112
   },
   {
     "job_title": "Account Supervisor/Account Executive",
@@ -1365,7 +1478,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 113
   },
   {
     "job_title": "Graphic Designer",
@@ -1377,7 +1491,8 @@
     "location": "Ille-Ile Bus-Stop, Opposite Skye Bank PLC, 505 Ikorodu Road, Lagos state",
     "employment_type": "Contract",
     "department": "Creative",
-    "label": 1
+    "label": 1,
+    "job_id": 114
   },
   {
     "job_title": "Field Sales Agent",
@@ -1389,7 +1504,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 115
   },
   {
     "job_title": "Interior Design Project Supervisor",
@@ -1401,7 +1517,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Construction",
-    "label": 0
+    "label": 0,
+    "job_id": 116
   },
   {
     "job_title": "Office Assistant",
@@ -1413,7 +1530,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 117
   },
   {
     "job_title": "Internal Control Assistant",
@@ -1425,7 +1543,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 118
   },
   {
     "job_title": "Ticketing and Reservation Officer",
@@ -1437,7 +1556,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Automotive & Aviation",
-    "label": 0
+    "label": 0,
+    "job_id": 119
   },
   {
     "job_title": "CNC Router Machine Operator",
@@ -1449,7 +1569,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 120
   },
   {
     "job_title": "Country Director (MEDA Senegal)",
@@ -1461,7 +1582,8 @@
     "location": "Senegal",
     "employment_type": "Full-Time",
     "department": "Management & Business Development",
-    "label": 0
+    "label": 0,
+    "job_id": 121
   },
   {
     "job_title": "Business Development Officer",
@@ -1473,7 +1595,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 122
   },
   {
     "job_title": "Marketer",
@@ -1485,7 +1608,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Tourism & Travel",
-    "label": 0
+    "label": 0,
+    "job_id": 123
   },
   {
     "job_title": "Project Officer",
@@ -1497,7 +1621,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 124
   },
   {
     "job_title": "Procurement Officer",
@@ -1509,7 +1634,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Shipping & Logistics",
-    "label": 0
+    "label": 0,
+    "job_id": 125
   },
   {
     "job_title": "Business Development Officer",
@@ -1521,7 +1647,8 @@
     "location": "No. 64 Toyin Street, Opebi-Toyin, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Business Development",
-    "label": 1
+    "label": 1,
+    "job_id": 126
   },
   {
     "job_title": "Production Supervisor.",
@@ -1533,7 +1660,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 127
   },
   {
     "job_title": "Accounting Officer",
@@ -1545,7 +1673,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 128
   },
   {
     "job_title": "Creative Designer",
@@ -1557,7 +1686,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 129
   },
   {
     "job_title": "Functional Consultant",
@@ -1569,7 +1699,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Banking, Finance & Insurance",
-    "label": 0
+    "label": 0,
+    "job_id": 130
   },
   {
     "job_title": "Management Trainee",
@@ -1581,7 +1712,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 131
   },
   {
     "job_title": "Front Desk Officer",
@@ -1593,7 +1725,8 @@
     "location": "Suite 2, Oluyole, Bus-Stop, Oregun, Ikeja, Lagos",
     "employment_type": "Full-Time",
     "department": "Administration",
-    "label": 1
+    "label": 1,
+    "job_id": 132
   },
   {
     "job_title": "Administrative Assistant",
@@ -1605,7 +1738,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Tourism & Travel",
-    "label": 0
+    "label": 0,
+    "job_id": 133
   },
   {
     "job_title": "Accountant",
@@ -1617,7 +1751,8 @@
     "location": "Kosofe, Lagos State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 134
   },
   {
     "job_title": "Business Development Officer",
@@ -1629,7 +1764,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Business Development",
-    "label": 1
+    "label": 1,
+    "job_id": 135
   },
   {
     "job_title": "Sales Representative",
@@ -1641,7 +1777,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 136
   },
   {
     "job_title": "Graphic Designer",
@@ -1653,7 +1790,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 137
   },
   {
     "job_title": "Design Architect",
@@ -1665,7 +1803,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Construction",
-    "label": 0
+    "label": 0,
+    "job_id": 138
   },
   {
     "job_title": "Mathematics Teacher",
@@ -1677,7 +1816,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 139
   },
   {
     "job_title": "Telemarketer/Sales Agent",
@@ -1689,7 +1829,8 @@
     "location": "Rest of Nigeria (Delta)",
     "employment_type": "Full-Time",
     "department": "Mining, Energy & Metals",
-    "label": 0
+    "label": 0,
+    "job_id": 140
   },
   {
     "job_title": "Software Engineer",
@@ -1701,7 +1842,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "Technology",
-    "label": 0
+    "label": 0,
+    "job_id": 141
   },
   {
     "job_title": "Legal Officer",
@@ -1713,7 +1855,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Law & Compliance",
-    "label": 0
+    "label": 0,
+    "job_id": 142
   },
   {
     "job_title": "Sales Officer",
@@ -1725,7 +1868,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 143
   },
   {
     "job_title": "Finance Writer",
@@ -1737,7 +1881,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 144
   },
   {
     "job_title": "Sales Executives",
@@ -1749,7 +1894,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 145
   },
   {
     "job_title": "Contractor Manager",
@@ -1761,7 +1907,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 146
   },
   {
     "job_title": "Senior Project Officer",
@@ -1773,7 +1920,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 147
   },
   {
     "job_title": "Lead Recruiter",
@@ -1785,7 +1933,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 148
   },
   {
     "job_title": "Medical Sales Representative",
@@ -1797,7 +1946,8 @@
     "location": "Rest of Nigeria (Anambra)",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 149
   },
   {
     "job_title": "Operations Lead",
@@ -1809,7 +1959,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Shipping & Logistics",
-    "label": 0
+    "label": 0,
+    "job_id": 150
   },
   {
     "job_title": "Marketing Manager",
@@ -1821,7 +1972,8 @@
     "location": "1 Babatunde Street, Off Ogunlana Drive, Surulere, Lagos State",
     "employment_type": "Full-Time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 151
   },
   {
     "job_title": "Website Graphic Designer (Freelancer)",
@@ -1833,7 +1985,8 @@
     "location": "Rest of Nigeria (Nationwide)",
     "employment_type": "Contract",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 152
   },
   {
     "job_title": "Medical Sales Representative",
@@ -1845,7 +1998,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 153
   },
   {
     "job_title": "Principal Project Officer",
@@ -1857,7 +2011,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 154
   },
   {
     "job_title": "Computer Operator",
@@ -1869,7 +2024,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 155
   },
   {
     "job_title": "Sales Executive",
@@ -1881,7 +2037,8 @@
     "location": "Kosofe, Lagos State",
     "employment_type": "Full-time",
     "department": "Sales",
-    "label": 1
+    "label": 1,
+    "job_id": 156
   },
   {
     "job_title": "Fulfilment Officer",
@@ -1893,7 +2050,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Retail, Fashion & FMCG",
-    "label": 0
+    "label": 0,
+    "job_id": 157
   },
   {
     "job_title": "Software Developer",
@@ -1905,7 +2063,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-time",
     "department": "Information Technology",
-    "label": 1
+    "label": 1,
+    "job_id": 158
   },
   {
     "job_title": "DFP Expert",
@@ -1917,7 +2076,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 159
   },
   {
     "job_title": "Nurse Practitioner",
@@ -1929,7 +2089,8 @@
     "location": "Ibadan Road, Ibadan South-West, Oyo State",
     "employment_type": "Full-time",
     "department": "Nursing",
-    "label": 1
+    "label": 1,
+    "job_id": 160
   },
   {
     "job_title": "Marketing Manager",
@@ -1941,7 +2102,8 @@
     "location": "No. 1-6, Alhaji Lateef Sulaimon Street, Opposite Owode-Onirin Market, Kosofe, Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 161
   },
   {
     "job_title": "Marketing Manager",
@@ -1953,7 +2115,8 @@
     "location": "Oshodi, Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 162
   },
   {
     "job_title": "Business Development/sales officer",
@@ -1965,7 +2128,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 163
   },
   {
     "job_title": "Production Manager.",
@@ -1977,7 +2141,8 @@
     "location": "Enugu",
     "employment_type": "Full-Time",
     "department": "Manufacturing & Warehousing",
-    "label": 0
+    "label": 0,
+    "job_id": 164
   },
   {
     "job_title": "IT Support Specialist",
@@ -1989,7 +2154,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Information Technology",
-    "label": 1
+    "label": 1,
+    "job_id": 165
   },
   {
     "job_title": "Sales Executive",
@@ -2001,7 +2167,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 166
   },
   {
     "job_title": "Business Development Executive",
@@ -2013,7 +2180,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Shipping & Logistics",
-    "label": 0
+    "label": 0,
+    "job_id": 167
   },
   {
     "job_title": "Grade Teacher",
@@ -2025,7 +2193,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 168
   },
   {
     "job_title": "Graphic Designer",
@@ -2037,7 +2206,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Advertising, Media & Communications",
-    "label": 0
+    "label": 0,
+    "job_id": 169
   },
   {
     "job_title": "Chief Security Officer",
@@ -2049,7 +2219,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 170
   },
   {
     "job_title": "Customer Service Representative",
@@ -2061,7 +2232,8 @@
     "location": "Lagos",
     "employment_type": "Contract",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 171
   },
   {
     "job_title": "Accounts Officer",
@@ -2073,7 +2245,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Agriculture, Fishing & Forestry",
-    "label": 0
+    "label": 0,
+    "job_id": 172
   },
   {
     "job_title": "Investment Advisor",
@@ -2085,7 +2258,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 173
   },
   {
     "job_title": "Driver",
@@ -2097,7 +2271,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 174
   },
   {
     "job_title": "Marketing Executive",
@@ -2109,7 +2284,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 175
   },
   {
     "job_title": "Head of Department IT",
@@ -2121,7 +2297,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 176
   },
   {
     "job_title": "Office Administrator",
@@ -2133,7 +2310,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Energy & Utilities",
-    "label": 0
+    "label": 0,
+    "job_id": 177
   },
   {
     "job_title": "Internal Control and Audit Officer",
@@ -2145,7 +2323,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Accounting, Auditing & Finance",
-    "label": 0
+    "label": 0,
+    "job_id": 178
   },
   {
     "job_title": "Marketing Manager",
@@ -2157,7 +2336,8 @@
     "location": "Suite 201, Philez Plaza, 02, Osolo Way, No. 7/8 Bus/Stop, off Murtala Mohammed Airport Road, beside Keystone Bank, Ikeja, Lags State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 179
   },
   {
     "job_title": "Oil and Gas Engineer",
@@ -2169,7 +2349,8 @@
     "location": "Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Engineering",
-    "label": 1
+    "label": 1,
+    "job_id": 180
   },
   {
     "job_title": "Superintendent Pharmaceutical Officer",
@@ -2181,7 +2362,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 181
   },
   {
     "job_title": "Software Developer",
@@ -2193,7 +2375,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-time",
     "department": "Software Development",
-    "label": 1
+    "label": 1,
+    "job_id": 182
   },
   {
     "job_title": "Accountant",
@@ -2205,7 +2388,8 @@
     "location": "Lagos State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 183
   },
   {
     "job_title": "Customer Service Representative",
@@ -2217,7 +2401,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-time",
     "department": "Customer Service",
-    "label": 1
+    "label": 1,
+    "job_id": 184
   },
   {
     "job_title": "Medical Sales Representative",
@@ -2229,7 +2414,8 @@
     "location": "Rest of Nigeria (Bayelsa)",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 185
   },
   {
     "job_title": "Restaurant Shift Manager",
@@ -2241,7 +2427,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 186
   },
   {
     "job_title": "Sales Representative",
@@ -2253,7 +2440,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Healthcare",
-    "label": 0
+    "label": 0,
+    "job_id": 187
   },
   {
     "job_title": "PHE Teacher",
@@ -2265,7 +2453,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Education",
-    "label": 0
+    "label": 0,
+    "job_id": 188
   },
   {
     "job_title": "Accounting Clerk",
@@ -2277,7 +2466,8 @@
     "location": "Oshodi, Lagos State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 189
   },
   {
     "job_title": "Software Developer",
@@ -2289,7 +2479,8 @@
     "location": "No. 73, Akerele Street, Surulere, Lagos State",
     "employment_type": "Full-time",
     "department": "Technology",
-    "label": 1
+    "label": 1,
+    "job_id": 190
   },
   {
     "job_title": "Human Resources Officer",
@@ -2301,7 +2492,8 @@
     "location": "Port Harcourt & Rivers State",
     "employment_type": "Full-Time",
     "department": "Construction",
-    "label": 0
+    "label": 0,
+    "job_id": 191
   },
   {
     "job_title": "Accountant",
@@ -2313,7 +2505,8 @@
     "location": "No. 64 Toyin Street, Opebi-Toyin, Ikeja, Lagos State",
     "employment_type": "Full-time",
     "department": "Accounting",
-    "label": 1
+    "label": 1,
+    "job_id": 192
   },
   {
     "job_title": "Graduate trainee",
@@ -2325,7 +2518,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Agriculture, Fishing & Forestry",
-    "label": 0
+    "label": 0,
+    "job_id": 193
   },
   {
     "job_title": "Customer Service Representative",
@@ -2337,7 +2531,8 @@
     "location": "Remote (Work From Home)",
     "employment_type": "Full-time",
     "department": "Customer Service",
-    "label": 1
+    "label": 1,
+    "job_id": 194
   },
   {
     "job_title": "Admin/HR Assistant",
@@ -2349,7 +2544,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Real Estate",
-    "label": 0
+    "label": 0,
+    "job_id": 195
   },
   {
     "job_title": "Accountant",
@@ -2361,7 +2557,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Recruitment",
-    "label": 0
+    "label": 0,
+    "job_id": 196
   },
   {
     "job_title": "Marketing Manager",
@@ -2373,7 +2570,8 @@
     "location": "Surulere, Lagos State",
     "employment_type": "Full-time",
     "department": "Marketing",
-    "label": 1
+    "label": 1,
+    "job_id": 197
   },
   {
     "job_title": "Project Manager",
@@ -2385,7 +2583,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Construction",
-    "label": 1
+    "label": 1,
+    "job_id": 198
   },
   {
     "job_title": "Accountant",
@@ -2397,7 +2596,8 @@
     "location": "Abuja",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 199
   },
   {
     "job_title": "Customer Care Representative",
@@ -2409,7 +2609,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Hospitality & Hotel",
-    "label": 0
+    "label": 0,
+    "job_id": 200
   },
   {
     "job_title": "Business Development Manager",
@@ -2421,7 +2622,8 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "Business Development",
-    "label": 1
+    "label": 1,
+    "job_id": 201
   },
   {
     "job_title": "Driver",
@@ -2433,6 +2635,7 @@
     "location": "Lagos",
     "employment_type": "Full-Time",
     "department": "IT & Telecoms",
-    "label": 0
+    "label": 0,
+    "job_id": 202
   }
 ]

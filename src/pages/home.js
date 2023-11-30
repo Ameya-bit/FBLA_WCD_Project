@@ -19,7 +19,7 @@ const Home = () => {
       <SpacingCont amount="12" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h1 class="d-flex justify-content-center">We are with You</h1>
+        <h1 class="d-flex justify-content-center">Pride</h1>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round " clas="padd" />
@@ -31,9 +31,8 @@ const Home = () => {
             </h3>
             <h3 class="d-flex justify-content-center padd">
               <em>
-                Working at (insert company) is so gratifying! The people are
-                nice, the projects are groundbreaking, and yet I never feel
-                overworked!
+                Working at VARIA is so gratifying! The people are nice, the
+                projects are groundbreaking, and yet I never feel overworked!
               </em>
             </h3>
             <h3 class="d-flex justify-content-end padd">- Anonymous</h3>
@@ -52,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <SpacingCont amount="7" />
-      <div class=" shaded round ">
+      <div class=" shaded  ">
         <div class="card-columns col-12 d-flex justify-content-center">
           <Image
             pic1={resumeCheck}
@@ -63,9 +62,7 @@ const Home = () => {
           />
           <div>
             <SpacingCont amount="1" />
-            <h2 class="d-flex justify-content-center padd">
-              We like helping you
-            </h2>
+            <h2 class="d-flex justify-content-center padd">Perks</h2>
             <h3 class="d-flex justify-content-center padd">
               - We look after you before you're with us (such as with Resume
               Check), to make sure your a stellar candidate
@@ -81,7 +78,7 @@ const Home = () => {
       <SpacingCont amount="7" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">Personalized Profile</h2>
+        <h2 class="d-flex justify-content-center padd">Value</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center">
           <div class="col-6">
@@ -91,7 +88,8 @@ const Home = () => {
             </h3>
             <h3 class="d-flex justify-content-center padd">
               - We offer salary raises, promotions, and more, frequently to
-              encourage our workers to do their best.
+              encourage our workers to do their best. We want you to realize
+              your true potential!
             </h3>
           </div>
           <Image pic1={profilePers} imgclas="round" clas="padd" />

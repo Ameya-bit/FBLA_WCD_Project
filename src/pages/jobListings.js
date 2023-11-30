@@ -31,16 +31,59 @@ const jobListings = () => {
     return (
       <div class="main ">
         <SpacingCont amount="5" />
+        <div class="shaded  padd">
+          <div class="">
+            <h3 class="d-flex justify-content-center padd">
+              Search and Filter Jobs:{" "}
+            </h3>
+          </div>
+
+          <div class="containerAdd container padd d-flex justify-content-center">
+            <select name="cars" class="shaded round shadeWhite" id="filtCat">
+              <Inputs
+                ids="filtCat"
+                name="Job Title"
+                type="text"
+                select="true"
+                selectType="job_title"
+                value=""
+              />
+            </select>
+            <select name="cars" class="shaded round shadeWhite" id="filtType">
+              <Inputs
+                ids="filtType"
+                name="Type"
+                type="text"
+                select="true"
+                selectType="employment_type"
+              />
+            </select>
+            <select
+              name="cars"
+              class="shaded round shadeWhite col-4"
+              id="filtLoc"
+            >
+              <Inputs
+                ids="filtLoc"
+                name="Location"
+                type="text"
+                select="true"
+                selectType="location"
+              />
+            </select>
+            <div>
+              <Button name="Save" clas="-success btn-lg" click={getData} />
+            </div>
+          </div>
+        </div>
         <div
           class="card-columns d-flex justify-content-center padd"
           style={{ height: 870 }}
         >
           <div>
-            <h1 class="d-flex justify-content-center shaded round padd">
-              Search Jobs:
-            </h1>
             <SpacingCont amount="1" />
-            <div class="shaded container round ">
+            <div class="shaded container round standHeight">
+              <h3 class="d-flex justify-content-center">Scroll to see more</h3>
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
                   end="30"
@@ -51,55 +94,7 @@ const jobListings = () => {
               </div>
             </div>
           </div>
-          <div class="col-8">
-            <div class="shaded round padd">
-              <h3 class="d-flex justify-content-center padd">Filters: </h3>
-              <div class="containerAdd container padd d-flex justify-content-center">
-                <select
-                  name="cars"
-                  class="shaded round shadedWhite"
-                  id="filtCat"
-                >
-                  <Inputs
-                    ids="filtCat"
-                    name="Category"
-                    type="text"
-                    select="true"
-                    selectType="job_title"
-                    value=""
-                  />
-                </select>
-                <select
-                  name="cars"
-                  class="shaded round shadedWhite"
-                  id="filtType"
-                >
-                  <Inputs
-                    ids="filtType"
-                    name="Type"
-                    type="text"
-                    select="true"
-                    selectType="employment_type"
-                  />
-                </select>
-                <select
-                  name="cars"
-                  class="shaded round shadedWhite col-4"
-                  id="filtLoc"
-                >
-                  <Inputs
-                    ids="filtLoc"
-                    name="Location"
-                    type="text"
-                    select="true"
-                    selectType="location"
-                  />
-                </select>
-                <div>
-                  <Button name="Save" clas="-success btn-lg" click={getData} />
-                </div>
-              </div>
-            </div>
+          <div class="col-8 standHeight">
             <SpacingCont amount="1" />
             <JobFullData />
           </div>
@@ -109,6 +104,12 @@ const jobListings = () => {
     );
   }
 };
+
+function Test() {
+  data[0]["testAdd"] = "will this work";
+
+  console.log(data[0]);
+}
 
 const getData = () => {
   category = document.getElementById("filtCat").value;
@@ -129,14 +130,14 @@ const getData = () => {
 function JobFullData() {
   if (i == 0) {
     return (
-      <div id="filters" class="container round shaded padd">
+      <div id="filters" class="standheight container round shaded padd">
         <h1 class="centered">Please select a Job Card from the left</h1>
-        <SpacingCont amount="30" />
+        <SpacingCont amount="33" />
       </div>
     );
   } else {
     return (
-      <div id="filters" class=" container round shaded padd">
+      <div id="filters" class="standHeight container round shaded padd">
         <div class="padd">
           <h1 class="d-flex justify-content-center padd">
             {data[i]["job_title"]}

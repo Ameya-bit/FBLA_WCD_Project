@@ -15,6 +15,14 @@ nav#navbar {
   background-color: gold;
 }
 
+.goldtext {
+  color: gold;
+}
+
+.bluetext {
+  color: dodgerblue;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -87,7 +95,7 @@ body {
 a#navname {
   font-size: 30px;
 
-  color: white;
+  color: gold;
   font-family: "Nunito";
 }
 a#linkname {
@@ -178,10 +186,14 @@ div.card {
 .scroll {
   margin: 4px, 4px;
   padding: 20px;
-  height: 780px;
+  height: 680px;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: justify;
+}
+
+.standHeight {
+  height: 850px;
 }
 
 .side {
