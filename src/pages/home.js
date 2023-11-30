@@ -31,7 +31,7 @@ const Home = () => {
             </h3>
             <h3 class="d-flex justify-content-center padd">
               <em>
-                Working at VARIA is so gratifying! The people are nice, the
+                Working at MYRYA is so gratifying! The people are nice, the
                 projects are groundbreaking, and yet I never feel overworked!
               </em>
             </h3>

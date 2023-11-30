@@ -6,7 +6,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
     <nav id={id} class={clas}>
       <div class="container-fluid">
         <a class="navbar-brand col-1 goldtext" href="/" id="navname">
-          VARIA Jobs
+          MYRYA Jobs
         </a>
 
         <div
@@ -207,7 +207,7 @@ function Footer() {
           </form>
         </section>
       </div>
-      <div class="text-center p-3 black dodgerblue">VARIA co.</div>
+      <div class="text-center p-3 black dodgerblue">MYRYA co.</div>
     </footer>
   );
 }
