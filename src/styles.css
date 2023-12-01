@@ -133,7 +133,6 @@ div.card {
   word-wrap: break-word;
 
   background-clip: border-box;
-  border-radius: 20px;
   box-shadow:
     5px 15px 15px 5px rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -202,7 +201,12 @@ div.card {
 
 .containerAdd {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 i {

@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import supabase from "../components/supabase.js";
 import { Card } from "../components/navbar";
 
-function JobPush({ start, end, moreInfo, category, location, type }) {
+function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
+  category = isUnd(category, "");
+  location = isUnd(location, "");
+  type = isUnd(type, "");
+  keyword = isUnd(keyword, "");
+  console.log(keyword);
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
@@ -17,6 +22,10 @@ function JobPush({ start, end, moreInfo, category, location, type }) {
     if (type) {
       query.eq("employment_type", type);
     }
+    if (keyword) {
+      query.ilike("department", "%" + keyword + "%");
+    }
+
     query.range(0, 29);
     const { data, error } = await query;
     setReviews(data);
@@ -27,9 +36,7 @@ function JobPush({ start, end, moreInfo, category, location, type }) {
   }, []);
 
   let send = [];
-  category = isUnd(category, "");
-  location = isUnd(location, "");
-  type = isUnd(type, "");
+
   let dataset = reviews;
   start = isUnd(start, 0);
   moreInfo = isUnd(moreInfo, false);

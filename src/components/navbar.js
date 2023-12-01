@@ -162,14 +162,12 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
     return returnVal;
   } else {
     return (
-      <div class={"input-group mb-3 shadeWhite round " + clas}>
-        <input
-          id={ids}
-          type={type}
-          class="form-control shaded shadeWhite form-control-lg"
-          placeholder={name}
-        />
-      </div>
+      <input
+        id={ids}
+        type={type}
+        class="form-control shaded round shadeWhite  form-control-lg"
+        placeholder={name}
+      />
     );
   }
 }
