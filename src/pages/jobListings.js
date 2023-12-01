@@ -11,7 +11,8 @@ const i = queryParameters.get("jobNum");
 var category = queryParameters.get("category");
 var location = queryParameters.get("location");
 var type = queryParameters.get("type");
-
+var keyword = queryParameters.get("keyword");
+console.log(keyword);
 const jobListings = () => {
   if (i == undefined) {
     return (
@@ -73,6 +74,14 @@ const jobListings = () => {
                 selectType="location"
               />
             </select>
+            <Inputs
+              ids="filtKey"
+              name="Keyword"
+              clas="shaded round shadeWhite col-4"
+              type="text"
+              value=""
+            />
+
             <div>
               <Button name="Save" clas="-success btn-lg" click={getData} />
             </div>
@@ -91,6 +100,7 @@ const jobListings = () => {
                   category={category}
                   location={location}
                   type={type}
+                  keyword={keyword}
                 />
               </div>
             </div>
@@ -110,6 +120,7 @@ const getData = () => {
   category = document.getElementById("filtCat").value;
   location = document.getElementById("filtLoc").value;
   type = document.getElementById("filtType").value;
+  keyword = document.getElementById("filtKey").value;
   window.location.assign(
     "https://yyxzgq-3000.csb.app/jobListings?jobNum=" +
       i +
@@ -118,7 +129,9 @@ const getData = () => {
       "&location=" +
       location +
       "&type=" +
-      type,
+      type +
+      "&keyword=" +
+      keyword,
   );
 };
 
