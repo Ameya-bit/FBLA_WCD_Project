@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import supabase from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
-const i = queryParameters.get("jobNum");
+var i = queryParameters.get("jobNum");
 var category = queryParameters.get("category");
 var location = queryParameters.get("location");
 var type = queryParameters.get("type");
@@ -154,33 +154,34 @@ function JobFullData() {
       </div>
     );
   } else {
+    var act = i - 1;
     return (
       <div id="filters" class="standHeight container round shaded padd">
         <div class="padd">
           <h1 class="d-flex justify-content-center padd">
-            {reviews[i]["job_title"]}
+            {reviews[act]["job_title"]}
           </h1>
           <SpacingCont amount="2" />
           <h3>
-            <u>Department:</u> {reviews[i]["department"]}
+            <u>Department:</u> {reviews[act]["department"]}
           </h3>
           <h3>
-            <u>Job Description:</u> {reviews[i]["job_desc"]}
+            <u>Job Description:</u> {reviews[act]["job_desc"]}
           </h3>
           <h3>
-            <u>Location:</u> {reviews[i]["location"]}
+            <u>Location:</u> {reviews[act]["location"]}
           </h3>
           <h3>
-            <u>Type:</u> {reviews[i]["employment_type"]}
+            <u>Type:</u> {reviews[act]["employment_type"]}
           </h3>
           <h3>
-            <u>Salary:</u> {reviews[i]["salary"]}
+            <u>Salary:</u> {reviews[act]["salary"]}
           </h3>
           <SpacingCont amount="1" />
           <h3>
             <u>Requirements:</u>{" "}
           </h3>
-          <h3> - {reviews[i]["job_requirement"]}</h3>
+          <h3> - {reviews[act]["job_requirement"]}</h3>
           <SpacingCont amount="3" />
           <div class="d-flex justify-content-center">
             <Button
