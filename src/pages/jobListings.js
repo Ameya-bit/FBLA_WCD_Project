@@ -93,7 +93,7 @@ const jobListings = () => {
         >
           <div>
             <SpacingCont amount="1" />
-            <div class="shaded container round standHeight">
+            <div class="shadePurple container round standHeight">
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
                   end="30"
