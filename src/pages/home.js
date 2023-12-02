@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <SpacingCont amount="7" />
-      <div class=" shaded  ">
+      <div class=" shadePurple  ">
         <div class="card-columns col-12 d-flex justify-content-center">
           <Image
             pic1={resumeCheck}
