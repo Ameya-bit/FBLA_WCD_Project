@@ -60,7 +60,7 @@ function NavBarLinks({ name, link }) {
   );
 }
 
-function Card({ title, loc, emp, desc, clas, link, height, button }) {
+function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   if (button == "no") {
     return (
       <div class={"card glass round " + clas} style={{ height: height }}>
@@ -97,7 +97,7 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
             />
             <Button
               link={"/jobListings?jobNum=" + link}
-              clas="-outline-success col-4"
+              clas="-outline-success col-4 select"
               name="Select"
             />
           </div>
@@ -107,9 +107,9 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
   }
 }
 
-function Button({ link, name, clas, click }) {
+function Button({ link, name, clas, click, ids }) {
   return (
-    <a href={link} onClick={click} class={"btn btn" + clas}>
+    <a href={link} id={ids} onClick={click} class={"btn btn" + clas}>
       {name}
     </a>
   );
