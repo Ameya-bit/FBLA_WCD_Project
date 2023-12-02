@@ -25,7 +25,6 @@ const Review = () => {
   useEffect(() => {
     getReviews();
   }, []);
-  console.log(reviews);
   return (
     <div class="main">
       <SpacingCont amount="7" />
@@ -63,9 +62,12 @@ const Review = () => {
         </div>
       </div>
       <SpacingCont amount="3" />
-      <div class="col-10 shaded round center scroll">
-        <ReviewPush data={reviews} />
+      <div class="d-flex justify-content-center">
+        <div class="col-10 shaded round">
+          <ReviewPush data={reviews} len="4" />
+        </div>
       </div>
+
       <SpacingCont amount="3" />
     </div>
   );

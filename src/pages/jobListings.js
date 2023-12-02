@@ -12,7 +12,7 @@ var category = queryParameters.get("category");
 var location = queryParameters.get("location");
 var type = queryParameters.get("type");
 var keyword = queryParameters.get("keyword");
-console.log(keyword);
+console.log(i);
 const jobListings = () => {
   if (i == undefined) {
     return (
@@ -105,6 +105,7 @@ const jobListings = () => {
               </div>
             </div>
           </div>
+
           <div class="col-8 standHeight">
             <SpacingCont amount="1" />
             <JobFullData />
@@ -146,6 +147,7 @@ function JobFullData() {
   useEffect(() => {
     getReviews();
   }, []);
+  console.log(i);
   if (i == 0 || reviews == []) {
     return (
       <div id="filters" class="standheight container round shaded padd">
