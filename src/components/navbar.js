@@ -63,7 +63,7 @@ function NavBarLinks({ name, link }) {
 function Card({ title, loc, emp, desc, clas, link, height, button }) {
   if (button == "no") {
     return (
-      <div class={"card " + clas} style={{ height: height }}>
+      <div class={"card glass  round " + clas} style={{ height: height }}>
         <div class="card-body padd">
           <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
           <div class="padd">
@@ -76,7 +76,7 @@ function Card({ title, loc, emp, desc, clas, link, height, button }) {
     );
   } else {
     return (
-      <div class={"card " + clas} style={{ height: height }}>
+      <div class={"card glass  round " + clas} style={{ height: height }}>
         <div class="card-body padd">
           <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
           <div class="padd">

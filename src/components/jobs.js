@@ -93,7 +93,10 @@ function StatusCard({
 }) {
   let comp = compDates.replace(/;/g, "\n");
   return (
-    <div class={"card " + clas} style={{ width: "100%" }}>
+    <div
+      class={"card shaded shadeWhite round " + clas}
+      style={{ width: "100%" }}
+    >
       <div class="card-body">
         <h1 class="card-title d-flex justify-content-center">{title}</h1>
         <div class="card-columns">
