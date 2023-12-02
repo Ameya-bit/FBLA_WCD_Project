@@ -1,4 +1,5 @@
 import { SpacingCont } from "./qualityOfLife";
+import { Card } from "./navbar";
 
 function ReviewCard({ pic1, title, text, rating, clas, imgclas, textclas }) {
   return (
@@ -14,4 +15,18 @@ function ReviewCard({ pic1, title, text, rating, clas, imgclas, textclas }) {
   );
 }
 
-export { ReviewCard };
+function ReviewPush(data) {
+  let sendReview = [];
+  console.log(data["data"]);
+  for (let i = 0; i < data["data"].length; i++) {
+    sendReview.push(
+      <Card
+        title={data["data"][i]["Position"]}
+        loc={data["data"][i]["pros"]}
+      />,
+    );
+  }
+  return sendReview;
+}
+
+export { ReviewCard, ReviewPush };

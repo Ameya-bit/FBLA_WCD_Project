@@ -2,12 +2,14 @@ import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
 import { Inputs, Card, Image } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
-import { ReviewCard } from "../components/reviewComp";
+import { ReviewCard, ReviewPush } from "../components/reviewComp";
 import { useEffect, useState } from "react";
 import supabase from "../components/supabase.js";
 
 import software from "./img/reviewPage/software.jpg";
 import marketing from "./img/reviewPage/marketing.jpg";
+import healthcare from "./img/reviewPage/healthcare.jpg";
+import law from "./img/reviewPage/law.jpg";
 
 const Review = () => {
   const [reviews, setReviews] = useState("");
@@ -26,9 +28,12 @@ const Review = () => {
   console.log(reviews);
   return (
     <div class="main">
-      <SpacingCont amount="15" />
-      <div class="col-6 center">
-        <div class="grid2 padd">
+      <SpacingCont amount="7" />
+      <h2 class="d-flex justify-content-center">
+        Hear from our growing network
+      </h2>
+      <div class="  shaded">
+        <div class="grid2 center padd">
           <ReviewCard
             pic1={software}
             title="Software"
@@ -42,21 +47,26 @@ const Review = () => {
             rating="4 stars"
           />
         </div>
-        <div class="grid2 padd">
+        <div class="grid2 center padd">
           <ReviewCard
-            pic1={software}
+            pic1={healthcare}
             title="Healthcare"
             text="For people who help others"
             rating="4 stars"
           />
           <ReviewCard
-            pic1={software}
-            title="Software"
-            text="For people who enjoy computers and science"
+            pic1={law}
+            title="Law"
+            text="For people who uphold the law"
             rating="4 stars"
           />
         </div>
       </div>
+      <SpacingCont amount="3" />
+      <div class="col-10 shaded round center scroll">
+        <ReviewPush data={reviews} />
+      </div>
+      <SpacingCont amount="3" />
     </div>
   );
 };
