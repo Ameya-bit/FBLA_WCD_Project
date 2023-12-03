@@ -13,16 +13,16 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
   async function getReviews() {
     let query = supabase.from("JobLIst").select();
 
-    if (category) {
+    if (category != "") {
       query.eq("job_title", category);
     }
-    if (location) {
+    if (location != "") {
       query.eq("location", location);
     }
-    if (type) {
+    if (type != "") {
       query.eq("employment_type", type);
     }
-    if (keyword) {
+    if (keyword != "") {
       query.ilike("department", "%" + keyword + "%");
     }
 
@@ -67,7 +67,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
 }
 
 function isUnd(check, base) {
-  if (check == undefined) {
+  if (check == undefined || check == null) {
     return base;
   } else {
     return check;
@@ -75,7 +75,7 @@ function isUnd(check, base) {
 }
 
 function isUnd2(check, addCheck, base) {
-  if (check == undefined || check > addCheck) {
+  if (check == undefined || check > addCheck || check == null) {
     return base;
   } else {
     return check;
