@@ -12,7 +12,6 @@ var category = queryParameters.get("category");
 var location = queryParameters.get("location");
 var type = queryParameters.get("type");
 var keyword = queryParameters.get("keyword");
-console.log(i);
 const jobListings = () => {
   if (i == undefined) {
     return (
