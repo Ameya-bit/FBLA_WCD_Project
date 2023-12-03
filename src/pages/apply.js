@@ -17,6 +17,20 @@ const Apply = () => {
   useEffect(() => {
     getReviews();
   }, []);
+  function gatherInfo() {
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+
+    let persInfo = [firstName, lastName, email];
+
+    let application = reviews[i]["job_title"];
+    let resume = document.getElementById("resume").value;
+
+    console.log(persInfo);
+    window.location.assign("/profile");
+  }
   if (i == undefined || reviews == []) {
     return (
       <div class="main padd">
@@ -117,20 +131,5 @@ const Apply = () => {
     );
   }
 };
-
-function gatherInfo() {
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let email = document.getElementById("email").value;
-  let phone = document.getElementById("phone").value;
-
-  let persInfo = [firstName, lastName, email];
-
-  let application = reviews[i]["job_title"];
-  let resume = document.getElementById("resume").value;
-
-  console.log(persInfo);
-  window.location.assign("/profile");
-}
 
 export default Apply;

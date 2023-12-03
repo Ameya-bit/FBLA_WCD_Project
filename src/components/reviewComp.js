@@ -1,41 +1,43 @@
 import { SpacingCont } from "./qualityOfLife";
 import { Card } from "./navbar";
 
-function ReviewCard({ pic1, title, text, rating, clas, imgclas, textclas }) {
+function ReviewCard({ pic1, title, text, rating, employee, clas, contact }) {
   return (
     <div>
-      <div class={"card round glass padd  " + clas}>
+      <div class={"card round transparent padd  " + clas}>
         <div class="card-body padd">
+          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
           <div class="padd">
             <p class="card-text">{'"' + text + '"'}</p>
             <p class="card-text">{rating}</p>
+            <p class="card-text d-flex justify-content-end">{"-" + employee}</p>
+            <p class="card-text d-flex justify-content-end">{contact}</p>
           </div>
-          <h3 class="card-title d-flex justify-content-end padd">
-            {"-" + title}
-          </h3>
         </div>
       </div>
-      <SpacingCont amount="1" />
     </div>
   );
 }
 
-function ReviewPush(data, { len }) {
+function ReviewPush({ data, start, len }) {
   let sendReview = [];
-  console.log(data["len"]);
-  if (data["len"] == undefined) {
-    len = data["data"].length;
+  if (len == undefined) {
+    len = data.length;
   }
-  console.log(data);
-  if (data["data"] == []) {
+  if (data == []) {
     return sendReview;
   }
-  for (let i = 0; i < data["len"]; i++) {
+  if (start == undefined) {
+    start = 0;
+  }
+  for (let i = start; i < len; i++) {
     sendReview.push(
       <ReviewCard
-        title={data["data"][i]["Position"]}
-        text={data["data"][i]["pros"]}
-        rating={data["data"][i]["Overall ratting"] + " stars"}
+        title={data[i]["Position"]}
+        text={data[i]["pros"]}
+        rating={data[i]["Overall ratting"] + " stars"}
+        employee="John Doe"
+        contact="johnDoe@myrya.com"
       />,
     );
   }

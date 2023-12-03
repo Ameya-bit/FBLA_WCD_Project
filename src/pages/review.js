@@ -31,40 +31,11 @@ const Review = () => {
       <h2 class="d-flex justify-content-center">
         Hear from our growing network
       </h2>
-      <div class="  shaded">
-        <div class="grid2 center padd">
-          <ReviewCard
-            pic1={software}
-            title="Software"
-            text="For people who enjoy computers and science"
-            rating="4 stars"
-          />
-          <ReviewCard
-            pic1={marketing}
-            title="Marketing"
-            text="For people gifted in selling"
-            rating="4 stars"
-          />
-        </div>
-        <div class="grid2 center padd">
-          <ReviewCard
-            pic1={healthcare}
-            title="Healthcare"
-            text="For people who help others"
-            rating="4 stars"
-          />
-          <ReviewCard
-            pic1={law}
-            title="Law"
-            text="For people who uphold the law"
-            rating="4 stars"
-          />
-        </div>
-      </div>
-      <SpacingCont amount="3" />
-      <div class="d-flex justify-content-center">
-        <div class="col-10 shaded round">
-          <ReviewPush data={reviews} len="4" />
+      <div class="padd">
+        <div class="glass round">
+          <div class="containerAdd padd">
+            <ReviewPush data={reviews} len="10" />
+          </div>
         </div>
       </div>
 
