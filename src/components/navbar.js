@@ -61,6 +61,12 @@ function NavBarLinks({ name, link }) {
 }
 
 function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
+  const queryParameters = new URLSearchParams(window.location.search);
+  var i = queryParameters.get("jobNum");
+  var category = queryParameters.get("category");
+  var location = queryParameters.get("location");
+  var type = queryParameters.get("type");
+  var keyword = queryParameters.get("keyword");
   if (button == "no") {
     return (
       <div class={"card glass round " + clas} style={{ height: height }}>
@@ -96,7 +102,18 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
               name="Apply Now"
             />
             <Button
-              link={"/jobListings?jobNum=" + link}
+              link={
+                "/jobListings?jobNum=" +
+                link +
+                "&category=" +
+                category +
+                "&type=" +
+                type +
+                "&location=" +
+                location +
+                "&keyword=" +
+                keyword
+              }
               clas="-outline-success col-4 select"
               name="Select"
             />

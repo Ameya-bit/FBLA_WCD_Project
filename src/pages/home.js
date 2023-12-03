@@ -19,7 +19,7 @@ const Home = () => {
       <SpacingCont amount="12" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h1 class="d-flex justify-content-center">Pride</h1>
+        <h2 class="d-flex justify-content-center">Pride</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round " clas="padd" />

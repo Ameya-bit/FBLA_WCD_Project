@@ -11,6 +11,7 @@ import JobListing from "./pages/jobListings";
 import Profile from "./pages/profile";
 import Apply from "./pages/apply.js";
 import Review from "./pages/review.js";
+import Citations from "./pages/citations.js";
 import { SpacingCont } from "./pages/qualityOfLife";
 
 ReactDOM.render(
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Apply" element={<Apply />} />
         <Route path="/Review" element={<Review />} />
+        <Route path="/Citations" element={<Citations />} />
       </Routes>
       <Footer />
     </Router>
