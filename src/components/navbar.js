@@ -182,7 +182,7 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
       <input
         id={ids}
         type={type}
-        class="form-control shaded round shadeWhite  form-control-lg"
+        class={"form-control shaded round shadeWhite  form-control-lg " + clas}
         placeholder={name}
       />
     );

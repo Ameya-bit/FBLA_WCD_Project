@@ -82,16 +82,20 @@ const Apply = () => {
                 clas=" padd"
                 type="text"
               />
+              <SpacingCont amount="1" />
               <Inputs ids="lastName" name="Last Name" clas="padd" type="text" />
+              <SpacingCont amount="1" />
               <Inputs ids="email" name="Email " clas=" padd" type="text" />
+              <SpacingCont amount="1" />
               <Inputs ids="phone" name="Phone " clas=" padd" type="text" />
+              <SpacingCont amount="1" />
               <Inputs
                 ids="password"
                 name="Password "
                 clas=" padd"
                 type="password"
               />
-
+              <SpacingCont amount="3" />
               <h3 class="d-flex justify-content-center padd">
                 Additional Information:{" "}
               </h3>
@@ -101,11 +105,12 @@ const Apply = () => {
                 clas=" padd"
                 type="text"
               />
-
+              <SpacingCont amount="3" />
               <h3 class="d-flex justify-content-center padd">
                 Enter Your Resume:{" "}
               </h3>
               <Inputs ids="resume" name="" clas=" padd" type="file" />
+              <SpacingCont amount="3" />
               <h3 class="d-flex justify-content-center padd">
                 Anything You Want To Highlight For Our Team:{" "}
               </h3>
