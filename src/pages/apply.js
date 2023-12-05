@@ -31,7 +31,8 @@ const Apply = () => {
     console.log(persInfo);
     window.location.assign("/profile");
   }
-  if (i == undefined || reviews == []) {
+  var act = i - 1;
+  if (i == undefined || reviews == [] || !i) {
     return (
       <div class="main padd">
         <SpacingCont amount="14" />
@@ -60,10 +61,10 @@ const Apply = () => {
           <div class="d-flex justify-content-center">
             <div class="col-10">
               <Card
-                title={reviews[i]["job_title"]}
-                loc={"Location: " + reviews[i]["location"]}
-                emp={"Job Type: " + reviews[i]["employment_type"]}
-                desc={"Description: " + reviews[i]["job_desc"]}
+                title={reviews[act]["job_title"]}
+                loc={"Location: " + reviews[act]["location"]}
+                emp={"Job Type: " + reviews[act]["employment_type"]}
+                desc={"Description: " + reviews[act]["job_desc"]}
                 clas="padd"
                 button="no"
               />

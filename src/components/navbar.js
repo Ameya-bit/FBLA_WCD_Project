@@ -4,20 +4,29 @@ import supabase from "../components/supabase.js";
 
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
-    <nav id={id} class={clas}>
+    <nav id={id} class={"navbar navbar-expand-sm " + clas}>
       <div class="container-fluid">
         <a class="navbar-brand col-1 goldtext" href="/" id="navname">
           MYRYA Jobs
         </a>
-
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div
           class="collapse navbar-collapse  justify-content-center col-10"
           id="navbarNav"
         >
           <ul class="navbar-nav">
+            <NavBarLinks name="Discover" link="/Review" />
             <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
-            <NavBarLinks name="Reviews" link="/Review" />
-
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
         </div>
@@ -67,6 +76,10 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   var location = queryParameters.get("location");
   var type = queryParameters.get("type");
   var keyword = queryParameters.get("keyword");
+  category = isUnd(category, "");
+  location = isUnd(location, "");
+  type = isUnd(type, "");
+  keyword = isUnd(keyword, "");
   if (button == "no") {
     return (
       <div class={"card glass round " + clas} style={{ height: height }}>
@@ -121,6 +134,22 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
         </div>
       </div>
     );
+  }
+}
+
+function isUnd(check, base) {
+  if (check == undefined || check == null) {
+    return base;
+  } else {
+    return check;
+  }
+}
+
+function isUnd2(check, addCheck, base) {
+  if (check == undefined || check > addCheck || check == null) {
+    return base;
+  } else {
+    return check;
   }
 }
 
@@ -195,39 +224,9 @@ function Footer() {
       <div class="container pt-4 ">
         <section class="">
           <form action="">
-            <div class="row d-flex justify-content-center">
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Sign up for our newsletter</strong>
-                </p>
-              </div>
-
-              <div class="col-md-5 col-12">
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input
-                    type="email"
-                    id="form5Example26"
-                    class="form-control"
-                  />
-                  <label
-                    class="form-label"
-                    placeholder="Email address"
-                    for="form5Example26"
-                  ></label>
-                </div>
-              </div>
-
-              <div class="col-auto">
-                <button
-                  data-mdb-ripple-init
-                  type="submit"
-                  class="btn btn-primary mb-4"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </div>
+            <div class="row d-flex justify-content-center"></div>
           </form>
+          <NavBarLinks name="Credits" link="/citations" />
         </section>
       </div>
       <div class="text-center p-3 black dodgerblue">MYRYA co.</div>
