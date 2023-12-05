@@ -14,9 +14,8 @@ const Citations = () => {
         </h2>
         <div class="d-flex justify-content-center">
           <div class="padd">
-            <h3 class="padd">
-              Unsplash Pictures Used: Website background Image:
-            </h3>
+            <h3 class="padd">Unsplash Pictures Used:</h3>
+            <h3 class="padd">Website background Image:</h3>
 
             <a
               href="https://unsplash.com/photos/low-angle-view-high-rise-buildings-nxZDMUQhN4o"
@@ -70,6 +69,10 @@ const Citations = () => {
             </a>
             <h3 class="padd">
               The project was coded on CodeSandBox: https://codesandbox.io/
+            </h3>
+            <h3 class="padd">
+              The project was stored on Github:
+              https://github.com/Ameya-bit/FBLA_WCD_Project
             </h3>
             <h3 class="padd">
               Datasets were stored in Supabase: https://supabase.com

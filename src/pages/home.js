@@ -19,7 +19,7 @@ const Home = () => {
       <SpacingCont amount="12" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center">Pride</h2>
+        <h2 class="d-flex justify-content-center">Explore</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round " clas="padd" />
@@ -62,34 +62,37 @@ const Home = () => {
           />
           <div>
             <SpacingCont amount="1" />
-            <h2 class="d-flex justify-content-center padd">Perks</h2>
+            <h2 class="d-flex justify-content-center padd">Discover</h2>
             <h3 class="d-flex justify-content-center padd">
-              - We look after you before you're with us (such as with Resume
-              Check), to make sure your a stellar candidate
+              It is okay if you are unsure about us, and so you can consult our
+              various employees on what is right for you
             </h3>
-            <h3 class="d-flex justify-content-center padd">
-              - We look after you after you've joined us (with Healthcare,
-              Retirement Plans, and Education Reimbursement), to make sure you
-              stay a stellar collegue
+            <h3 class=" padd">
+              We offer many services at our company, such as:
             </h3>
+            <div class="padd">
+              <h3> - Healthcare</h3>
+              <h3> - Retirement plans (401k...)</h3>
+              <h3> - Tuition Reimbursement</h3>
+              <h3> - And More!</h3>
+            </div>
           </div>
         </div>
       </div>
       <SpacingCont amount="7" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">Value</h2>
+        <h2 class="d-flex justify-content-center padd">Profile</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center">
           <div class="col-6">
             <h3 class="d-flex justify-content-center padd">
-              - We understand if you feel that your job isn't where you want to
-              be, which is why we implement our Level Up system
+              - We understand that you have a busy day, and
             </h3>
             <h3 class="d-flex justify-content-center padd">
-              - We offer salary raises, promotions, and more, frequently to
-              encourage our workers to do their best. We want you to realize
-              your true potential!
+              - We offer salary raises and promotions frequently to encourage
+              our workers to do their best. We want you to realize your true
+              potential!
             </h3>
           </div>
           <Image pic1={profilePers} imgclas="round" clas="padd" />

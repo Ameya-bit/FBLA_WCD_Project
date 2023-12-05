@@ -21,8 +21,8 @@ const jobListings = () => {
               interviewStat="Upcoming interview on February 29th"
               supervisor="Assistant Manager: Steve"
               supercont="steve@company.com"
-              start="Dec 1"
-              compDates="Resume recieved (Dec 1) "
+              start="Dec 3"
+              compDates="Resume recieved (Dec 3) "
               estimatedTime="10 days"
             />
             <StatusCard
@@ -42,14 +42,9 @@ const jobListings = () => {
           <div class="card shaded round shadeWhite">
             <img src={User} class="card-img-top round" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">User TBD</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
-              </a>
+              <h5 class="card-title">Ameya Panchal</h5>
+              <p class="card-text">Email: example@gmail.com</p>
+              <p class="card-text">Phone: 12345</p>
             </div>
           </div>
         </div>

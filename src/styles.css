@@ -73,6 +73,7 @@ nav#footer {
 body {
   font-family: "Nunito";
   color: white;
+  width: 100%;
 }
 
 .main {
@@ -120,7 +121,12 @@ a {
   bottom: 8px;
   left: 16px;
   margin-right: 50%;
-  font-size: 150px;
+  font-size: 8vw;
+}
+
+.card-img-overlay {
+  width: 100%;
+  height: 70%;
 }
 
 div.card {
@@ -146,11 +152,10 @@ div.card {
 .containered {
   position: relative;
   text-align: center;
+  width: 100%;
+  height: 120vh;
   color: white;
   font-family: "Nunito";
-}
-.padded {
-  padding: 450px;
 }
 
 .padd {
