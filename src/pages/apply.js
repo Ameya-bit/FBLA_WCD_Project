@@ -2,35 +2,47 @@ import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
 import { Inputs, Card, Image, Button } from "../components/navbar";
 import { useEffect, useState } from "react";
-import supabase from "../components/supabase.js";
+import {
+  supabase,
+  RetrieveDataset,
+  setUserData,
+} from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 const i = queryParameters.get("applicationNumber");
 const Apply = () => {
-  const [reviews, setReviews] = useState("");
+  const [user, setUser] = useState("");
+  let reviews = RetrieveDataset("JobLIst", 9);
+  console.log(reviews);
 
-  async function getReviews() {
-    let { data, error } = await supabase.from("JobLIst").select().range(0, 9);
-    setReviews(data);
-  }
-
-  useEffect(() => {
-    getReviews();
-  }, []);
-  function gatherInfo() {
+  async function getUser() {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-
-    let persInfo = [firstName, lastName, email];
-
-    let application = reviews[i]["job_title"];
-    let resume = document.getElementById("resume").value;
-
-    console.log(persInfo);
-    window.location.assign("/profile");
+    let phoneNum = document.getElementById("phone").value;
+    if (email && pass && firstName && lastName && phoneNum) {
+      let { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: pass,
+      });
+      if (error) {
+        console.log("Error: ", error);
+      } else if (data) {
+        console.log(data);
+        setUser(data);
+        setUserData(data);
+        window.location.assign("/profile");
+      }
+    } else {
+      document.getElementById("error").innerHTML =
+        "<div id='error' class='alert alert-danger col-4 round' role='alert'>Missing Inputs!</div>";
+      document.documentElement.scrollTop = 0;
+    }
   }
+
+  console.log(user);
+
   var act = i - 1;
   if (i == undefined || reviews == [] || !i) {
     return (
@@ -70,7 +82,8 @@ const Apply = () => {
               />
             </div>
           </div>
-
+          <SpacingCont amount="2" />
+          <div id="error" class="d-flex justify-content-center"></div>
           <SpacingCont amount="2" />
           <div class="d-flex justify-content-center">
             <div class="padd ">
@@ -125,7 +138,7 @@ const Apply = () => {
               <Button
                 name="Submit"
                 clas="-primary btn-lg d-flex justify-content-center"
-                click={gatherInfo}
+                click={getUser}
               />
             </div>
           </div>
