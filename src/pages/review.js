@@ -4,7 +4,7 @@ import { Inputs, Card, Image } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
 import { ReviewCard, ReviewPush } from "../components/reviewComp";
 import { useEffect, useState } from "react";
-import supabase from "../components/supabase.js";
+import { supabase, RetrieveDataset } from "../components/supabase.js";
 
 import software from "./img/reviewPage/software.jpg";
 import marketing from "./img/reviewPage/marketing.jpg";
@@ -12,19 +12,7 @@ import healthcare from "./img/reviewPage/healthcare.jpg";
 import law from "./img/reviewPage/law.jpg";
 
 const Review = () => {
-  const [reviews, setReviews] = useState("");
-
-  async function getReviews() {
-    let { data, error } = await supabase
-      .from("JobReviews")
-      .select()
-      .range(0, 9);
-    setReviews(data);
-  }
-
-  useEffect(() => {
-    getReviews();
-  }, []);
+  let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
       <SpacingCont amount="7" />

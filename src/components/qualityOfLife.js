@@ -13,4 +13,20 @@ function SpacingCont({ amount }) {
   return <>{parse(str)}</>;
 }
 
-export { SpacingCont };
+function isUnd(check, base) {
+  if (check == undefined || check == null) {
+    return base;
+  } else {
+    return check;
+  }
+}
+
+function isUnd2(check, addCheck, base) {
+  if (check == undefined || check > addCheck || check == null) {
+    return base;
+  } else {
+    return check;
+  }
+}
+
+export { SpacingCont, isUnd, isUnd2 };

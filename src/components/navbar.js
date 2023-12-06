@@ -1,6 +1,6 @@
-import { SpacingCont } from "./qualityOfLife";
+import { SpacingCont, isUnd, isUnd2 } from "./qualityOfLife";
 import { useEffect, useState } from "react";
-import supabase from "../components/supabase.js";
+import { supabase, RetrieveDataset } from "../components/supabase.js";
 
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
@@ -137,22 +137,6 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   }
 }
 
-function isUnd(check, base) {
-  if (check == undefined || check == null) {
-    return base;
-  } else {
-    return check;
-  }
-}
-
-function isUnd2(check, addCheck, base) {
-  if (check == undefined || check > addCheck || check == null) {
-    return base;
-  } else {
-    return check;
-  }
-}
-
 function Button({ link, name, clas, click, ids }) {
   return (
     <a href={link} id={ids} onClick={click} class={"btn btn" + clas}>
@@ -173,16 +157,7 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
 }
 
 function Inputs({ name, clas, type, ids, select, selectType }) {
-  const [reviews, setReviews] = useState("");
-
-  async function getReviews() {
-    let { data, error } = await supabase.from("JobLIst").select();
-    setReviews(data);
-  }
-
-  useEffect(() => {
-    getReviews();
-  }, []);
+  let reviews = RetrieveDataset("JobLIst", 200);
   if (select == "true") {
     let values = [];
     let returnVal = [];

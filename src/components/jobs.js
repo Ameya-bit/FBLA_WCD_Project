@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import supabase from "../components/supabase.js";
+import { supabase } from "../components/supabase.js";
 import { Card } from "../components/navbar";
+import { isUnd, isUnd2 } from "../components/qualityOfLife.js";
 
 function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
   category = isUnd(category, "");
@@ -64,22 +65,6 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
     }
   }
   return send;
-}
-
-function isUnd(check, base) {
-  if (check == undefined || check == null) {
-    return base;
-  } else {
-    return check;
-  }
-}
-
-function isUnd2(check, addCheck, base) {
-  if (check == undefined || check > addCheck || check == null) {
-    return base;
-  } else {
-    return check;
-  }
 }
 
 function StatusCard({

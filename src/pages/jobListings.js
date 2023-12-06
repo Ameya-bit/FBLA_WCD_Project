@@ -4,7 +4,7 @@ import { Inputs, Card, Button } from "../components/navbar";
 import { JobPush } from "../components/jobs";
 
 import { useEffect, useState } from "react";
-import supabase from "../components/supabase.js";
+import { supabase } from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 var i = queryParameters.get("jobNum");
