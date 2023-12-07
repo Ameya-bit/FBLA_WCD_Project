@@ -39,4 +39,77 @@ async function setUserData(input) {
   }
 }
 
-export { supabase, RetrieveDataset, setUserData };
+async function signOutUser() {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    console.log(error);
+  }
+  window.location.reload();
+}
+
+async function signInUser(email, pass) {
+  console.log(email, pass);
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: pass,
+  });
+
+  console.log("they signed in");
+  if (error) {
+    console.log(error);
+  }
+  if (data) {
+    window.location.assign("/profile");
+  }
+}
+
+function getCurrentUser() {
+  const [user, getUser] = useState("");
+  const [userData, getUserData] = useState("");
+
+  console.log("working");
+  async function getCurrentUser() {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    getUser(user);
+    if (user) {
+      getCurrentUserData(user["id"]);
+    }
+  }
+
+  async function getCurrentUserData(user) {
+    console.log(user);
+    let { data: profiles, error } = await supabase
+      .from("profiles")
+      .select()
+      .eq("id", user);
+
+    getUserData(profiles);
+    if (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
+
+  if (userData) {
+    console.log(userData[0]["first_name"]);
+    return userData[0];
+  } else {
+    console.log("Please sign in");
+    return null;
+  }
+}
+
+export {
+  supabase,
+  RetrieveDataset,
+  setUserData,
+  getCurrentUser,
+  signOutUser,
+  signInUser,
+};

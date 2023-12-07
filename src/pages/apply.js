@@ -6,10 +6,15 @@ import {
   supabase,
   RetrieveDataset,
   setUserData,
+  signInUser,
 } from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
-const i = queryParameters.get("applicationNumber");
+let i = queryParameters.get("applicationNumber");
+const signIn = queryParameters.get("signIn");
+if (signIn == "yes") {
+  i = -1;
+}
 const Apply = () => {
   const [user, setUser] = useState("");
   let reviews = RetrieveDataset("JobLIst", 9);
@@ -58,6 +63,51 @@ const Apply = () => {
           <SpacingCont amount="2" />
         </div>
         <SpacingCont amount="14" />
+      </div>
+    );
+  } else if (signIn == "yes" && i == -1) {
+    function signInTheUser() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      signInUser(email, password);
+    }
+    return (
+      <div class="main">
+        <SpacingCont amount="7" />
+        <div class="container shaded round col-8  ">
+          <SpacingCont amount="2" />
+          <h2 class="d-flex justify-content-center">Sign In </h2>
+
+          <SpacingCont amount="2" />
+          <SpacingCont amount="2" />
+          <div class="d-flex justify-content-center">
+            <div class="padd ">
+              <h3 class="d-flex justify-content-center padd">
+                Create your Account:{" "}
+              </h3>
+              <SpacingCont amount="1" />
+              <Inputs ids="email" name="Email " clas=" padd" type="text" />
+              <SpacingCont amount="1" />
+              <Inputs
+                ids="password"
+                name="Password "
+                clas=" padd"
+                type="password"
+              />
+              <SpacingCont amount="1" />
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                onClick={signInTheUser}
+              >
+                Sign In
+              </button>
+            </div>
+          </div>
+
+          <SpacingCont amount="2" />
+        </div>
+        <SpacingCont amount="2" />
       </div>
     );
   } else {
