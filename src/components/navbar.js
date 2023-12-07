@@ -1,12 +1,17 @@
 import { SpacingCont, isUnd, isUnd2 } from "./qualityOfLife";
 import { useEffect, useState } from "react";
-import { supabase, RetrieveDataset } from "../components/supabase.js";
+import {
+  supabase,
+  RetrieveDataset,
+  getCurrentUser,
+  signOutUser,
+} from "../components/supabase.js";
 
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
     <nav id={id} class={"navbar navbar-expand-sm " + clas}>
       <div class="container-fluid">
-        <a class="navbar-brand col-1 goldtext" href="/" id="navname">
+        <a class="navbar-brand col-3 goldtext" href="/" id="navname">
           MYRYA Jobs
         </a>
         <button
@@ -20,8 +25,9 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div
-          class="collapse navbar-collapse  justify-content-center col-10"
+          class="collapse navbar-collapse  justify-content-center col-6"
           id="navbarNav"
         >
           <ul class="navbar-nav">
@@ -30,11 +36,40 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
         </div>
-
-        <div class="col-1"></div>
+        <div class="col-3 d-flex justify-content-end padd">
+          <SignInOrOut />
+        </div>
       </div>
     </nav>
   );
+}
+
+function SignInOrOut() {
+  let userData = getCurrentUser();
+  console.log(userData);
+  let message;
+  if (!userData) {
+    message = "Please Sign IN";
+  } else {
+    message = "Welcome, " + userData["first_name"];
+  }
+  if (getCurrentUser()) {
+    return (
+      <div class="card-columns d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-success btn-sm"
+          onClick={signOutUser}
+        >
+          Sign out of {userData["first_name"]}'s account
+        </button>
+      </div>
+    );
+  } else {
+    return (
+      <Button name="Sign In" link="/Apply?signIn=yes" clas="-success btn-sm" />
+    );
+  }
 }
 
 function OffCanvas() {
