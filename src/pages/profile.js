@@ -2,56 +2,90 @@ import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
 import { Inputs, Card } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
-
+import { useEffect, useState } from "react";
+import {
+  supabase,
+  RetrieveDataset,
+  setUserData,
+  signInUser,
+  getCurrentUser,
+} from "../components/supabase.js";
 import User from "./img/user.jpg";
 
 const jobListings = () => {
   return (
     <div class="main">
       <SpacingCont amount="7" />
-      <div class="card-columns d-flex justify-content-center">
-        <div class="col-8">
+      <div class="d-flex justify-content-center">
+        <div class="col-12">
           <h1 class="d-flex justify-content-center shaded round">
             Welcome to your Profile
           </h1>
-          <div id="filters" class=" container scroll shaded padd round">
-            <StatusCard
-              clas="col-12"
-              title="Accountant"
-              interviewStat="Upcoming interview on February 29th"
-              supervisor="Assistant Manager: Steve"
-              supercont="steve@company.com"
-              start="Dec 3"
-              compDates="Resume recieved (Dec 3) "
-              estimatedTime="10 days"
-            />
-            <StatusCard
-              clas="col-12"
-              title="Example"
-              interviewStat="Upcoming interview on February 29th"
-              supervisor="Assistant Manager: Bob"
-              supercont="bob@company.com"
-              start="January 12"
-              compDates="Resume recieved (Dec 1) "
-              estimatedTime="100 years"
-            />
-          </div>
-        </div>
-
-        <div id="jobslist" class="col-4 container padd round">
-          <div class="card shaded round shadeWhite">
-            <img src={User} class="card-img-top round" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Ameya Panchal</h5>
-              <p class="card-text">Email: example@gmail.com</p>
-              <p class="card-text">Phone: 12345</p>
-            </div>
-          </div>
+          <table class=" table table-dark table-striped">
+            <thead class="">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Contact Info</th>
+                <th scope="col">DeadLines</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody class="">
+              <DataPush />
+            </tbody>
+          </table>
         </div>
       </div>
       <SpacingCont amount="3" />
     </div>
   );
 };
+
+function getData() {
+  const [app, getApp] = useState("");
+  let userdat = getCurrentUser();
+  async function gotApp() {
+    let { data, error } = await supabase
+      .from("applications")
+      .select()
+      .eq("id", userdat["id"]);
+    getApp(data);
+  }
+
+  useEffect(() => {
+    gotApp();
+  }, []);
+
+  console.log(app);
+  return app;
+}
+
+function DataPush() {
+  let applications = [];
+
+  var apps = getData();
+  console.log(apps);
+  /*function date(dateCond) {
+    let year = dateCond % 10000;
+    let day = ((dateCond % 1000000) - year) / 10000;
+    let month = (dateCond - (dateCond % 1000000)) / 1000000;
+    return month + "/" + day + "/" + year;
+  }
+  console.log(date(userData["applications"]["1"]["start"]));
+  for (let i = 0; i < Object.keys(userData["applications"]).length; i++) {
+    console.log("came here");
+    applications.push(
+      <tr>
+        <th scope="row">1</th>
+        <td>9</td>
+        <td>9</td>
+        <td>9</td>
+        <td>9</td>
+      </tr>,
+    );
+  }
+  return applications;*/
+}
 
 export default jobListings;

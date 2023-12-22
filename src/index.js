@@ -12,6 +12,8 @@ import Profile from "./pages/profile";
 import Apply from "./pages/apply.js";
 import Review from "./pages/review.js";
 import Citations from "./pages/citations.js";
+import SignIn from "./pages/signIn.js";
+import SignUp from "./pages/signUp.js";
 import { SpacingCont } from "./pages/qualityOfLife";
 
 ReactDOM.render(
@@ -28,6 +30,8 @@ ReactDOM.render(
         <Route path="/Apply" element={<Apply />} />
         <Route path="/Review" element={<Review />} />
         <Route path="/Citations" element={<Citations />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>

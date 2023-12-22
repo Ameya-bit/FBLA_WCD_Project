@@ -49,13 +49,11 @@ async function signOutUser() {
 }
 
 async function signInUser(email, pass) {
-  console.log(email, pass);
   const { data, error } = await supabase.auth.signInWithPassword({
     email: email,
     password: pass,
   });
 
-  console.log("they signed in");
   if (error) {
     console.log(error);
   }
@@ -68,7 +66,6 @@ function getCurrentUser() {
   const [user, getUser] = useState("");
   const [userData, getUserData] = useState("");
 
-  console.log("working");
   async function getCurrentUser() {
     const {
       data: { user },
@@ -80,7 +77,6 @@ function getCurrentUser() {
   }
 
   async function getCurrentUserData(user) {
-    console.log(user);
     let { data: profiles, error } = await supabase
       .from("profiles")
       .select()
@@ -97,10 +93,8 @@ function getCurrentUser() {
   }, []);
 
   if (userData) {
-    console.log(userData[0]["first_name"]);
     return userData[0];
   } else {
-    console.log("Please sign in");
     return null;
   }
 }
