@@ -46,14 +46,13 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
 
 function SignInOrOut() {
   let userData = getCurrentUser();
-  console.log(userData);
   let message;
   if (!userData) {
     message = "Please Sign IN";
   } else {
     message = "Welcome, " + userData["first_name"];
   }
-  if (getCurrentUser()) {
+  if (userData && userData != null) {
     return (
       <div class="card-columns d-flex justify-content-end">
         <button
@@ -67,7 +66,10 @@ function SignInOrOut() {
     );
   } else {
     return (
-      <Button name="Sign In" link="/Apply?signIn=yes" clas="-success btn-sm" />
+      <div class="grid2">
+        <Button name="Sign In" link="/SignIn" clas="-success btn-sm" />
+        <Button name="Sign Up" link="/SignUp" clas="-primary btn-sm" />
+      </div>
     );
   }
 }
@@ -107,6 +109,13 @@ function NavBarLinks({ name, link }) {
 function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   const queryParameters = new URLSearchParams(window.location.search);
   var i = queryParameters.get("jobNum");
+  let userData = getCurrentUser();
+  let linkNext;
+  if (userData && userData != null) {
+    linkNext = "/Apply?applicationNumber=" + link;
+  } else {
+    linkNext = "/SignUp?applicationNumber=" + link;
+  }
   var category = queryParameters.get("category");
   var location = queryParameters.get("location");
   var type = queryParameters.get("type");
@@ -144,11 +153,7 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
             role="group"
             aria-label="Basic example"
           >
-            <Button
-              link={"/Apply?applicationNumber=" + link}
-              clas="-primary col-8"
-              name="Apply Now"
-            />
+            <Button link={linkNext} clas="-primary col-8" name="Apply Now" />
             <Button
               link={
                 "/jobListings?jobNum=" +
