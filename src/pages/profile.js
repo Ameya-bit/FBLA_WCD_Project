@@ -42,14 +42,14 @@ const jobListings = () => {
   );
 };
 
-function getData() {
+function getData(userId) {
   const [app, getApp] = useState("");
-  let userdat = getCurrentUser();
+
   async function gotApp() {
     let { data, error } = await supabase
       .from("applications")
       .select()
-      .eq("id", userdat["id"]);
+      .eq("id", userId);
     getApp(data);
   }
 
@@ -63,9 +63,11 @@ function getData() {
 
 function DataPush() {
   let applications = [];
-
-  var apps = getData();
-  console.log(apps);
+  let userdat = getCurrentUser();
+  if (userdat.length > 0) {
+    var apps = getData(userdat["id"]);
+    console.log(apps);
+  }
   /*function date(dateCond) {
     let year = dateCond % 10000;
     let day = ((dateCond % 1000000) - year) / 10000;
