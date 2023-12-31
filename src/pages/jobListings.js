@@ -122,7 +122,7 @@ const getData = () => {
   type = document.getElementById("filtType").value;
   keyword = document.getElementById("filtKey").value;
   window.location.assign(
-    "https://yyxzgq-3000.csb.app/jobListings?jobNum=" +
+    "/jobListings?jobNum=" +
       i +
       "&category=" +
       category +
@@ -141,12 +141,15 @@ function JobFullData() {
   async function getReviews() {
     let { data, error } = await supabase.from("JobLIst").select();
     setReviews(data);
+    if (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
     getReviews();
   }, []);
-  console.log(i);
+
   if (i == 0 || reviews == []) {
     return (
       <div id="filters" class="standheight container round shaded padd">

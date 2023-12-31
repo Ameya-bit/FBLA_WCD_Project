@@ -21,6 +21,7 @@ const SignIn = () => {
       <div class="container shaded round col-8 center ">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Sign In </h2>
+        <div id="error" class=" d-flex justify-content-center"></div>
         <div class="d-flex justify-content-center">
           <div class="padd ">
             <SpacingCont amount="1" />
