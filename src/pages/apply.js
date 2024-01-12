@@ -7,12 +7,15 @@ import {
   RetrieveDataset,
   setUserData,
   signInUser,
+  getCurrentUser,
 } from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 let i = queryParameters.get("applicationNumber");
 
 const Apply = () => {
+  let userData = getCurrentUser();
+
   const [user, setUser] = useState("");
   let reviews = RetrieveDataset("JobLIst", 9);
   console.log(reviews);
@@ -20,7 +23,8 @@ const Apply = () => {
   console.log(user);
 
   var act = i - 1;
-  if (i == undefined || reviews == [] || !i) {
+
+  if (i == undefined || reviews == [] || !i || !userData || userData == null) {
     return (
       <div class="main padd">
         <SpacingCont amount="14" />

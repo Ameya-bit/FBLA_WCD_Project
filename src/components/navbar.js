@@ -109,13 +109,7 @@ function NavBarLinks({ name, link }) {
 function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   const queryParameters = new URLSearchParams(window.location.search);
   var i = queryParameters.get("jobNum");
-  let userData = getCurrentUser();
-  let linkNext;
-  if (userData && userData != null) {
-    linkNext = "/Apply?applicationNumber=" + link;
-  } else {
-    linkNext = "/SignUp?applicationNumber=" + link;
-  }
+  var linkNext = "/SignUp?applicationNumber=" + link;
   var category = queryParameters.get("category");
   var location = queryParameters.get("location");
   var type = queryParameters.get("type");
