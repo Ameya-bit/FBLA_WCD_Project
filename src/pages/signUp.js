@@ -7,6 +7,7 @@ import {
   RetrieveDataset,
   setUserData,
   signInUser,
+  getCurrentUser,
 } from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
@@ -14,6 +15,10 @@ let reroute = queryParameters.get("reroute");
 let appNum = queryParameters.get("applicationNumber");
 
 const Review = () => {
+  let userData = getCurrentUser();
+  if (userData && userData != null) {
+    window.location.assign("/Apply?applicationNumber=" + appNum);
+  }
   const [user, setUser] = useState("");
   async function getUser() {
     let email = document.getElementById("email").value;
