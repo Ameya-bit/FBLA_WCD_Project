@@ -15,14 +15,65 @@ let i = queryParameters.get("applicationNumber");
 
 const Apply = () => {
   let userData = getCurrentUser();
+  const date = new Date();
 
   const [user, setUser] = useState("");
   let reviews = RetrieveDataset("JobLIst", 9);
-  console.log(reviews);
-
-  console.log(user);
 
   var act = i - 1;
+
+  async function getInformation() {
+    console.log("entered getInformation fn");
+    var id = userData["id"];
+    var start = startDate();
+    var contact_name = "Steve Bobs";
+    var contact_email = "stevebobs@company.com";
+    var deadlines = [resumeDue()];
+    var deadlines_assoc = ["Submit Resume"];
+    var status = "Ongoing";
+    var application_name = reviews[act]["job_title"];
+
+    const { data, error } = await supabase
+      .from("applications")
+      .insert([
+        {
+          id: id,
+          start: start,
+          contact_name: contact_name,
+          contact_email: contact_email,
+          deadlines: deadlines,
+          deadline_assoc: deadlines_assoc,
+          status: status,
+          application_name: application_name,
+        },
+      ])
+      .select();
+    if (error) {
+      console.log(error);
+    }
+
+    window.location.assign("/profile");
+  }
+
+  function resumeDue() {
+    var day = date.getDate() + 5;
+    var month = day > 30 ? date.getMonth() + 2 : date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    var fullDate =
+      month.toString() + "/" + day.toString() + "/" + year.toString();
+    return fullDate;
+  }
+
+  function startDate() {
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    var fullDate =
+      month.toString() + "/" + day.toString() + "/" + year.toString();
+    return fullDate;
+  }
 
   if (i == undefined || reviews == [] || !i || !userData || userData == null) {
     return (
@@ -85,6 +136,7 @@ const Apply = () => {
               <Button
                 name="Submit"
                 clas="-primary btn-lg d-flex justify-content-center"
+                click={getInformation}
               />
             </div>
           </div>

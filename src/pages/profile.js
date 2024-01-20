@@ -31,6 +31,7 @@ const jobListings = () => {
             <thead class="">
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">Application Name</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">Contact Info</th>
                 <th scope="col">DeadLines</th>
@@ -133,11 +134,14 @@ function DataPush() {
       applications.push(
         <tr>
           <th scope="row">{i + 1}</th>
+          <td>{apps[i]["application_name"]}</td>
           <td>{apps[i]["start"]}</td>
           <td>
             {apps[i]["contact_name"]}: {apps[i]["contact_email"]}
           </td>
-          <td></td>
+          <td>
+            {apps[i]["deadline_assoc"]} by {apps[i]["deadlines"]}
+          </td>
           <td>{apps[i]["status"]}</td>
         </tr>,
       );
