@@ -11,7 +11,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
   return (
     <nav id={id} class={"navbar navbar-expand-sm " + clas}>
       <div class="container-fluid">
-        <a class="navbar-brand col-3 goldtext" href="/" id="navname">
+        <a class="navbar-brand col-4 goldtext" href="/" id="navname">
           MYRYA Jobs
         </a>
         <button
@@ -26,18 +26,15 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
-          class="collapse navbar-collapse  justify-content-center col-6"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse col-7" id="navbarNav">
+          <ul class="navbar-nav col-9">
             <NavBarLinks name="Discover" link="/Review" />
             <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
-        </div>
-        <div class="col-3 d-flex justify-content-end padd">
-          <SignInOrOut />
+          <div class="col-3 d-flex justify-content-end padd">
+            <SignInOrOut />
+          </div>
         </div>
       </div>
     </nav>
@@ -55,11 +52,7 @@ function SignInOrOut() {
   if (userData && userData != null) {
     return (
       <div class="card-columns d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-success btn-sm"
-          onClick={signOutUser}
-        >
+        <button type="button" class="btn btn-success" onClick={signOutUser}>
           Sign out of {userData["first_name"]}'s account
         </button>
       </div>
@@ -67,8 +60,8 @@ function SignInOrOut() {
   } else {
     return (
       <div class="grid2">
-        <Button name="Sign In" link="/SignIn" clas="-success btn-sm" />
-        <Button name="Sign Up" link="/SignUp" clas="-primary btn-sm" />
+        <Button name="Sign In" link="/SignIn" clas="-success" />
+        <Button name="Sign Up" link="/SignUp" clas="-primary" />
       </div>
     );
   }
@@ -106,7 +99,18 @@ function NavBarLinks({ name, link }) {
   );
 }
 
-function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
+function Card({
+  title,
+  loc,
+  emp,
+  desc,
+  clas,
+  link,
+  height,
+  button,
+  ids,
+  shadedOrNot,
+}) {
   const queryParameters = new URLSearchParams(window.location.search);
   var i = queryParameters.get("jobNum");
   var linkNext = "/SignUp?applicationNumber=" + link;
@@ -115,12 +119,18 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
   var type = queryParameters.get("type");
   var keyword = queryParameters.get("keyword");
   category = isUnd(category, "");
+  if (shadedOrNot != "shaded") {
+    shadedOrNot = "glass";
+  }
   location = isUnd(location, "");
   type = isUnd(type, "");
   keyword = isUnd(keyword, "");
   if (button == "no") {
     return (
-      <div class={"card glass round " + clas} style={{ height: height }}>
+      <div
+        class={"card round " + clas + " " + shadedOrNot}
+        style={{ height: height }}
+      >
         <div class="card-body padd">
           <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
           <div class="padd">
@@ -133,9 +143,12 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
     );
   } else {
     return (
-      <div class={"card glass round " + clas} style={{ height: height }}>
+      <div
+        class={"card round " + clas + " " + shadedOrNot}
+        style={{ height: height }}
+      >
         <div class="card-body padd">
-          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
+          <h3 class="card-title  d-flex justify-content-end padd">{title}</h3>
           <div class="padd">
             <p class="card-text">{loc}</p>
             <p class="card-text">{emp}</p>
@@ -161,8 +174,8 @@ function Card({ title, loc, emp, desc, clas, link, height, button, ids }) {
                 "&keyword=" +
                 keyword
               }
-              clas="-outline-success col-4 select"
-              name="Select"
+              clas="-outline-primary col-4 select"
+              name="More Info"
             />
           </div>
         </div>
