@@ -15,21 +15,59 @@ const Review = () => {
   let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
-      <SpacingCont amount="7" />
-      <h2 class="d-flex justify-content-center">
-        Hear from our growing network
-      </h2>
+      <SpacingCont amount="5" />
       <div class="padd">
-        <div class="glass round">
-          <div class="containerAdd padd">
-            <ReviewPush data={reviews} len="10" />
+        <div class="">
+          <h1 class="d-flex justify-content-center shaded round">
+            Discover the best jobs
+          </h1>
+          <div class="containerNew">
+            <div class="gallery-wrap ">
+              <div class="item item-1"></div>
+              <div class="item item-2"></div>
+              <div class="item item-3"></div>
+              <div class="item item-4"></div>
+              <div class="item item-5"></div>
+            </div>
+          </div>
+
+          <div class="social"></div>
+        </div>
+
+        <SpacingCont amount="3" />
+        <h2 class="d-flex justify-content-center shaded round">
+          Hear from our growing network
+        </h2>
+        <div class="padd">
+          <div class="glass round">
+            <div class="containerAdd padd">
+              <ReviewPush data={reviews} len="10" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <SpacingCont amount="3" />
+        <SpacingCont amount="3" />
+      </div>
     </div>
   );
 };
+
+function Message({ position, message }) {
+  if (position == "right") {
+    return (
+      <div class="grid2 padd">
+        <div />
+        <p class="shaded round card-text">{message}</p>
+      </div>
+    );
+  } else {
+    return (
+      <div class="grid2 padd">
+        <p class="shaded round card-text">{message}</p>
+        <div />
+      </div>
+    );
+  }
+}
 
 export default Review;

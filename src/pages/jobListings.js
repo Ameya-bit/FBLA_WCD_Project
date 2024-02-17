@@ -33,11 +33,11 @@ const jobListings = () => {
     return (
       <div class="main ">
         <SpacingCont amount="5" />
-        <div class="shaded  padd">
+        <div class="shaded hundredWidth padd">
           <div class="">
-            <h3 class="d-flex justify-content-center padd">
+            <h1 class="d-flex justify-content-center padd">
               Search and Filter Jobs:{" "}
-            </h3>
+            </h1>
           </div>
 
           <div class="containerAdd container padd d-flex justify-content-center">
@@ -82,14 +82,11 @@ const jobListings = () => {
             />
 
             <div>
-              <Button name="Save" clas="-success btn-lg" click={getData} />
+              <Button name="Update" clas="-primary btn-lg" click={getData} />
             </div>
           </div>
         </div>
-        <div
-          class="card-columns d-flex justify-content-center padd"
-          style={{ height: 870 }}
-        >
+        <div class="d-flex justify-content-center padd" style={{ height: 870 }}>
           <div>
             <SpacingCont amount="1" />
             <div class="shadePurple container round standHeight">

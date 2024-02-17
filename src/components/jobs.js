@@ -44,10 +44,11 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
   end = isUnd2(end, dataset.length, dataset.length);
 
   for (var i = start; i < end; i++) {
+    var iInc = i + 1;
     if (moreInfo == true) {
       send.push(
         <Card
-          title={dataset[i]["job_title"]}
+          title={iInc + ". " + dataset[i]["job_title"]}
           loc={"Location: " + dataset[i]["location"]}
           emp={"Job Type: " + dataset[i]["employment_type"]}
           desc={"Description: " + dataset[i]["job_desc"]}
@@ -57,7 +58,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
     } else {
       send.push(
         <Card
-          title={dataset[i]["job_title"]}
+          title={iInc + ". " + dataset[i]["job_title"]}
           loc={"Department: " + dataset[i]["department"]}
           link={dataset[i]["job_id"]}
         />,
