@@ -6,32 +6,61 @@ import { ReviewCard, ReviewPush } from "../components/reviewComp";
 import { useEffect, useState } from "react";
 import { supabase, RetrieveDataset } from "../components/supabase.js";
 
-import software from "./img/reviewPage/software.jpg";
-import marketing from "./img/reviewPage/marketing.jpg";
-import healthcare from "./img/reviewPage/healthcare.jpg";
-import law from "./img/reviewPage/law.jpg";
-
 const Review = () => {
   let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
       <SpacingCont amount="5" />
-      <div class="padd">
-        <div class="">
-          <h1 class="d-flex justify-content-center shaded round">
-            Discover the best jobs
-          </h1>
+      <div class="">
+        <div class="shaded">
+          <h2 class="d-flex justify-content-center glass bluetext">
+            Surf the categories of jobs that we offer
+          </h2>
+          <SpacingCont amount="2" />
+          <h3 class="d-flex justify-content-center">
+            Hover over the cards to learn about our departments
+          </h3>
           <div class="containerNew">
-            <div class="gallery-wrap ">
-              <div class="item item-1"></div>
-              <div class="item item-2"></div>
-              <div class="item item-3"></div>
-              <div class="item item-4"></div>
-              <div class="item item-5"></div>
+            <div class="gallery-wrap padd">
+              <div class="item item-1 padd">
+                <h1 class="shadeWhite padd">Software</h1>
+                <div class="itemtext shaded round">
+                  <h3 class="padd ">
+                    Build the future. Innovate with cutting-edge technologies.
+                    Find your dream role in software development, engineering,
+                    and design.
+                  </h3>
+                </div>
+              </div>
+              <div class="item item-2 padd">
+                <h1 class="shadeWhite padd">Healthcare</h1>
+                <div class="itemtext shaded round">
+                  <h3 class="padd ">
+                    Make a difference in lives. Pursue a rewarding career in
+                    healthcare and medicine.
+                  </h3>
+                </div>
+              </div>
+              <div class="item item-3 padd">
+                <h1 class="shadeWhite padd">Marketing</h1>
+                <div class="itemtext shaded round">
+                  <h3 class="padd ">
+                    Shape imaginations. Drive results. Unleash your marketing
+                    talents.
+                  </h3>
+                </div>
+              </div>
+              <div class="item item-4 padd">
+                <h1 class="shadeWhite padd">Content Creation</h1>
+                <div class="itemtext shaded round">
+                  <h3 class="padd ">
+                    Tell stories. Inform audiences. Be the voice behind engaging
+                    content.
+                  </h3>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="social"></div>
         </div>
 
         <SpacingCont amount="3" />
