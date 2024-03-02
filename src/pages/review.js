@@ -12,18 +12,14 @@ const Review = () => {
     <div class="main">
       <SpacingCont amount="5" />
       <div class="">
+        <h2 class="d-flex justify-content-center shaded padd">
+          Surf the categories of jobs that we offer
+        </h2>
         <div class="shaded">
-          <h2 class="d-flex justify-content-center glass bluetext">
-            Surf the categories of jobs that we offer
-          </h2>
-          <SpacingCont amount="2" />
-          <h3 class="d-flex justify-content-center">
-            Hover over the cards to learn about our departments
-          </h3>
           <div class="containerNew">
             <div class="gallery-wrap padd">
               <div class="item item-1 padd">
-                <h1 class="shadeWhite padd">Software</h1>
+                <h1 class="bluetext padd">Software</h1>
                 <div class="itemtext shaded round">
                   <h3 class="padd ">
                     Build the future. Innovate with cutting-edge technologies.
@@ -33,7 +29,7 @@ const Review = () => {
                 </div>
               </div>
               <div class="item item-2 padd">
-                <h1 class="shadeWhite padd">Healthcare</h1>
+                <h1 class=" padd">Healthcare</h1>
                 <div class="itemtext shaded round">
                   <h3 class="padd ">
                     Make a difference in lives. Pursue a rewarding career in
@@ -42,7 +38,7 @@ const Review = () => {
                 </div>
               </div>
               <div class="item item-3 padd">
-                <h1 class="shadeWhite padd">Marketing</h1>
+                <h1 class="bluetext padd">Marketing</h1>
                 <div class="itemtext shaded round">
                   <h3 class="padd ">
                     Shape imaginations. Drive results. Unleash your marketing
@@ -51,7 +47,7 @@ const Review = () => {
                 </div>
               </div>
               <div class="item item-4 padd">
-                <h1 class="shadeWhite padd">Content Creation</h1>
+                <h1 class=" padd">Content Creation</h1>
                 <div class="itemtext shaded round">
                   <h3 class="padd ">
                     Tell stories. Inform audiences. Be the voice behind engaging

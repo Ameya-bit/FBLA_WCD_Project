@@ -15,7 +15,7 @@ import User from "./img/user.jpg";
 const jobListings = () => {
   var applic = DataPush();
   var user = getCurrentUser();
-  if (applic.length > 0) {
+  if (user && applic.length > 0) {
     return (
       <div class="main">
         <SpacingCont amount="7" />
@@ -26,21 +26,42 @@ const jobListings = () => {
             </h1>
           </div>
         </div>
-        <div class="d-flex justify-content-center shaded round">
-          <table class="">
-            <thead class="">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Application Name</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">Contact Info</th>
-                <th scope="col">DeadLines</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <DataPush />
-          </table>
+        <div class="d-flex justify-content-center">
+          <div class="shaded round padd col-6">
+            <br></br>
+            <div class="d-flex justify-content-center">
+              <table class="">
+                <thead class="">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Application Name</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Contact Info</th>
+                    <th scope="col">DeadLines</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <DataPush />
+              </table>
+            </div>
+            <br></br>
+          </div>
         </div>
+        <SpacingCont amount="3"/>
+        <div class="d-flex justify-content-center">
+          <div class="col-12">
+            <h1 class="d-flex justify-content-center shaded round">
+              Saved Jobs
+            </h1>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="scroll shaded round col-6">
+            <SavedJobs user={user}/>
+          </div>
+        </div>
+        
+        
         <SpacingCont amount="3" />
       </div>
     );
@@ -94,7 +115,39 @@ const jobListings = () => {
   }
 };
 
-function getData() {
+
+
+function SavedJobs(user) {
+  console.log(user);
+  let reviews = RetrieveDataset("JobLIst", 30);
+  let retSav = [];
+  let saved_job = user["user"]["savedJobs"]
+
+  if(reviews) {
+    console.log(reviews[1]);
+    
+    for(let i = 0; i < saved_job.length; i++){
+      console.log("Got here saved jobs");
+      retSav.push(
+        <Card
+          title={reviews[saved_job[i]]["job_title"]}
+          loc={"Location: " + reviews[saved_job[i]]["location"]}
+          emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
+          desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
+          clas="padd"
+        />
+      );
+    }
+  } 
+  
+   
+
+  if(retSav){
+    return retSav;
+  }
+}
+
+function getData(from) {
   const [userData, getUserData] = useState("");
 
   async function getCurrentUser() {
@@ -109,7 +162,7 @@ function getData() {
 
   async function gotApp(userId) {
     let { data, error } = await supabase
-      .from("applications")
+      .from(from)
       .select()
       .eq("id", userId);
     if (error) {
@@ -128,7 +181,7 @@ function getData() {
 
 function DataPush() {
   let applications = [];
-  var apps = getData();
+  var apps = getData("applications");
   if (apps != null) {
     for (let i = 0; i < apps.length; i++) {
       applications.push(
