@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import "./review.css";
 
 import { AIintegrate } from "./components/jobs.js";
 import NavBar, { Footer } from "./components/navbar";

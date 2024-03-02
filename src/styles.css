@@ -1,6 +1,5 @@
 nav#navbar {
   background-color: rgba(90, 27, 199, 0.2);
-  height: 100px;
   box-shadow:
     0 15px 40px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -11,16 +10,29 @@ nav#navbar {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.hundredWidth {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: rgb(255, 119, 0);
+  border-color: rgb(255, 119, 0);
+}
+
 .gold {
-  background-color: gold;
+  background-color: rgb(255, 119, 0);
 }
 
 .goldtext {
-  color: gold;
+  color: rgb(255, 119, 0);
 }
 
 .bluetext {
   color: dodgerblue;
+}
+
+.whitetext {
+  color: white;
 }
 
 ::-webkit-scrollbar {
@@ -39,7 +51,7 @@ h2 {
   font-size: 5vw;
   border-radius: 30px;
   padding: 20px;
-  color: gold;
+  color: rgb(255, 119, 0);
 }
 .shaded-gold {
   background-color: rgba(255, 215, 0, 0.3);
@@ -47,7 +59,7 @@ h2 {
 }
 
 h1 {
-  color: gold;
+  color: rgb(255, 119, 0);
   font-size: 5vmin;
 }
 
@@ -102,18 +114,19 @@ td {
   background-attachment: fixed;
 }
 a#navname {
-  font-size: 30px;
+  font-size: 2vw;
 
-  color: gold;
+  color: rgb(255, 119, 0);
   font-family: "Nunito";
 }
 a#linkname {
-  font-size: 17px;
+  font-size: 1vw;
   color: white;
   font-family: "Nunito";
 }
 a {
   color: white;
+  font-size: 2vw;
   font-family: "Nunito";
 }
 
@@ -243,8 +256,17 @@ div.card {
   grid-template-columns: 1fr 1fr;
 }
 
+.grid4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .heightbutton {
   height: 10px;
+}
+
+.button {
+  font-size: 2vw;
 }
 
 i {
