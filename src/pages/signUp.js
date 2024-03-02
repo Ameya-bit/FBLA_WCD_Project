@@ -21,12 +21,13 @@ const Review = () => {
   }
   const [user, setUser] = useState("");
   async function getUser() {
+    document.getElementById("error").innerHTML  = "";
     let email = document.getElementById("email").value;
-    let pass = document.getElementById("password").value;
+    let pass = validatePassword();
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
-    let phoneNum = document.getElementById("phone").value;
-    if (email && pass && firstName && lastName && phoneNum) {
+    let phoneNum = validatePhone();
+    if (email && pass && firstName && lastName && phoneNum && phoneNum != -1 && pass != -1) {
       let { data, error } = await supabase.auth.signUp({
         email: email,
         password: pass,
@@ -42,10 +43,13 @@ const Review = () => {
           window.location.assign("/");
         }
       }
-    } else {
-      document.getElementById("error").innerHTML =
-        "<div id='error' class='alert alert-danger col-4 round' role='alert'>Missing Inputs!</div>";
-      document.documentElement.scrollTop = 0;
+
+    }
+    else if(phoneNum != -1 && pass != -1){    
+      errorMessage("Missing Inputs!")
+    }
+    else{
+      return 0;
     }
   }
   function signInTheUser() {
@@ -59,6 +63,10 @@ const Review = () => {
       <div class="container shaded round col-8  ">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Create Your Account: </h2>
+        <div class="d-flex justify-content-center">
+          <div id="error" class=""/>
+        </div>
+        <div id="error" class=""/>
         <div class="d-flex justify-content-center">
           <div class="padd col-8">
             <SpacingCont amount="1" />
@@ -99,5 +107,41 @@ const Review = () => {
     </div>
   );
 };
+
+function validatePassword() {
+  let password = document.getElementById("password").value;
+
+  if(password.length > 8 ){
+    return password;
+  }
+  else if(password.length == 0){
+    return 1;
+  }
+  else{
+    errorMessage("Invalid Password!")
+    return -1;
+  }
+}
+
+function validatePhone() {
+  let phone = document.getElementById("phone").value
+
+  if(phone.length == 10){
+    return phone;
+  }
+  else if(phone.length == 0){
+    return 1;
+  }
+  else{
+    errorMessage("Invalid Phone Number! ");
+    return -1;
+  }
+}
+
+function errorMessage(message){
+  document.getElementById("error").innerHTML +=
+        "<div id='errorMessage' class='alert alert-danger round' role='alert'>"+message+"</div>";
+      document.documentElement.scrollTop = 0;
+}
 
 export default Review;
