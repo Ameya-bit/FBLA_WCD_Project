@@ -65,6 +65,57 @@ const Review = () => {
 
         <SpacingCont amount="3" />
         <h2 class="d-flex justify-content-center shaded round">
+          We offer many benefits
+        </h2>
+
+        
+        <div class=" d-flex justify content center padd">
+          <div class="shaded round padd">
+          <div class="padd">
+          <table>
+            <thead>
+              <tr>
+                <th>Benefit</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Competitive Salary &amp; Benefits</td>
+                <td>Top-tier salaries at the 75th percentile for your experience level. Comprehensive benefits package including medical, dental, vision insurance, and a 401(k) with a 6% employer match.</td>
+              </tr>
+              <tr>
+                <td>Work-Life Balance</td>
+                <td>Flexible work arrangements (remote work, compressed weeks). Generous 20 days of paid time off (vacation, sick, personal).</td>
+              </tr>
+              <tr>
+                <td>Professional Development</td>
+                <td>$2,000 annual training & development budget per employee. Mentorship program for guidance and support.</td>
+              </tr>
+              <tr>
+                <td>Wellness &amp; Perks</td>
+                <td>On-site fitness classes. Student loan repayment assistance (up to $2,000/year). Fun work environment with company outings, social events, and free food options.</td>
+              </tr>
+              <tr>
+                <td>Modern Work Environment</td>
+                <td>State-of-the-art equipment and technology to empower your work. Collaborative and inspiring workspace to foster creativity and productivity.</td>
+              </tr>
+              <tr>
+                <td>Recognition &amp; Rewards</td>
+                <td>We value your contributions! Regular performance recognition programs and opportunities to earn bonuses. Enjoy employee discounts on various products and services.</td>
+              </tr>
+              <tr>
+                <td>Personal &amp; Professional Wellbeing</td>
+                <td>Employee Assistance Program (EAP) for confidential counseling and support. Generous vacation and sick leave to prioritize your well-being.</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          </div>
+        </div>
+
+        <SpacingCont amount="3" />
+        <h2 class="d-flex justify-content-center shaded round">
           Hear from our growing network
         </h2>
         <div class="padd">

@@ -92,7 +92,7 @@ const jobListings = () => {
             <div class="shadePurple container round standHeight">
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
-                  end="30"
+                  end="199"
                   category={category}
                   location={location}
                   type={type}
@@ -118,6 +118,9 @@ const getData = () => {
   location = document.getElementById("filtLoc").value;
   type = document.getElementById("filtType").value;
   keyword = document.getElementById("filtKey").value;
+  if(i == null){
+    i = 0;
+  }
   window.location.assign(
     "/jobListings?jobNum=" +
       i +
@@ -198,3 +201,4 @@ function JobFullData() {
 }
 
 export default jobListings;
+export {getData};
