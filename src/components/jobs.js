@@ -27,7 +27,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
       query.ilike("department", "%" + keyword + "%");
     }
 
-    query.range(0, 29);
+    query.range(0, 199);
     const { data, error } = await query;
     setReviews(data);
   }

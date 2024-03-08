@@ -1,7 +1,8 @@
 import React from "react";
 import { SpacingCont } from "./qualityOfLife";
-import { Card, Image, OffCanvas } from "../components/navbar";
+import { Card, Image, OffCanvas, Inputs, Button } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs.js";
+import {getData} from "./jobListings.js"
 
 import addedRecom from "./img/addedRecom.jpg";
 import profilePers from "./img/profilePers.jpg";
@@ -10,13 +11,74 @@ import resumeCheck from "./img/resumeCheck.jpg";
 const Home = () => {
   return (
     <div class="main ">
-      <Image
-        text="Welcome to our Offices!"
-        clas="containered padded"
-        imgclas="round darkened"
-        textclas="shaded padd"
-      />
-      <SpacingCont amount="12" />
+      
+      
+      <SpacingCont amount="12"/>
+      <div class="shaded hundredWidth padd">
+          <div class="">
+            <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
+            
+          </div>
+
+          <div class="containerAdd container padd d-flex justify-content-center">
+            <select name="cars" class="shaded round shadeWhite" id="filtCat">
+              <Inputs
+                ids="filtCat"
+                name="Search our Titles!"
+                type="text"
+                select="true"
+                selectType="job_title"
+                value=""
+              />
+            </select>
+            <select name="cars" class="shaded round shadeWhite" id="filtType">
+              <Inputs
+                ids="filtType"
+                name="Search for Work Schedules!"
+                type="text"
+                select="true"
+                selectType="employment_type"
+              />
+            </select>
+            <select
+              name="cars"
+              class="shaded round shadeWhite col-4"
+              id="filtLoc"
+            >
+              <Inputs
+                ids="filtLoc"
+                name="Search for Locations!"
+                type="text"
+                select="true"
+                selectType="location"
+              />
+            </select>
+            <Inputs
+              ids="filtKey"
+              name="Search Keywords"
+              clas="shaded round shadeWhite col-4"
+              type="text"
+              value=""
+            />
+
+            
+          </div>
+          <div class="padd">
+            <div class="d-flex justify-content-center padd">
+              <Button name="Start your Search" clas="-primary btn-lg" click={getData} />
+
+            </div>
+          </div>
+      </div>
+      <SpacingCont amount="11"/>
+      <div class="d-flex justify-content-center">
+        <div class="col-3 shaded round ">
+          <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
+          <h3 class="d-flex justify-content-center"> ↓ </h3>
+        </div>
+        
+      </div>
+      <SpacingCont amount="5" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Explore</h2>
