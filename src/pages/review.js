@@ -10,10 +10,110 @@ const Review = () => {
   let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
-      <SpacingCont amount="5" />
+      <SpacingCont amount="14" />
+      <div>
+        <div class="shadedEdit hundredWidth padd d-flex justify-content-center">
+          <div class="col-6 newcenter">
+            <h2>We are MYRYA!</h2>
+            <h3 class="padd">Specializing in many fields to better the world!</h3>
+          </div>
+          <div class="padd newcenter">
+          <h3>
+            At MYRYA, we're passionate about leveraging technology, healthcare, marketing, and 
+          content creation to make a positive impact on the world. We're not just building software, providing healthcare services, 
+          crafting marketing campaigns, or creating content – we're building a better future.
+          </h3>
+          <br></br>
+          <h3>
+            Join our talented team and use your skills to tackle real-world challenges.  Whether you're developing 
+          innovative healthcare software solutions, crafting impactful marketing campaigns for social good initiatives, or creating 
+          informative content that empowers communities, your work will have a meaningful purpose. We believe in fostering a 
+          collaborative and supportive environment where you can grow both professionally and personally.  If you're looking for more 
+          than just a job, and you're passionate about making a difference, we invite you to explore career opportunities at MYRYA.
+          </h3>
+          </div>
+          
+        </div>
+      </div>
+      <SpacingCont amount="10" />
       <div class="">
-        
+        <div class=" d-flex justify content padd">
+          <div class="padd col-9">
+            <h1 class="d-flex justify-content-center shadedEdit round">
+              Discover the perks of our work!
+            </h1>
+            <SpacingCont amount="2" />
+            <div class="shadePurple round padd">
+              <div class="padd">
+                <div class="gallery-wrap card-columns padd  ">
+                  <div class="item item-5 padd">
+                    <div class="shadedEdit round ">
+                      <h3 class="padd   ">Competitive Salary & Robust Benefits</h3>
+                      <div class="itemtext  round">
+                        <ul>
+                          <li>Salary: 80th percentile for your experience level.</li>
+                          <li>Medical, Dental, & Vision Insurance (80% individual, 70% family coverage).</li>
+                          <li>401(k) with 6% employer match.</li>
+                          <li>Life & Disability Insurance (details vary by position).</li>
+                        </ul>
+                      </div>
+                    </div>
 
+                  </div>
+                  <div class="item item-6 padd">
+                    <div class="shadedEdit round">
+                      <h3 class="padd   ">Work-Life Balance & Well-being</h3>
+                      <div class="itemtext   ">
+                        <ul>
+                          <li>Flexible work arrangements (remote work, compressed weeks, flexible hours).</li>
+                          <li>25 days PTO (15 vacation, 5 sick, 5 personal).</li>
+                          <li>On-site fitness classes & wellness programs.</li>
+                          <li>Employee Assistance Program (EAP).</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="item item-7 padd">
+                    <div class="shadedEdit round">
+                      <h3 class="padd   ">Professional Development & Growth</h3>
+                      <div class="itemtext  ">
+                        <ul>
+                          <li>$3,000 annual training & development budget.</li>
+                          <li>Mentorship program.</li>
+                          <li>Tuition reimbursement program (details vary).</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="item item-8 padd">
+                    <div class="shadedEdit round ">
+                      <h3 class="padd   ">Modern Work Environment & Company Culture</h3>
+                      <div class="itemtext  ">
+                        <ul>
+                          <li>State-of-the-art equipment & technology.</li>
+                          <li>Collaborative & inspiring workspace.</li>
+                          <li>Fun & engaging culture (outings, social events, free food).</li>
+                          <li>Recognition & rewards programs.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="padd col-3">
+
+            <div class="shadedEdit round padd">
+              <h3 class="d-flex justify-content-center padd">Hear from our Employees!</h3>
+              <ReviewPush data={reviews} condense="yes" len="6" start="4" />
+            </div>
+          </div>
+        </div>
+        <SpacingCont amount="10"/>
         <div class="shaded">
           <div>
             <h2 class="d-flex justify-content-center  padd round">
@@ -63,68 +163,9 @@ const Review = () => {
           </div>
         </div>
 
-        <SpacingCont amount="3" />
-        <h2 class="d-flex justify-content-center shaded round">
-          We offer many benefits
-        </h2>
 
-        
-        <div class=" d-flex justify content center padd">
-          <div class="shaded round padd">
-          <div class="padd">
-          <table>
-            <thead>
-              <tr>
-                <th>Benefit</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Competitive Salary &amp; Benefits</td>
-                <td>Top-tier salaries at the 75th percentile for your experience level. Comprehensive benefits package including medical, dental, vision insurance, and a 401(k) with a 6% employer match.</td>
-              </tr>
-              <tr>
-                <td>Work-Life Balance</td>
-                <td>Flexible work arrangements (remote work, compressed weeks). Generous 20 days of paid time off (vacation, sick, personal).</td>
-              </tr>
-              <tr>
-                <td>Professional Development</td>
-                <td>$2,000 annual training & development budget per employee. Mentorship program for guidance and support.</td>
-              </tr>
-              <tr>
-                <td>Wellness &amp; Perks</td>
-                <td>On-site fitness classes. Student loan repayment assistance (up to $2,000/year). Fun work environment with company outings, social events, and free food options.</td>
-              </tr>
-              <tr>
-                <td>Modern Work Environment</td>
-                <td>State-of-the-art equipment and technology to empower your work. Collaborative and inspiring workspace to foster creativity and productivity.</td>
-              </tr>
-              <tr>
-                <td>Recognition &amp; Rewards</td>
-                <td>We value your contributions! Regular performance recognition programs and opportunities to earn bonuses. Enjoy employee discounts on various products and services.</td>
-              </tr>
-              <tr>
-                <td>Personal &amp; Professional Wellbeing</td>
-                <td>Employee Assistance Program (EAP) for confidential counseling and support. Generous vacation and sick leave to prioritize your well-being.</td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-          </div>
-        </div>
 
-        <SpacingCont amount="3" />
-        <h2 class="d-flex justify-content-center shaded round">
-          Hear from our growing network
-        </h2>
-        <div class="padd">
-          <div class="glass round">
-            <div class="containerAdd padd">
-              <ReviewPush data={reviews} len="10" />
-            </div>
-          </div>
-        </div>
+
 
         <SpacingCont amount="3" />
       </div>
