@@ -1,22 +1,23 @@
 import { SpacingCont } from "./qualityOfLife";
 import { Card } from "./navbar";
 
-function ReviewCard({ pic1, title, text, rating, employee, clas, contact }) {
+function ReviewCard({ pic1, title, text, rating, employee, clas, contact, condense }) {
   return (
-    <div>
-      <div class={"card round transparent padd  " + clas}>
-        <div class="card-body padd">
-          <h3 class="card-title d-flex justify-content-end padd">{title}</h3>
-          <div class="padd">
-            <p class="card-text">{'"' + text + '"'}</p>
-            <p class="card-text">{rating}</p>
-            <p class="card-text d-flex justify-content-end">{"-" + employee}</p>
-            <p class="card-text d-flex justify-content-end">{contact}</p>
-          </div>
+
+    <div class={" round transparent padd  " + clas}>
+      <hr></hr>
+      <div class=" padd">
+        <div class="padd">
+          <p class="">{'"' + text + '"'}</p>
+          <p class=" d-flex justify-content-end">{rating}</p>
+          <p class=" d-flex justify-content-end">{"-" + contact}</p>
         </div>
       </div>
     </div>
+
   );
+
+
 }
 
 function ReviewPush({ data, start, len }) {
