@@ -13,7 +13,7 @@ const Home = () => {
     <div class="main ">
 
 
-      <SpacingCont amount="12" />
+      <SpacingCont amount="13" />
       <div class="shaded hundredWidth padd">
         <div class="">
           <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
@@ -70,7 +70,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <SpacingCont amount="11" />
+      <SpacingCont amount="10" />
       <div class="d-flex justify-content-center">
         <div class="col-3 shaded round ">
           <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
