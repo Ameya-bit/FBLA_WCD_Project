@@ -10,40 +10,38 @@ const Review = () => {
   let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
-      <SpacingCont amount="14" />
+
       <div>
+        <SpacingCont amount="5" />
         <div class="shadedEdit hundredWidth padd d-flex justify-content-center">
           <div class="col-6 newcenter">
             <h2>We are MYRYA!</h2>
             <h3 class="padd">Specializing in many fields to better the world!</h3>
           </div>
           <div class="padd newcenter">
-          <h3>
-            At MYRYA, we're passionate about leveraging technology, healthcare, marketing, and 
-          content creation to make a positive impact on the world. We're not just building software, providing healthcare services, 
-          crafting marketing campaigns, or creating content – we're building a better future.
-          </h3>
-          <br></br>
-          <h3>
-            Join our talented team and use your skills to tackle real-world challenges.  Whether you're developing 
-          innovative healthcare software solutions, crafting impactful marketing campaigns for social good initiatives, or creating 
-          informative content that empowers communities, your work will have a meaningful purpose. We believe in fostering a 
-          collaborative and supportive environment where you can grow both professionally and personally.  If you're looking for more 
-          than just a job, and you're passionate about making a difference, we invite you to explore career opportunities at MYRYA.
-          </h3>
+            <h3>
+              At MYRYA, we're passionate about leveraging technology, healthcare, marketing, and
+              content creation to make a positive impact on the world. We're not just building software, providing healthcare services,
+              crafting marketing campaigns, or creating content – we're building a better future.
+            </h3>
+            <br></br>
+            <h3>
+              Join our talented team and use your skills to tackle real-world challenges.  Whether you're developing
+              innovative healthcare software solutions, crafting impactful marketing campaigns for social good initiatives, or creating
+              informative content that empowers communities, your work will have a meaningful purpose. We believe in fostering a
+              collaborative and supportive environment where you can grow both professionally and personally.  If you're looking for more
+              than just a job, and you're passionate about making a difference, we invite you to explore career opportunities at MYRYA.
+            </h3>
           </div>
-          
+
         </div>
       </div>
-      <SpacingCont amount="10" />
       <div class="">
         <div class=" d-flex justify content padd">
           <div class="padd col-9">
-            <h1 class="d-flex justify-content-center shadedEdit round">
-              Discover the perks of our work!
-            </h1>
-            <SpacingCont amount="2" />
+
             <div class="shadePurple round padd">
+              <h1 class="d-flex justify-content-center padd">View our various Benefits</h1>
               <div class="padd">
                 <div class="gallery-wrap card-columns padd  ">
                   <div class="item item-5 padd">
@@ -104,64 +102,67 @@ const Review = () => {
                 </div>
               </div>
             </div>
+            <SpacingCont amount="1"/>
+            <div class="shaded round padd">
+              <div>
+                <h2 class="d-flex justify-content-center  padd round">
+                  View our various departments
+                </h2>
+              </div>
+              <div class="containerNew">
+                <div class="gallery-wrap padd">
+                  <div class="item item-1 padd">
+                    <h1 class="bluetext shaded padd round">Software</h1>
+                    <div class="itemtext shaded round">
+                      <h3 class="padd ">
+                        Build the future. Innovate with cutting-edge technologies.
+                        Find your dream role in software development, engineering,
+                        and design.
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="item item-2 padd">
+                    <h1 class="bluetext shaded padd round">Healthcare</h1>
+                    <div class="itemtext shaded round">
+                      <h3 class="padd ">
+                        Make a difference in lives. Pursue a rewarding career in
+                        healthcare and medicine.
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="item item-3 padd">
+                    <h1 class="bluetext shaded padd round">Marketing</h1>
+                    <div class="itemtext shaded round">
+                      <h3 class="padd ">
+                        Shape imaginations. Drive results. Unleash your marketing
+                        talents.
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="item item-4 padd">
+                    <h1 class="bluetext shaded padd round">Content Creation</h1>
+                    <div class="itemtext shaded round">
+                      <h3 class="padd ">
+                        Tell stories. Inform audiences. Be the voice behind engaging
+                        content.
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
           <div class="padd col-3">
 
             <div class="shadedEdit round padd">
               <h3 class="d-flex justify-content-center padd">Hear from our Employees!</h3>
-              <ReviewPush data={reviews} condense="yes" len="6" start="4" />
+              <ReviewPush data={reviews} condense="yes" len="9" start="4" />
             </div>
           </div>
         </div>
-        <SpacingCont amount="10"/>
-        <div class="shaded">
-          <div>
-            <h2 class="d-flex justify-content-center  padd round">
-              View our various departments
-            </h2>
-          </div>
-          <div class="containerNew">
-            <div class="gallery-wrap padd">
-              <div class="item item-1 padd">
-                <h1 class="bluetext shaded padd round">Software</h1>
-                <div class="itemtext shaded round">
-                  <h3 class="padd ">
-                    Build the future. Innovate with cutting-edge technologies.
-                    Find your dream role in software development, engineering,
-                    and design.
-                  </h3>
-                </div>
-              </div>
-              <div class="item item-2 padd">
-                <h1 class="bluetext shaded padd round">Healthcare</h1>
-                <div class="itemtext shaded round">
-                  <h3 class="padd ">
-                    Make a difference in lives. Pursue a rewarding career in
-                    healthcare and medicine.
-                  </h3>
-                </div>
-              </div>
-              <div class="item item-3 padd">
-                <h1 class="bluetext shaded padd round">Marketing</h1>
-                <div class="itemtext shaded round">
-                  <h3 class="padd ">
-                    Shape imaginations. Drive results. Unleash your marketing
-                    talents.
-                  </h3>
-                </div>
-              </div>
-              <div class="item item-4 padd">
-                <h1 class="bluetext shaded padd round">Content Creation</h1>
-                <div class="itemtext shaded round">
-                  <h3 class="padd ">
-                    Tell stories. Inform audiences. Be the voice behind engaging
-                    content.
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SpacingCont amount="10" />
 
 
 
