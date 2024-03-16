@@ -13,70 +13,74 @@ const Home = () => {
     <div class="main ">
 
 
-      <SpacingCont amount="13" />
-      <div class="shaded hundredWidth padd">
-        <div class="">
-          <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
-
-        </div>
-
-        <div class="containerAdd container padd d-flex justify-content-center">
-          <select name="cars" class="shaded round shadeWhite" id="filtCat">
-            <Inputs
-              ids="filtCat"
-              name="Search our Titles!"
-              type="text"
-              select="true"
-              selectType="job_title"
-              value=""
-            />
-          </select>
-          <select name="cars" class="shaded round shadeWhite" id="filtType">
-            <Inputs
-              ids="filtType"
-              name="Search for Work Schedules!"
-              type="text"
-              select="true"
-              selectType="employment_type"
-            />
-          </select>
-          <select
-            name="cars"
-            class="shaded round shadeWhite col-4"
-            id="filtLoc"
-          >
-            <Inputs
-              ids="filtLoc"
-              name="Search for Locations!"
-              type="text"
-              select="true"
-              selectType="location"
-            />
-          </select>
-          <Inputs
-            ids="filtKey"
-            name="Search Keywords"
-            clas="shaded round shadeWhite col-4"
-            type="text"
-            value=""
-          />
-
-
-        </div>
-        <div class="padd">
-          <div class="d-flex justify-content-center padd">
-            <Button name="Start your Search" clas="-primary btn-lg" click={getData} />
+      <SpacingCont amount="15" />
+      <div class="">
+        <div class="shaded hundredWidth padd">
+          <div class="">
+            <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
 
           </div>
-        </div>
-      </div>
-      <SpacingCont amount="10" />
-      <div class="d-flex justify-content-center">
-        <div class="col-3 shaded round ">
-          <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
-          <h3 class="d-flex justify-content-center"> ↓ </h3>
-        </div>
 
+          {/* Greeting with inputs */}
+          <div class="containerAdd container padd d-flex justify-content-center">
+            <select name="cars" class="shaded round shadeWhite" id="filtCat">
+              <Inputs
+                ids="filtCat"
+                name="Search our Titles!"
+                type="text"
+                select="true"
+                selectType="job_title"
+                value=""
+              />
+            </select>
+            <select name="cars" class="shaded round shadeWhite" id="filtType">
+              <Inputs
+                ids="filtType"
+                name="Search for Work Schedules!"
+                type="text"
+                select="true"
+                selectType="employment_type"
+              />
+            </select>
+            <select
+              name="cars"
+              class="shaded round shadeWhite col-4"
+              id="filtLoc"
+            >
+              <Inputs
+                ids="filtLoc"
+                name="Search for Locations!"
+                type="text"
+                select="true"
+                selectType="location"
+              />
+            </select>
+            <Inputs
+              ids="filtKey"
+              name="Search Keywords"
+              clas="shaded round shadeWhite col-4"
+              type="text"
+              value=""
+            />
+
+
+          </div>
+          <div class="padd">
+            <div class="d-flex justify-content-center padd">
+              <Button name="Start your Search" clas="-primary btn-lg" click={getData} />
+
+            </div>
+          </div>
+
+        </div>
+        <SpacingCont amount="9" />
+        <div class="d-flex justify-content-center">
+          <div class="col-3 shaded round ">
+            <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
+            <h3 class="d-flex justify-content-center"> ↓ </h3>
+          </div>
+
+        </div>
       </div>
       <SpacingCont amount="5" />
       <div class="container shaded round col-8">
@@ -84,7 +88,7 @@ const Home = () => {
         <h2 class="d-flex justify-content-center">Explore</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center ">
-          <Image pic1={addedRecom} imgclas="round " clas="padd" />
+          <Image pic1={addedRecom} imgclas="round breaks" clas="padd" />
           <div class="col-6 ">
             <SpacingCont amount="1" />
             <h3 class="d-flex justify-content-center padd">
@@ -103,7 +107,7 @@ const Home = () => {
         </div>
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">
-          Explore our gratifying jobs!
+          Find great jobs!
         </h2>
         <SpacingCont amount="2" />
         <div class="d-flex justify-content-center padd">
@@ -161,23 +165,45 @@ const Home = () => {
         </div>
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">
-          View your promotions online
+          View Applications online
         </h2>
         <div class="d-flex justify-content-center padd">
-          <div id="cards" class="col-12">
-            <StatusCard
-              clas="col-12"
-              title="Senior graphic designer"
-              interviewStat="Upcoming interview on February 29th"
-              supervisor="Assistant Manager: Steve"
-              supercont="steve@company.com"
-              start="January 12"
-              compDates="Resume recieved (Jan 13), Interview complete (Jan 29), "
-              estimatedTime="100 years"
-            />
+          <div class="padd col-8">
+            <div class="padd glass round black tab">
+              <br />
+              <thead class="">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Application Name</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">Contact Info</th>
+                  <th scope="col">DeadLines</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Content Creator</td>
+                  <td>5/23/2020</td>
+                  <td>
+                    Steve Bobs: stevebobs@company.com
+                  </td>
+                  <td>
+                    Resume due by 5/29/2020
+                  </td>
+                  <td>Ongoing</td>
+                </tr>
+              </tbody>
+              <br />
+            </div>
           </div>
+
         </div>
+        <h3 class="newcenter padd">Know exactly where you are in your application, next steps, and more through our comprehensive table</h3>
+
       </div>
+
       <div id="footer"></div>
       <SpacingCont amount="12" />
     </div>
