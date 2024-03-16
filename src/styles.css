@@ -39,6 +39,18 @@ nav#navbar {
   display: none;
 }
 
+@media only screen and (max-width: 1050px) {
+  /* For mobile phones: */
+  [class*="breaks"] {
+    width: 100%;
+  }
+  [class*="tab"] {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+
 .dodgerblue {
   background-color: dodgerblue;
 }

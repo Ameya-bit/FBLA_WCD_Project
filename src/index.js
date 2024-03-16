@@ -5,6 +5,7 @@ import "./styles.css";
 import "./review.css";
 
 import { AIintegrate } from "./components/jobs.js";
+import {OffCanvas} from "./components/myrical.js";
 import NavBar, { Footer } from "./components/navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home.js";
@@ -19,6 +20,7 @@ import { SpacingCont } from "./pages/qualityOfLife";
 
 ReactDOM.render(
   <React.StrictMode>
+    <OffCanvas/>
     <Router>
       <NavBar
         id="navbar"

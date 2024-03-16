@@ -47,7 +47,7 @@ const jobListings = () => {
             <br></br>
           </div>
         </div>
-        <SpacingCont amount="3"/>
+        <SpacingCont amount="3" />
         <div class="d-flex justify-content-center">
           <div class="col-12">
             <h1 class="d-flex justify-content-center shaded round">
@@ -56,12 +56,12 @@ const jobListings = () => {
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <div class="scroll shaded round col-6">
-            <SavedJobs user={user}/>
+          <div class="shaded round col-8">
+            <SavedJobs user={user} />
           </div>
         </div>
-        
-        
+
+
         <SpacingCont amount="3" />
       </div>
     );
@@ -123,26 +123,43 @@ function SavedJobs(user) {
   let retSav = [];
   let saved_job = user["user"]["savedJobs"]
 
-  if(reviews) {
+  if (reviews) {
     console.log(reviews[1]);
-    
-    for(let i = 0; i < saved_job.length; i++){
+
+    for (let i = 0; i < saved_job.length; i += 3) {
       console.log("Got here saved jobs");
       retSav.push(
-        <Card
-          title={reviews[saved_job[i]]["job_title"]}
-          loc={"Location: " + reviews[saved_job[i]]["location"]}
-          emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
-          desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
-          clas="padd"
-        />
+        <div class="card-columns">
+          <Card
+            title={reviews[saved_job[i]]["job_title"]}
+            loc={"Location: " + reviews[saved_job[i]]["location"]}
+            emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
+            desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
+            clas="padd"
+          />
+          <Card
+            title={reviews[saved_job[i+1]]["job_title"]}
+            loc={"Location: " + reviews[saved_job[i+1]]["location"]}
+            emp={"Job Type: " + reviews[saved_job[i+1]]["employment_type"]}
+            desc={"Description: " + reviews[saved_job[i+1]]["job_desc"]}
+            clas="padd"
+          />
+          <Card
+            title={reviews[saved_job[i+2]]["job_title"]}
+            loc={"Location: " + reviews[saved_job[i+2]]["location"]}
+            emp={"Job Type: " + reviews[saved_job[i+2]]["employment_type"]}
+            desc={"Description: " + reviews[saved_job[i+2]]["job_desc"]}
+            clas="padd"
+          />
+        </div>
+
       );
     }
-  } 
-  
-   
+  }
 
-  if(retSav){
+
+
+  if (retSav) {
     return retSav;
   }
 }

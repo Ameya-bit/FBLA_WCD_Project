@@ -12,30 +12,26 @@ const Review = () => {
     <div class="main">
 
       <div>
-        <SpacingCont amount="5" />
+        <SpacingCont amount="6" />
         <div class="shadedEdit hundredWidth padd d-flex justify-content-center">
           <div class="col-6 newcenter">
             <h2>We are MYRYA!</h2>
             <h3 class="padd">Specializing in many fields to better the world!</h3>
           </div>
           <div class="padd newcenter">
-            <h3>
-              At MYRYA, we're passionate about leveraging technology, healthcare, marketing, and
-              content creation to make a positive impact on the world. We're not just building software, providing healthcare services,
-              crafting marketing campaigns, or creating content – we're building a better future.
-            </h3>
-            <br></br>
-            <h3>
-              Join our talented team and use your skills to tackle real-world challenges.  Whether you're developing
-              innovative healthcare software solutions, crafting impactful marketing campaigns for social good initiatives, or creating
-              informative content that empowers communities, your work will have a meaningful purpose. We believe in fostering a
-              collaborative and supportive environment where you can grow both professionally and personally.  If you're looking for more
-              than just a job, and you're passionate about making a difference, we invite you to explore career opportunities at MYRYA.
+            <h3 class="padd">
+            Craft your career with purpose at MYRYA. We're a team dedicated to using technology, 
+            healthcare, marketing, and content creation to address real-world challenges and make a positive impact.  
+            Here, you won't just be building software, providing care, crafting campaigns, or creating content – you'll 
+            be empowering communities, fostering innovation, and shaping a better future.  Join us and discover a 
+            work environment that values both your contributions and your well-being. Explore careers at MYRYA
+            and find your place where passion meets purpose.
             </h3>
           </div>
 
         </div>
       </div>
+      <SpacingCont amount="2"/>
       <div class="">
         <div class=" d-flex justify content padd">
           <div class="padd col-9">
@@ -43,7 +39,7 @@ const Review = () => {
             <div class="shadePurple round padd">
               <h1 class="d-flex justify-content-center padd">View our various Benefits</h1>
               <div class="padd">
-                <div class="gallery-wrap card-columns padd  ">
+                <div class="gallery-wrap  ">
                   <div class="item item-5 padd">
                     <div class="shadedEdit round ">
                       <h3 class="padd   ">Competitive Salary & Robust Benefits</h3>
@@ -105,48 +101,67 @@ const Review = () => {
             <SpacingCont amount="1"/>
             <div class="shaded round padd">
               <div>
-                <h2 class="d-flex justify-content-center  padd round">
+                <h1 class="d-flex justify-content-center  padd round">
                   View our various departments
-                </h2>
+                </h1>
               </div>
               <div class="containerNew">
                 <div class="gallery-wrap padd">
                   <div class="item item-1 padd">
-                    <h1 class="bluetext shaded padd round">Software</h1>
-                    <div class="itemtext shaded round">
-                      <h3 class="padd ">
-                        Build the future. Innovate with cutting-edge technologies.
-                        Find your dream role in software development, engineering,
-                        and design.
-                      </h3>
+                    <div class="shaded round">
+                    <h3 class="bluetext  padd round">Software</h3>
+                    <div class="itemtext  round">
+                      <p class="padd ">
+                      Join our Software Department, where innovation meets expertise in a dynamic environment. 
+                      Dive into developing cutting-edge software solutions with a team that values creativity, agility, 
+                      and pushing technological boundaries. Embrace the opportunity to be at the forefront of tech, 
+                      continuously learning and redefining what's possible in the digital world.
+                      </p>
                     </div>
+                    </div>
+                    
                   </div>
                   <div class="item item-2 padd">
-                    <h1 class="bluetext shaded padd round">Healthcare</h1>
-                    <div class="itemtext shaded round">
-                      <h3 class="padd ">
-                        Make a difference in lives. Pursue a rewarding career in
-                        healthcare and medicine.
-                      </h3>
+                    <div class="shaded round">
+                    <h3 class="bluetext  padd round">Healthcare</h3>
+                    <div class="itemtext  round">
+                      <p class="padd ">
+                      Be part of our Healthcare Department, where technology and healthcare converge to improve lives. 
+                      This team is pioneering new ways to enhance patient care and accessibility, offering you a chance to 
+                      contribute to meaningful advancements in health outcomes. Your work here will directly impact creating 
+                      a healthier future for everyone.
+                      </p>
                     </div>
+                    </div>
+                    
                   </div>
                   <div class="item item-3 padd">
-                    <h1 class="bluetext shaded padd round">Marketing</h1>
-                    <div class="itemtext shaded round">
-                      <h3 class="padd ">
-                        Shape imaginations. Drive results. Unleash your marketing
-                        talents.
-                      </h3>
+                    <div class="shaded round">
+                      <h3 class="bluetext  padd round">Marketing</h3>
+                    <div class="itemtext  round">
+                      <p class="padd ">
+                      Our Marketing Department is a creative powerhouse, where strategy and storytelling come together to 
+                      amplify our brand's voice. Work on compelling campaigns and digital experiences that engage and inspire our 
+                      global audience. If you're driven by innovation and connecting with people, join us to shape how the world sees our brand.
+                      </p>
                     </div>
+
+                    </div>
+                    
                   </div>
                   <div class="item item-4 padd">
-                    <h1 class="bluetext shaded padd round">Content Creation</h1>
-                    <div class="itemtext shaded round">
-                      <h3 class="padd ">
-                        Tell stories. Inform audiences. Be the voice behind engaging
-                        content.
-                      </h3>
+                    <div class="shaded round">
+                    <h3 class="bluetext  padd round">Content Creation</h3>
+                    <div class="itemtext  round">
+                      <p class="padd ">
+                      Step into the Content Creation Department, a creative haven for storytellers and visionaries. 
+                      Here, your ideas are transformed into captivating narratives across various mediums. In a collaborative 
+                      and supportive atmosphere, you'll create content that not only reaches but resonates and influences 
+                      our diverse audience. Join us to make your mark and inspire action through your creativity.
+                      </p>
                     </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -162,13 +177,6 @@ const Review = () => {
             </div>
           </div>
         </div>
-        <SpacingCont amount="10" />
-
-
-
-
-
-        <SpacingCont amount="3" />
       </div>
     </div>
   );

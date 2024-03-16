@@ -34,7 +34,10 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           </ul>
           <div class="col-3 d-flex justify-content-end padd">
             <SignInOrOut />
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">MyricalAI</button>
           </div>
+
+
         </div>
       </div>
     </nav>
@@ -67,27 +70,7 @@ function SignInOrOut() {
   }
 }
 
-function OffCanvas() {
-  return (
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-        <button
-          type="button"
-          class="btn-close text-reset"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">...</div>
-    </div>
-  );
-}
+
 
 function NavBarLinks({ name, link }) {
   return (
@@ -194,7 +177,7 @@ function Button({ link, name, clas, click, ids }) {
 
 function Image({ pic1, text, clas, imgclas, textclas }) {
   return (
-    <div class={"  " + clas}>
+    <div class={" breaks " + clas}>
       <img class={"card-img-top " + imgclas} src={pic1} alt="" />
       <div id="textcont" class="card-img-overlay">
         <h2 class={"card-text leftbottom  " + textclas}>{text}</h2>
@@ -216,7 +199,7 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
     for (let value in values) {
       if (value == 0) {
         returnVal.push(
-          <option class="shadeWhite" value="">
+          <option class="shadeWhite " value="">
             {name}
           </option>,
         );
@@ -233,7 +216,7 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
       <input
         id={ids}
         type={type}
-        class={"form-control shaded round shadeWhite  form-control-lg " + clas}
+        class={"form-control shaded round shadeWhite breaks form-control-lg " + clas}
         placeholder={name}
       />
     );
@@ -256,4 +239,4 @@ function Footer() {
   );
 }
 
-export { Card, Image, Inputs, OffCanvas, Button, Footer };
+export { Card, Image, Inputs,  Button, Footer };
