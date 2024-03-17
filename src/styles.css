@@ -35,6 +35,10 @@ nav#navbar {
   color: white;
 }
 
+.offcanvas{
+  width:25% !important;
+}  
+
 ::-webkit-scrollbar {
   display: none;
 }
