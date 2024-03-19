@@ -13,7 +13,7 @@ function OffCanvas() {
 
 
     return (
-        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div className="offcanvas offcanvas-end transparent" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <ChatBot
                 config={config}
                 messageParser={MessageParser}
@@ -24,19 +24,28 @@ function OffCanvas() {
 }
 
 const config = {
-    initialMessages: [createChatBotMessage('Hello World')],
+    initialMessages: [createChatBotMessage('I am Myrical, your job finding assistant!')],
+    botName: 'Myrical AI',
+    customStyles: {
+        botMessageBox: {
+            backgroundColor: '#376B7E',
+        },
+        chatButton: {
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+        },
+    },
 };
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = async (message) => {
         let newMessage = await generateResponse(message);
         const botMessage = createChatBotMessage(newMessage);
-    
+
         setState((prev) => ({
-          ...prev,
-          messages: [...prev.messages, botMessage],
+            ...prev,
+            messages: [...prev.messages, botMessage],
         }));
-      };
+    };
     return (
         <div>
             {React.Children.map(children, (child) => {
@@ -95,3 +104,4 @@ const generateResponse = async (query, req, res) => {
 
 
 export default OffCanvas
+export {generateResponse};
