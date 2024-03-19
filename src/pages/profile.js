@@ -1,5 +1,6 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
+import {generateResponse} from "../components/myrical.js"
 import { Inputs, Card } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
 import { useEffect, useState } from "react";
@@ -60,7 +61,6 @@ const jobListings = () => {
             <SavedJobs user={user} />
           </div>
         </div>
-
 
         <SpacingCont amount="3" />
       </div>
@@ -138,17 +138,17 @@ function SavedJobs(user) {
             clas="padd"
           />
           <Card
-            title={reviews[saved_job[i+1]]["job_title"]}
-            loc={"Location: " + reviews[saved_job[i+1]]["location"]}
-            emp={"Job Type: " + reviews[saved_job[i+1]]["employment_type"]}
-            desc={"Description: " + reviews[saved_job[i+1]]["job_desc"]}
+            title={reviews[saved_job[i + 1]]["job_title"]}
+            loc={"Location: " + reviews[saved_job[i + 1]]["location"]}
+            emp={"Job Type: " + reviews[saved_job[i + 1]]["employment_type"]}
+            desc={"Description: " + reviews[saved_job[i + 1]]["job_desc"]}
             clas="padd"
           />
           <Card
-            title={reviews[saved_job[i+2]]["job_title"]}
-            loc={"Location: " + reviews[saved_job[i+2]]["location"]}
-            emp={"Job Type: " + reviews[saved_job[i+2]]["employment_type"]}
-            desc={"Description: " + reviews[saved_job[i+2]]["job_desc"]}
+            title={reviews[saved_job[i + 2]]["job_title"]}
+            loc={"Location: " + reviews[saved_job[i + 2]]["location"]}
+            emp={"Job Type: " + reviews[saved_job[i + 2]]["employment_type"]}
+            desc={"Description: " + reviews[saved_job[i + 2]]["job_desc"]}
             clas="padd"
           />
         </div>
@@ -222,6 +222,30 @@ function DataPush() {
     return applications;
   }
   // this works, but when it goes back to the original funciton, something happens
+}
+
+const RecommendedJobs = ({user}) => {
+  let reviews =  RetrieveDataset("JobLIst", 30);
+  console.log(user);
+  var savedjobs = user["savedJobs"];
+
+  if(reviews){
+    let jobsString = "";
+    let totalJobsString = "";
+    for(let k = 0; k < reviews.length; k++){
+      totalJobsString += reviews[k]["job_title"] + ", ";
+    }
+    for(let i = 0; i < savedjobs.length; i++){
+      jobsString += reviews[savedjobs[i]]["job_title"] + ",  ";
+    }
+    var getRecommendedJobs = "Based on the applicants interests in these jobs:  " + jobsString + ", recommend jobs from this list: " + totalJobsString + "and explain why.";
+    const getRecommendations = async (message) => {
+      var recommendations =  await generateResponse(message);
+      console.log(recommendations)
+    }
+    getRecommendations(getRecommendedJobs);
+  }
+  
 }
 
 export default jobListings;
