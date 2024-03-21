@@ -1,6 +1,6 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
-import {generateResponse} from "../components/myrical.js"
+import { generateResponse } from "../components/myrical.js"
 import { Inputs, Card } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
 import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ import User from "./img/user.jpg";
 const jobListings = () => {
   var applic = DataPush();
   var user = getCurrentUser();
+  let reviews = RetrieveDataset("JobLIst", 30);
   if (user && applic.length > 0) {
     return (
       <div class="main">
@@ -59,6 +60,19 @@ const jobListings = () => {
         <div class="d-flex justify-content-center">
           <div class="shaded round col-8">
             <SavedJobs user={user} />
+          </div>
+        </div>
+        <SpacingCont amount="3" />
+        <div class="d-flex justify-content-center">
+          <div class="col-12">
+            <h1 class="d-flex justify-content-center shaded round">
+              Recommended Jobs
+            </h1>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="shaded round col-8">
+            <AIRecom user={user} reviews={reviews} />
           </div>
         </div>
 
@@ -118,13 +132,11 @@ const jobListings = () => {
 
 
 function SavedJobs(user) {
-  console.log(user);
   let reviews = RetrieveDataset("JobLIst", 30);
   let retSav = [];
   let saved_job = user["user"]["savedJobs"]
 
   if (reviews) {
-    console.log(reviews[1]);
 
     for (let i = 0; i < saved_job.length; i += 3) {
       console.log("Got here saved jobs");
@@ -221,31 +233,103 @@ function DataPush() {
   if (applications) {
     return applications;
   }
-  // this works, but when it goes back to the original funciton, something happens
 }
 
-const RecommendedJobs = ({user}) => {
-  let reviews =  RetrieveDataset("JobLIst", 30);
-  console.log(user);
+const AIRecom = ({ user, reviews }) => {
+  const [recom, setRecom] = useState("");
   var savedjobs = user["savedJobs"];
+  let jobsString = "";
+  let totalJobsString = "";
 
-  if(reviews){
-    let jobsString = "";
-    let totalJobsString = "";
-    for(let k = 0; k < reviews.length; k++){
-      totalJobsString += reviews[k]["job_title"] + ", ";
-    }
-    for(let i = 0; i < savedjobs.length; i++){
-      jobsString += reviews[savedjobs[i]]["job_title"] + ",  ";
-    }
-    var getRecommendedJobs = "Based on the applicants interests in these jobs:  " + jobsString + ", recommend jobs from this list: " + totalJobsString + "and explain why.";
-    const getRecommendations = async (message) => {
-      var recommendations =  await generateResponse(message);
-      console.log(recommendations)
-    }
-    getRecommendations(getRecommendedJobs);
+  for (let k = 0; k < reviews.length; k++) {
+    totalJobsString += reviews[k]["job_title"] + ", ";
+  }
+
+  for (let i = 0; i < savedjobs.length; i++) {
+    jobsString += i + ": " + reviews[savedjobs[i]]["job_title"] + ",  ";
+  }
+
+  var getRecommendedJobs = "Based on the applicants interests in these jobs:  " + jobsString + ", recommend jobs from this list: " + totalJobsString + "and explain why. " +
+    "Before your response, write only the corresponding numbers of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon.";
+
+  async function recomJobs(message) {
+    var recommendations = await generateResponse(message);
+    setRecom(recommendations)
+  }
+
+  useEffect(() => {
+    recomJobs(getRecommendedJobs);
+  }, []);
+  console.log(recom);
+
+  if(recom != ""){
+    var recomArr = recom.split(";");
+    var recom1 = recomArr[0];
+    var recom2 = recomArr[1];
+    var recom3 = recomArr[2];
+    var explain = recomArr[3];
+    console.log(recom1);
+
+    var explain3 = explain.split("3.")[1];
+    var explain1 = explain.split("3.")[0].split("2.")[1];
+    var explain2 = explain.split("3.")[0].split("2.")[0].split("1.")[1];
+    
+
+    return (
+      <div>
+        <div class="card-columns padd">
+          <Card
+            title={reviews[recom1]["job_title"]}
+            loc={"Location: " + reviews[recom1]["location"]}
+            emp={"Job Type: " + reviews[recom1]["employment_type"]}
+            desc={"Description: " + reviews[recom1]["job_desc"]}
+            clas="padd"
+          />
+          <Card
+            title={reviews[recom2]["job_title"]}
+            loc={"Location: " + reviews[recom2]["location"]}
+            emp={"Job Type: " + reviews[recom2]["employment_type"]}
+            desc={"Description: " + reviews[recom2]["job_desc"]}
+            clas="padd"
+          />
+          <Card
+            title={reviews[recom3]["job_title"]}
+            loc={"Location: " + reviews[recom3]["location"]}
+            emp={"Job Type: " + reviews[recom3]["employment_type"]}
+            desc={"Description: " + reviews[recom3]["job_desc"]}
+            clas="padd"
+          />
+        </div>
+        <br/>
+        <h3 class=" padd">
+          {explain1}
+        </h3>
+        <br/>
+        <h3 class=" padd">
+          {explain2}
+        </h3>
+        <br/>
+        <h3 class=" padd">
+          {explain3}
+        </h3>
+      </div>
+    )
+  }
+  else {
+    return (
+      <div>
+        <h1>Your Recommendations are Loading...</h1>
+      </div>
+    )
   }
   
+
+
+
 }
+
+
+
+
 
 export default jobListings;
