@@ -21,11 +21,12 @@ const Review = () => {
   }
   const [user, setUser] = useState("");
   async function getUser() {
-    document.getElementById("error").innerHTML  = "";
+    document.getElementById("error").innerHTML = "";
     let email = document.getElementById("email").value;
     let pass = validatePassword();
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
+ 
     let phoneNum = validatePhone();
     if (email && pass && firstName && lastName && phoneNum && phoneNum != -1 && pass != -1) {
       let { data, error } = await supabase.auth.signUp({
@@ -64,9 +65,9 @@ const Review = () => {
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Create Your Account: </h2>
         <div class="d-flex justify-content-center">
-          <div id="error" class=""/>
+          <div id="error" class="" />
         </div>
-        <div id="error" class=""/>
+        <div id="error" class="" />
         <div class="d-flex justify-content-center">
           <div class="padd col-8">
             <SpacingCont amount="1" />
@@ -85,6 +86,10 @@ const Review = () => {
               clas=" padd"
               type="text"
             />
+            <h3 class="d-flex justify-content-center padd" >
+              Enter Your Resume:{" "}
+            </h3>
+            <Inputs ids="resume" name="" clas=" padd" type="file" />
             <SpacingCont amount="1" />
             <Inputs ids="lastName" name="Last Name" clas="padd" type="text" />
             <SpacingCont amount="1" />
@@ -111,13 +116,13 @@ const Review = () => {
 function validatePassword() {
   let password = document.getElementById("password").value;
 
-  if(password.length > 8 ){
+  if (password.length > 8) {
     return password;
   }
-  else if(password.length == 0){
+  else if (password.length == 0) {
     return 1;
   }
-  else{
+  else {
     errorMessage("Invalid Password!")
     return -1;
   }
@@ -126,22 +131,22 @@ function validatePassword() {
 function validatePhone() {
   let phone = document.getElementById("phone").value
 
-  if(phone.length == 10){
+  if (phone.length == 10) {
     return phone;
   }
-  else if(phone.length == 0){
+  else if (phone.length == 0) {
     return 1;
   }
-  else{
+  else {
     errorMessage("Invalid Phone Number! ");
     return -1;
   }
 }
 
-function errorMessage(message){
+function errorMessage(message) {
   document.getElementById("error").innerHTML +=
-        "<div id='errorMessage' class='alert alert-danger round' role='alert'>"+message+"</div>";
-      document.documentElement.scrollTop = 0;
+    "<div id='errorMessage' class='alert alert-danger round' role='alert'>" + message + "</div>";
+  document.documentElement.scrollTop = 0;
 }
 
 export default Review;

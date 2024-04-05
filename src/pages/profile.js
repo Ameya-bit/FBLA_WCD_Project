@@ -1,8 +1,9 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
-import { generateResponse } from "../components/myrical.js"
+import { generateResponse, createEmbedding } from "../components/myrical.js"
 import { Inputs, Card } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
+const { Configuration, OpenAIApi } = require("openai");
 import { useEffect, useState } from "react";
 import {
   supabase,
@@ -10,6 +11,7 @@ import {
   setUserData,
   signInUser,
   getCurrentUser,
+  getResume
 } from "../components/supabase.js";
 import User from "./img/user.jpg";
 
@@ -75,7 +77,7 @@ const jobListings = () => {
             <AIRecom user={user} reviews={reviews} />
           </div>
         </div>
-
+        <GetResume user={user}></GetResume>
         <SpacingCont amount="3" />
       </div>
     );
@@ -235,6 +237,15 @@ function DataPush() {
   }
 }
 
+function GetResume(user) {
+  let file = user["user"]["Resume"];
+  let filepath = getResume(file);
+
+  return (
+    <embed src={filepath} width="800px" height="2100px" />
+  );
+}
+
 const AIRecom = ({ user, reviews }) => {
   const [recom, setRecom] = useState("");
   var savedjobs = user["savedJobs"];
@@ -249,8 +260,9 @@ const AIRecom = ({ user, reviews }) => {
     jobsString += i + ": " + reviews[savedjobs[i]]["job_title"] + ",  ";
   }
 
-  var getRecommendedJobs = "Based on the applicants interests in these jobs:  " + jobsString + ", recommend jobs from this list: " + totalJobsString + "and explain why. " +
-    "Before your response, write only the corresponding numbers of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon.";
+  var getRecommendedJobs = "Based on the applicants saved jobs:  " + jobsString + ", recommend 3 similar jobs from this main list: " + totalJobsString + ", that are not already in the applicants saved jobs." +
+    "Before your response, write only the corresponding numbers, according to the main list, of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon." +
+    "For the response, explain why for each similar job. Label each explanation as 1, 2, 3.";
 
   async function recomJobs(message) {
     var recommendations = await generateResponse(message);
@@ -260,60 +272,65 @@ const AIRecom = ({ user, reviews }) => {
   useEffect(() => {
     recomJobs(getRecommendedJobs);
   }, []);
-  console.log(recom);
 
-  if(recom != ""){
+  if (recom != "") {
+    console.log(recom);
     var recomArr = recom.split(";");
     var recom1 = recomArr[0];
     var recom2 = recomArr[1];
     var recom3 = recomArr[2];
     var explain = recomArr[3];
-    console.log(recom1);
 
     var explain3 = explain.split("3.")[1];
     var explain1 = explain.split("3.")[0].split("2.")[1];
     var explain2 = explain.split("3.")[0].split("2.")[0].split("1.")[1];
-    
 
-    return (
-      <div>
-        <div class="card-columns padd">
-          <Card
-            title={reviews[recom1]["job_title"]}
-            loc={"Location: " + reviews[recom1]["location"]}
-            emp={"Job Type: " + reviews[recom1]["employment_type"]}
-            desc={"Description: " + reviews[recom1]["job_desc"]}
-            clas="padd"
-          />
-          <Card
-            title={reviews[recom2]["job_title"]}
-            loc={"Location: " + reviews[recom2]["location"]}
-            emp={"Job Type: " + reviews[recom2]["employment_type"]}
-            desc={"Description: " + reviews[recom2]["job_desc"]}
-            clas="padd"
-          />
-          <Card
-            title={reviews[recom3]["job_title"]}
-            loc={"Location: " + reviews[recom3]["location"]}
-            emp={"Job Type: " + reviews[recom3]["employment_type"]}
-            desc={"Description: " + reviews[recom3]["job_desc"]}
-            clas="padd"
-          />
+    if (!explain1 || !explain2 || !explain3) {
+      return (
+        <h3>There was an issue loading recommendations. Please reload the page.</h3>
+      )
+    }
+    else {
+      return (
+        <div>
+          <div class="card-columns padd">
+            <Card
+              title={reviews[recom1]["job_title"]}
+              loc={"Location: " + reviews[recom1]["location"]}
+              emp={"Job Type: " + reviews[recom1]["employment_type"]}
+              desc={"Description: " + reviews[recom1]["job_desc"]}
+              clas="padd"
+            />
+            <Card
+              title={reviews[recom2]["job_title"]}
+              loc={"Location: " + reviews[recom2]["location"]}
+              emp={"Job Type: " + reviews[recom2]["employment_type"]}
+              desc={"Description: " + reviews[recom2]["job_desc"]}
+              clas="padd"
+            />
+            <Card
+              title={reviews[recom3]["job_title"]}
+              loc={"Location: " + reviews[recom3]["location"]}
+              emp={"Job Type: " + reviews[recom3]["employment_type"]}
+              desc={"Description: " + reviews[recom3]["job_desc"]}
+              clas="padd"
+            />
+          </div>
+          <br />
+          <h3 class=" padd">
+            {explain1}
+          </h3>
+          <br />
+          <h3 class=" padd">
+            {explain2}
+          </h3>
+          <br />
+          <h3 class=" padd">
+            {explain3}
+          </h3>
         </div>
-        <br/>
-        <h3 class=" padd">
-          {explain1}
-        </h3>
-        <br/>
-        <h3 class=" padd">
-          {explain2}
-        </h3>
-        <br/>
-        <h3 class=" padd">
-          {explain3}
-        </h3>
-      </div>
-    )
+      )
+    }
   }
   else {
     return (
@@ -322,7 +339,8 @@ const AIRecom = ({ user, reviews }) => {
       </div>
     )
   }
-  
+
+
 
 
 
