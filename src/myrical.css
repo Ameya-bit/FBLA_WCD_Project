@@ -6,8 +6,12 @@
 }
 
 .react-chatbot-kit-chat-message-container {
-    height: 98vh !important;
-   
+    height: 90vh !important;
+
+}
+
+.react-chatbot-kit-chat-bot-message {
+  width: 75% !important;
 }
 .react-chatbot-kit-chat-inner-container {
     background-color: rgba(255, 255, 255, 0) !important;

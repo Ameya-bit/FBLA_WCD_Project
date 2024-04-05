@@ -1,17 +1,22 @@
 import axios from 'axios';
-const OpenAI = require("openai");
+import OpenAI from 'openai';
+const fs = require('fs');
+const path = "./JobLIst_rows.csv"
 import React, { useState } from 'react';
-
 import 'react-chatbot-kit/build/main.css'
 import { Inputs, Button } from './navbar'
+import {
+    supabase,
+    RetrieveDataset,
+    setUserData,
+    signInUser,
+    getCurrentUser,
+    getResume
+} from "../components/supabase.js";
 import ChatBot, { createChatBotMessage } from 'react-chatbot-kit';
 const OpenAIKey = process.env.REACT_APP_OPENAI_KEY;
 
-
 function OffCanvas() {
-
-
-
     return (
         <div className="offcanvas offcanvas-end transparent" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <ChatBot
@@ -100,8 +105,5 @@ const generateResponse = async (query, req, res) => {
     }
 };
 
-
-
-
 export default OffCanvas
-export {generateResponse};
+export { generateResponse };

@@ -37,7 +37,7 @@ const Review = () => {
           <div class="padd col-9">
 
             <div class="shadePurple round padd">
-              <h1 class="d-flex justify-content-center padd">View our various Benefits</h1>
+              <h1 class="d-flex justify-content-center padd">Our various Benefits</h1>
               <div class="padd">
                 <div class="gallery-wrap  ">
                   <div class="item item-5 padd">
@@ -102,7 +102,7 @@ const Review = () => {
             <div class="shaded round padd">
               <div>
                 <h1 class="d-flex justify-content-center  padd round">
-                  View our various departments
+                  Our various departments
                 </h1>
               </div>
               <div class="containerNew">

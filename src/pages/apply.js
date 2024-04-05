@@ -118,10 +118,8 @@ const Apply = () => {
           <SpacingCont amount="2" />
           <div class="d-flex justify-content-center">
             <div class="padd ">
-              <h3 class="d-flex justify-content-center padd">
-                Enter Your Resume:{" "}
-              </h3>
-              <Inputs ids="resume" name="" clas=" padd" type="file" />
+              
+              
               <SpacingCont amount="3" />
               <h3 class="d-flex justify-content-center padd">
                 Anything You Want To Highlight For Our Team:{" "}

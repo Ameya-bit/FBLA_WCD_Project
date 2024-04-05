@@ -5,6 +5,12 @@ const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+function getResume(file) {
+  const { data } = supabase.storage.from('Resumes').getPublicUrl(file)
+
+  console.log(data.publicUrl)
+}
+
 function RetrieveDataset(dataset, range) {
   const [reviews, setReviews] = useState("");
 
@@ -109,4 +115,5 @@ export {
   getCurrentUser,
   signOutUser,
   signInUser,
+  getResume
 };
