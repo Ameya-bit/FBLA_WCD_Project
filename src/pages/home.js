@@ -22,20 +22,20 @@ const Home = () => {
 
           {/* Greeting with inputs */}
           <div class="containerAdd container padd d-flex justify-content-center">
-            <select name="cars" class="shaded round shadeWhite" id="filtCat">
+            <select name="cars" class="shaded round col-lg shadeWhite" id="filtCat">
               <Inputs
                 ids="filtCat"
-                name="Search our Titles!"
+                name="Search Titles"
                 type="text"
                 select="true"
                 selectType="job_title"
                 value=""
               />
             </select>
-            <select name="cars" class="shaded round shadeWhite" id="filtType">
+            <select name="cars" class="shaded round shadeWhite col" id="filtType">
               <Inputs
                 ids="filtType"
-                name="Search for Work Schedules!"
+                name="Search Types"
                 type="text"
                 select="true"
                 selectType="employment_type"
@@ -43,12 +43,12 @@ const Home = () => {
             </select>
             <select
               name="cars"
-              class="shaded round shadeWhite col-4"
+              class="shaded round shadeWhite col"
               id="filtLoc"
             >
               <Inputs
                 ids="filtLoc"
-                name="Search for Locations!"
+                name="Search Locations"
                 type="text"
                 select="true"
                 selectType="location"
@@ -57,7 +57,7 @@ const Home = () => {
             <Inputs
               ids="filtKey"
               name="Search Keywords"
-              clas="shaded round shadeWhite col-4"
+              clas="shaded round shadeWhite col"
               type="text"
               value=""
             />
@@ -86,7 +86,7 @@ const Home = () => {
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Explore</h2>
         <SpacingCont amount="2" />
-        <div class="card-columns col-12 d-flex justify-content-center ">
+        <div class="card-columns d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round breaks" clas="padd" />
           <div class="col-6 ">
             <SpacingCont amount="2" />
@@ -117,11 +117,11 @@ const Home = () => {
           <Image
             pic1={resumeCheck}
             text=""
-            clas=" newcenter"
+            clas=" newcenter col"
             imgclas="round"
             textclas=""
           />
-          <div class="col-4">
+          <div class="col">
             <SpacingCont amount="1" />
             <h2 class="d-flex justify-content-center padd">Discover</h2>
             <h3 class="">
@@ -142,7 +142,7 @@ const Home = () => {
       <SpacingCont amount="7" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">Profile</h2>
+        <h2 class="d-flex justify-content-center padd">Dashboard</h2>
         <SpacingCont amount="2" />
         <div class="card-columns col-12 d-flex justify-content-center">
           <div class="col-6">

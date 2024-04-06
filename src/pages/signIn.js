@@ -23,30 +23,32 @@ const SignIn = () => {
         <h2 class="d-flex justify-content-center">Sign In </h2>
         <div id="error" class=" d-flex justify-content-center"></div>
         <div class="d-flex justify-content-center">
-          <div class="padd ">
+          <div class="padd col-6">
             <SpacingCont amount="1" />
             <Inputs ids="email" name="Email " clas=" padd" type="text" />
-            <SpacingCont amount="1" />
+            <SpacingCont amount="2" />
             <Inputs
               ids="password"
               name="Password "
               clas=" padd"
               type="password"
             />
-            <SpacingCont amount="1" />
-            <button
-              type="button"
-              class="btn btn-success btn-sm"
-              onClick={signInTheUser}
-            >
-              Sign In
-            </button>
+            <SpacingCont amount="3" />
+            <div class="d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-success btn-lg"
+                onClick={signInTheUser}
+              >
+                Sign In
+              </button>
+            </div>
+
           </div>
         </div>
 
         <SpacingCont amount="2" />
       </div>
-      <SpacingCont amount="2" />
     </div>
   );
 };

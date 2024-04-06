@@ -41,7 +41,7 @@ const jobListings = () => {
           </div>
 
           <div class="containerAdd container padd d-flex justify-content-center">
-            <select name="cars" class="shaded round shadeWhite" id="filtCat">
+            <select name="cars" class="shaded round shadeWhite col" id="filtCat">
               <Inputs
                 ids="filtCat"
                 name="Job Title"
@@ -51,7 +51,7 @@ const jobListings = () => {
                 value=""
               />
             </select>
-            <select name="cars" class="shaded round shadeWhite" id="filtType">
+            <select name="cars" class="shaded round shadeWhite col" id="filtType">
               <Inputs
                 ids="filtType"
                 name="Type"
@@ -62,7 +62,7 @@ const jobListings = () => {
             </select>
             <select
               name="cars"
-              class="shaded round shadeWhite col-4"
+              class="shaded round shadeWhite col"
               id="filtLoc"
             >
               <Inputs
@@ -76,7 +76,7 @@ const jobListings = () => {
             <Inputs
               ids="filtKey"
               name="Keyword"
-              clas="shaded round shadeWhite col-4"
+              clas="shaded round shadeWhite col"
               type="text"
               value=""
             />
@@ -89,7 +89,7 @@ const jobListings = () => {
         <div class="d-flex justify-content-center padd" style={{ height: 870 }}>
           <div>
             <SpacingCont amount="1" />
-            <div class="shadePurple container round standHeight">
+            <div class="shadePurple container round standHeight col">
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
                   end="199"
@@ -102,7 +102,7 @@ const jobListings = () => {
             </div>
           </div>
 
-          <div class="col-8 standHeight">
+          <div class="col standHeight">
             <SpacingCont amount="1" />
             <JobFullData />
           </div>
