@@ -45,7 +45,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
 
   for (var i = start; i < end; i++) {
     var iInc = i + 1;
-    if (moreInfo == true) {
+    if (moreInfo == "true") {
       send.push(
         <Card
           title={iInc + ". " + dataset[i]["job_title"]}

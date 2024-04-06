@@ -34,7 +34,9 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           </ul>
           <div class="col-3 d-flex justify-content-end padd">
             <SignInOrOut />
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">MyricalAI</button>
+            <button class="btn glass" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <img src="https://i.pinimg.com/originals/a2/cb/9a/a2cb9abc2a55211dda256cd2f3193b17.png" width="25" height="25"/>
+            </button>
           </div>
 
 
@@ -55,8 +57,8 @@ function SignInOrOut() {
   if (userData && userData != null) {
     return (
       <div class="card-columns d-flex justify-content-end">
-        <button type="button" class="btn btn-success" onClick={signOutUser}>
-          Sign out of {userData["first_name"]}'s account
+        <button type="button" class="btn btn-primary" onClick={signOutUser}>
+          Sign out
         </button>
       </div>
     );
