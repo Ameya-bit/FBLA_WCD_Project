@@ -141,7 +141,6 @@ function SavedJobs(user) {
   if (reviews) {
 
     for (let i = 0; i < saved_job.length; i += 3) {
-      console.log("Got here saved jobs");
       retSav.push(
         <div class="card-columns">
           <Card
@@ -274,7 +273,6 @@ const AIRecom = ({ user, reviews }) => {
   }, []);
 
   if (recom != "") {
-    console.log(recom);
     var recomArr = recom.split(";");
     var recom1 = recomArr[0];
     var recom2 = recomArr[1];

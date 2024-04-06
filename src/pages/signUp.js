@@ -26,7 +26,7 @@ const Review = () => {
     let pass = validatePassword();
     let firstName = document.getElementById("firstName").value;
     let lastName = document.getElementById("lastName").value;
- 
+
     let phoneNum = validatePhone();
     if (email && pass && firstName && lastName && phoneNum && phoneNum != -1 && pass != -1) {
       let { data, error } = await supabase.auth.signUp({
@@ -46,10 +46,10 @@ const Review = () => {
       }
 
     }
-    else if(phoneNum != -1 && pass != -1){    
+    else if (phoneNum != -1 && pass != -1) {
       errorMessage("Missing Inputs!")
     }
-    else{
+    else {
       return 0;
     }
   }
@@ -71,38 +71,46 @@ const Review = () => {
         <div class="d-flex justify-content-center">
           <div class="padd col-8">
             <SpacingCont amount="1" />
+            <h3 class="d-flex justify-content-center padd" >
+              Enter your personal information: 
+            </h3>
+            <SpacingCont amount="2"/>
             <Inputs ids="email" name="Email " clas=" padd" type="text" />
-            <SpacingCont amount="1" />
+            <SpacingCont amount="2" />
             <Inputs
               ids="password"
               name="Password "
               clas=" padd"
               type="password"
             />
-            <SpacingCont amount="1" />
+            <SpacingCont amount="2" />
             <Inputs
               ids="firstName"
               name="First Name"
               clas=" padd"
               type="text"
             />
+            <SpacingCont amount="2" />
+            <Inputs ids="lastName" name="Last Name" clas="padd" type="text" />
+            <SpacingCont amount="2" />
+            <Inputs ids="phone" name="Phone " clas=" padd" type="text" />
+            <SpacingCont amount="4" />
+
             <h3 class="d-flex justify-content-center padd" >
               Enter Your Resume:{" "}
             </h3>
             <Inputs ids="resume" name="" clas=" padd" type="file" />
-            <SpacingCont amount="1" />
-            <Inputs ids="lastName" name="Last Name" clas="padd" type="text" />
-            <SpacingCont amount="1" />
-            <Inputs ids="phone" name="Phone " clas=" padd" type="text" />
-            <SpacingCont amount="1" />
-            <SpacingCont amount="3" />
-            <button
-              type="button"
-              class="btn btn-success btn-sm"
-              onClick={getUser}
-            >
-              Create Account
-            </button>
+            <SpacingCont amount="4" />
+            <div class="d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-success btn-lg"
+                onClick={getUser}
+              >
+                Create Account
+              </button>
+            </div>
+
           </div>
         </div>
 

@@ -35,6 +35,10 @@ nav#navbar {
   color: white;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .offcanvas{
   width:25% !important;
 }  
@@ -43,10 +47,14 @@ nav#navbar {
   display: none;
 }
 
-@media only screen and (max-width: 1050px) {
+.text-reset {
+  font-size: 20px !important;
+}
+
+@media only screen and (max-width: 1320px) {
   /* For mobile phones: */
-  [class*="breaks"] {
-    width: 100%;
+  [class*="col"] {
+    max-width: 100% !important;
   }
   [class*="tab"] {
     overflow-x: auto;

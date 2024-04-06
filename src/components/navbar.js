@@ -201,13 +201,13 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
     for (let value in values) {
       if (value == 0) {
         returnVal.push(
-          <option class="shadeWhite " value="">
+          <option class="shadeWhite breaks" value="">
             {name}
           </option>,
         );
       }
       returnVal.push(
-        <option class="bluetext" value={values[value]}>
+        <option class="bluetext breaks" value={values[value]}>
           {values[value]}
         </option>,
       );
@@ -227,17 +227,94 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
 
 function Footer() {
   return (
-    <footer class="text-center dodgerblue">
-      <div class="container pt-4 ">
-        <section class="">
-          <form action="">
-            <div class="row d-flex justify-content-center"></div>
-          </form>
-          <NavBarLinks name="Credits" link="/citations" />
-        </section>
+  
+    <footer class="text-center text-lg-start shadePurple text-muted">
+
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+     
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+  
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+  
+      </section>
+      
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+    
+          <div class="row mt-3">
+        
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        
+              <h6 class="text-uppercase fw-bold mb-4">
+                MYRYA Co.
+              </h6>
+              <p>
+                We are a company that specializes in many fields.
+              </p>
+            </div>
+     
+            
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+         
+              <h6 class="text-uppercase fw-bold mb-4">
+                Useful links
+              </h6>
+              <p>
+                <a href="/SignUp" class="text-reset">Sign Up</a>
+              </p>
+              <p>
+                <a href="/SignIn" class="text-reset">Sign In</a>
+              </p>
+              <p>
+                <a href="/" class="text-reset">Help</a>
+              </p>
+            </div>
+           
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+         
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Some City, SS 00000, Some Country</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@myrya.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+  
+          </div>
+      
+        </div>
+      </section>
+   
+      <div class="text-center p-4" >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
-      <div class="text-center p-3 black dodgerblue">MYRYA co.</div>
+    
     </footer>
+
   );
 }
 

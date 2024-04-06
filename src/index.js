@@ -17,31 +17,40 @@ import Review from "./pages/review.js";
 import Citations from "./pages/citations.js";
 import SignIn from "./pages/signIn.js";
 import SignUp from "./pages/signUp.js";
+import Error from "./pages/error.js";
 import { SpacingCont } from "./pages/qualityOfLife";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <OffCanvas/>
-    <Router>
-      <NavBar
-        id="navbar"
-        clas="navbar navbar-expand-lg navbar-dark fixed-top"
-      />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/jobListings" element={<JobListing />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Apply" element={<Apply />} />
-        <Route path="/Review" element={<Review />} />
-        <Route path="/Citations" element={<Citations />} />
-        <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/SignUp" element={<SignUp />} />
-      </Routes>
-      <Footer />
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root"),
-);
+try {
+  ReactDOM.render(
+    <React.StrictMode>
+      <OffCanvas/>
+      <Router>
+        <NavBar
+          id="navbar"
+          clas="navbar navbar-expand-lg navbar-dark fixed-top"
+        />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/jobListings" element={<JobListing />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Apply" element={<Apply />} />
+          <Route path="/Review" element={<Review />} />
+          <Route path="/Citations" element={<Citations />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </React.StrictMode>,
+    document.getElementById("root"),
+  );
+} catch(e) {
+  console.log(e);
+  const container = document.getElementById('root');
+  const root = ReactDOM.createRoot(container);
+  root.render(<Error />)
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
