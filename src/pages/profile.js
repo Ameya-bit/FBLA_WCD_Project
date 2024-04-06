@@ -26,7 +26,7 @@ const jobListings = () => {
         <div class="d-flex justify-content-center">
           <div class="col-12">
             <h1 class="d-flex justify-content-center shaded round">
-              Welcome to your Profile
+              Current Applications
             </h1>
           </div>
         </div>

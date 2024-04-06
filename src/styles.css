@@ -157,7 +157,7 @@ a {
     text-align: center;
     margin: auto;
     width: 50%;
-    padding: 10px;
+
 }
 
 .leftbottom {
@@ -202,7 +202,9 @@ div.card {
   font-family: "Nunito";
 }
 
-
+.homeheight {
+  height: 100%;
+}
 
 .padd {
   padding: 20px;

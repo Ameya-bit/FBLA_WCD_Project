@@ -14,11 +14,10 @@ const Home = () => {
 
 
       <SpacingCont amount="15" />
-      <div class="">
+      <div class="homeheight">
         <div class="shaded hundredWidth padd">
           <div class="">
             <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
-
           </div>
 
           {/* Greeting with inputs */}
@@ -90,19 +89,15 @@ const Home = () => {
         <div class="card-columns col-12 d-flex justify-content-center ">
           <Image pic1={addedRecom} imgclas="round breaks" clas="padd" />
           <div class="col-6 ">
-            <SpacingCont amount="1" />
+            <SpacingCont amount="2" />
+            
             <h3 class="d-flex justify-content-center padd">
-              - We are proud of our immense workforce, and they share the same
-              pride about their jobs
+              - Find your perfect job match with ease. 
+              Filter and apply to a diverse range of opportunities that align with your preferences,
+            consult with our dedicated employers and employees, take advantage of our AI assistance,
+             and take the first step towards a rewarding career at MYRYA.
             </h3>
-            <h3 class="d-flex justify-content-center padd">
-              <em>
-                Working at MYRYA is so gratifying! The people are nice, the
-                projects are groundbreaking, and yet I never feel overworked!
-              </em>
-            </h3>
-            <h3 class="d-flex justify-content-end padd">- Anonymous</h3>
-            <SpacingCont amount="1" />
+            
           </div>
         </div>
         <SpacingCont amount="2" />
@@ -112,7 +107,7 @@ const Home = () => {
         <SpacingCont amount="2" />
         <div class="d-flex justify-content-center padd">
           <div id="cards" class="card-columns col-12">
-            <JobPush end="3" moreInfo="false" />
+            <JobPush end="3" moreInfo="true" />
           </div>
         </div>
       </div>
@@ -122,26 +117,25 @@ const Home = () => {
           <Image
             pic1={resumeCheck}
             text=""
-            clas="container padd"
+            clas=" newcenter"
             imgclas="round"
             textclas=""
           />
-          <div>
+          <div class="col-4">
             <SpacingCont amount="1" />
             <h2 class="d-flex justify-content-center padd">Discover</h2>
-            <h3 class="d-flex justify-content-center padd">
-              It is okay if you are unsure about us, and so you can consult our
-              various employees on what is right for you
+            <h3 class="">
+              We know the importance of finding the right job, and so it is ok to be a little skeptic.
             </h3>
-            <h3 class=" padd">
-              We offer many services at our company, such as:
+            <h3 class="">
+              Feel free to explore, investigate, and consider us: 
             </h3>
-            <div class="padd">
-              <h3> - Healthcare</h3>
-              <h3> - Retirement plans (401k...)</h3>
-              <h3> - Tuition Reimbursement</h3>
-              <h3> - And More!</h3>
-            </div>
+            <ul class="padd">
+              <li><h5>Detailed information about your benefits as a MYRYA employee</h5></li>
+              <li><h5>Detailed information about our jobs and departments to inform your decision</h5></li>
+              <li><h5>Converse with existing employees and employers</h5></li>
+              <li><h5>And More!</h5></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -153,10 +147,10 @@ const Home = () => {
         <div class="card-columns col-12 d-flex justify-content-center">
           <div class="col-6">
             <h3 class="d-flex justify-content-center padd">
-              - We understand that you have a busy day, and
+              - As a MYRYA applicant, you can keep track of application updates in your profile.
             </h3>
             <h3 class="d-flex justify-content-center padd">
-              - We offer salary raises and promotions frequently to encourage
+              - As a MYRYA employee, we offer salary raises and promotions frequently to encourage
               our workers to do their best. We want you to realize your true
               potential!
             </h3>
