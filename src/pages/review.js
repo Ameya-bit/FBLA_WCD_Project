@@ -34,13 +34,13 @@ const Review = () => {
       <SpacingCont amount="2"/>
       <div class="">
         <div class=" d-flex justify content padd">
-          <div class="padd col-9">
+          <div class="padd col">
 
             <div class="shadePurple round padd">
               <h1 class="d-flex justify-content-center padd">Our various Benefits</h1>
               <div class="padd">
-                <div class="gallery-wrap  ">
-                  <div class="item item-5 padd">
+                <div class="gallery-wrap tab ">
+                  <div class="item item-5 padd col-6">
                     <div class="shadedEdit round ">
                       <h3 class="padd   ">Competitive Salary & Robust Benefits</h3>
                       <div class="itemtext  round">
@@ -54,7 +54,7 @@ const Review = () => {
                     </div>
 
                   </div>
-                  <div class="item item-6 padd">
+                  <div class="item item-6 padd col-6">
                     <div class="shadedEdit round">
                       <h3 class="padd   ">Work-Life Balance & Well-being</h3>
                       <div class="itemtext   ">
@@ -68,7 +68,7 @@ const Review = () => {
                     </div>
 
                   </div>
-                  <div class="item item-7 padd">
+                  <div class="item item-7 padd col-6">
                     <div class="shadedEdit round">
                       <h3 class="padd   ">Professional Development & Growth</h3>
                       <div class="itemtext  ">
@@ -81,7 +81,7 @@ const Review = () => {
                     </div>
 
                   </div>
-                  <div class="item item-8 padd">
+                  <div class="item item-8 padd col-6">
                     <div class="shadedEdit round ">
                       <h3 class="padd   ">Modern Work Environment & Company Culture</h3>
                       <div class="itemtext  ">
@@ -106,7 +106,7 @@ const Review = () => {
                 </h1>
               </div>
               <div class="containerNew">
-                <div class="gallery-wrap padd">
+                <div class="gallery-wrap padd tab">
                   <div class="item item-1 padd">
                     <div class="shaded round">
                     <h3 class="bluetext  padd round">Software</h3>
@@ -169,7 +169,7 @@ const Review = () => {
 
           </div>
 
-          <div class="padd col-3">
+          <div class="padd col-3 hid">
 
             <div class="shadedEdit round padd">
               <h3 class="d-flex justify-content-center padd">Hear from our Employees!</h3>
