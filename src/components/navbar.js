@@ -263,6 +263,9 @@ function Footer() {
                 <a href="/SignIn" class="text-reset">Sign In</a>
               </p>
               <p>
+                <a href="/Citations" class="text-reset">works cited</a>
+              </p>
+              <p>
                 <a href="/" class="text-reset">Help</a>
               </p>
             </div>

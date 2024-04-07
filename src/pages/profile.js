@@ -18,11 +18,13 @@ import User from "./img/user.jpg";
 const jobListings = () => {
   var applic = DataPush();
   var user = getCurrentUser();
+  console.log(user);
   let reviews = RetrieveDataset("JobLIst", 30);
   if (user && applic.length > 0) {
     return (
       <div class="main">
         <SpacingCont amount="7" />
+
         <div class="d-flex justify-content-center">
           <div class="col-12">
             <h1 class="d-flex justify-content-center shaded round">

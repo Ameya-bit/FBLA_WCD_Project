@@ -9,11 +9,22 @@ import {
   signInUser,
 } from "../components/supabase.js";
 
+const queryParameters = new URLSearchParams(window.location.search);
+let appNum = queryParameters.get("applicationNumber");
+
 const SignIn = () => {
-  function signInTheUser() {
+  async function signInTheUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    signInUser(email, password);
+    const user = await signInUser(email, password);
+    if(user != 0) {
+      if(appNum) {
+        window.location.assign("/Apply?applicationNumber=" + appNum);
+      } else {
+        window.location.assign("/Profile");
+      }
+    }
+    
   }
   return (
     <div class="main">
@@ -21,6 +32,7 @@ const SignIn = () => {
       <div class="container shaded round col-8 center ">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Sign In </h2>
+        <a href="/SignUp" class="text-reset d-flex justify-content-center">Or create an account</a>
         <div id="error" class=" d-flex justify-content-center"></div>
         <div class="d-flex justify-content-center">
           <div class="padd col-6">

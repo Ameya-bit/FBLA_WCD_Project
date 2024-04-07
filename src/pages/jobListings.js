@@ -102,7 +102,7 @@ const jobListings = () => {
             </div>
           </div>
 
-          <div class="col-xl-8 standHeight mx-auto mb-4">
+          <div class="col-xl-8  mx-auto mb-4">
             <SpacingCont amount="1" />
             <JobFullData />
           </div>
@@ -160,7 +160,7 @@ function JobFullData() {
   } else {
     var act = i - 1;
     return (
-      <div id="filters" class="standHeight container round shaded padd">
+      <div id="filters" class=" container round shaded padd">
         <div class="padd">
           <h1 class="d-flex justify-content-center padd">
             {reviews[act]["job_title"]}
