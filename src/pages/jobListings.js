@@ -87,9 +87,9 @@ const jobListings = () => {
           </div>
         </div>
         <div class="d-flex justify-content-center padd" style={{ height: 870 }}>
-          <div>
+          <div class="breaks col-4">
             <SpacingCont amount="1" />
-            <div class="shadePurple container round standHeight col">
+            <div class="shadePurple container round standHeight">
               <div id="jobslist" class=" container round scroll padd">
                 <JobPush
                   end="199"
@@ -102,7 +102,7 @@ const jobListings = () => {
             </div>
           </div>
 
-          <div class="col standHeight">
+          <div class="col right standHeight breaks ">
             <SpacingCont amount="1" />
             <JobFullData />
           </div>
