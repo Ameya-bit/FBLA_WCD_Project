@@ -58,12 +58,16 @@ const Review = () => {
     let password = document.getElementById("password").value;
     signInUser(email, password);
   }
+  const link = "/SignIn?applicationNumber=" + appNum
   return (
     <div class="main">
       <SpacingCont amount="7" />
       <div class="container shaded round col-8  ">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Create Your Account: </h2>
+ 
+          <a href={link} class="text-reset d-flex justify-content-center">Or log into an existing account</a>
+ 
         <div class="d-flex justify-content-center">
           <div id="error" class="" />
         </div>

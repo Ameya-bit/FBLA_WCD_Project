@@ -66,9 +66,8 @@ async function signInUser(email, pass) {
     document.getElementById("error").innerHTML =
       "<div id='error' class='alert alert-danger col-4 round' role='alert'>Incorrect Login Credentials!</div>";
     document.documentElement.scrollTop = 0;
-  } else if (data) {
-    window.location.assign("/profile");
-  }
+    return 0;
+  } 
 }
 
 function getCurrentUser() {
