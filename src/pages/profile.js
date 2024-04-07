@@ -33,7 +33,7 @@ const jobListings = () => {
         <div class="d-flex justify-content-center">
           <div class="shaded round padd col-6">
             <br></br>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center tab">
               <table class="">
                 <thead class="">
                   <tr>
@@ -246,6 +246,7 @@ function GetResume(user) {
 }
 
 const AIRecom = ({ user, reviews }) => {
+  try{
   const [recom, setRecom] = useState("");
   var savedjobs = user["savedJobs"];
   let jobsString = "";
@@ -337,6 +338,9 @@ const AIRecom = ({ user, reviews }) => {
       </div>
     )
   }
+} catch (e) {
+  window.location.assign("/error")
+}
 
 
 

@@ -51,15 +51,25 @@ nav#navbar {
   font-size: 20px !important;
 }
 
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 @media only screen and (max-width: 1320px) {
   /* For mobile phones: */
   [class*="col"] {
-    max-width: 100% !important;
+    width: 100% !important;
   }
   [class*="tab"] {
     overflow-x: auto;
     white-space: nowrap;
     width: 100%;
+  }
+  [class*="gallery-wrap"] {
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
 

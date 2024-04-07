@@ -38,6 +38,7 @@ try {
           <Route path="/Citations" element={<Citations />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
         <Footer />
       </Router>
