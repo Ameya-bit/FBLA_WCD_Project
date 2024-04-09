@@ -17,14 +17,13 @@ const SignIn = () => {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     const user = await signInUser(email, password);
-    if(user != 0) {
-      if(appNum) {
+    if (user != 0) {
+      if (appNum) {
         window.location.assign("/Apply?applicationNumber=" + appNum);
       } else {
         window.location.assign("/Profile");
       }
     }
-    
   }
   return (
     <div class="main">
@@ -32,7 +31,9 @@ const SignIn = () => {
       <div class="container shaded round col-8 center ">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Sign In </h2>
-        <a href="/SignUp" class="text-reset d-flex justify-content-center">Or create an account</a>
+        <a href="/SignUp" class="text-reset d-flex justify-content-center">
+          Or create an account
+        </a>
         <div id="error" class=" d-flex justify-content-center"></div>
         <div class="d-flex justify-content-center">
           <div class="padd col-6">
@@ -55,7 +56,6 @@ const SignIn = () => {
                 Sign In
               </button>
             </div>
-
           </div>
         </div>
 

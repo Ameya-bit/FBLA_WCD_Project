@@ -53,7 +53,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
           emp={"Job Type: " + dataset[i]["employment_type"]}
           desc={"Description: " + dataset[i]["job_desc"]}
           link={dataset[i]["job_id"]}
-        />,
+        />
       );
     } else {
       send.push(
@@ -61,11 +61,19 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
           title={iInc + ". " + dataset[i]["job_title"]}
           loc={"Department: " + dataset[i]["department"]}
           link={dataset[i]["job_id"]}
-        />,
+        />
       );
     }
   }
-  return send;
+  if (send.length > 0) {
+    return send;
+  } else {
+    return (
+      <h3 class="newcenter padd">
+        Sorry, but it seems that no jobs fit your search parameters
+      </h3>
+    );
+  }
 }
 
 function StatusCard({

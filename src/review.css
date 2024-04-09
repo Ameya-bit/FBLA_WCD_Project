@@ -10,15 +10,11 @@
   height: 65vh;
 }
 
-
-
 .itemtext {
   display: none;
 
-
   .item:hover {
     display: block;
-    
   }
 }
 
@@ -38,12 +34,10 @@
   transition: flex 0.8s ease;
   border-radius: 50px;
 
-
   &:hover {
     flex: 7;
     .itemtext {
       display: block;
-
     }
   }
 }

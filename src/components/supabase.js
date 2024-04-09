@@ -6,16 +6,19 @@ const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 function getResume(file) {
-  const { data } = supabase.storage.from('Resumes').getPublicUrl(file)
+  const { data } = supabase.storage.from("Resumes").getPublicUrl(file);
 
-  console.log(data.publicUrl)
+  console.log(data.publicUrl);
 }
 
 function RetrieveDataset(dataset, range) {
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
-    let { data, error } = await supabase.from(dataset).select().range(0, range);
+    let { data, error } = await supabase
+      .from(dataset)
+      .select()
+      .range(0, range);
     setReviews(data);
   }
 
@@ -67,7 +70,7 @@ async function signInUser(email, pass) {
       "<div id='error' class='alert alert-danger col-4 round' role='alert'>Incorrect Login Credentials!</div>";
     document.documentElement.scrollTop = 0;
     return 0;
-  } 
+  }
 }
 
 function getCurrentUser() {
@@ -114,5 +117,5 @@ export {
   getCurrentUser,
   signOutUser,
   signInUser,
-  getResume
+  getResume,
 };

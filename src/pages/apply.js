@@ -17,7 +17,6 @@ const Apply = () => {
   let userData = getCurrentUser();
   const date = new Date();
 
-  const [user, setUser] = useState("");
   let reviews = RetrieveDataset("JobLIst", 9);
 
   var act = i - 1;
@@ -120,8 +119,6 @@ const Apply = () => {
           <SpacingCont amount="2" />
           <div class="d-flex justify-content-center">
             <div class="padd ">
-              
-              
               <SpacingCont amount="3" />
               <h3 class="d-flex justify-content-center padd">
                 Anything You Want To Highlight For Our Team:{" "}

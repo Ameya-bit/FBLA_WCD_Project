@@ -41,7 +41,11 @@ const jobListings = () => {
           </div>
 
           <div class="containerAdd container padd d-flex justify-content-center">
-            <select name="cars" class="shaded round shadeWhite col" id="filtCat">
+            <select
+              name="cars"
+              class="shaded round shadeWhite col"
+              id="filtCat"
+            >
               <Inputs
                 ids="filtCat"
                 name="Job Title"
@@ -51,7 +55,11 @@ const jobListings = () => {
                 value=""
               />
             </select>
-            <select name="cars" class="shaded round shadeWhite col" id="filtType">
+            <select
+              name="cars"
+              class="shaded round shadeWhite col"
+              id="filtType"
+            >
               <Inputs
                 ids="filtType"
                 name="Type"
@@ -118,7 +126,7 @@ const getData = () => {
   location = document.getElementById("filtLoc").value;
   type = document.getElementById("filtType").value;
   keyword = document.getElementById("filtKey").value;
-  if(i == null){
+  if (i == null) {
     i = 0;
   }
   window.location.assign(
@@ -131,7 +139,7 @@ const getData = () => {
       "&type=" +
       type +
       "&keyword=" +
-      keyword,
+      keyword
   );
 };
 
@@ -189,7 +197,7 @@ function JobFullData() {
           <SpacingCont amount="3" />
           <div class="d-flex justify-content-center">
             <Button
-              link={"/Apply?applicationNumber=" + i}
+              link={"/SignUp?applicationNumber=" + i}
               clas="-primary btn-lg col-8 "
               name="Apply Now"
             />
@@ -201,4 +209,4 @@ function JobFullData() {
 }
 
 export default jobListings;
-export {getData};
+export { getData };
