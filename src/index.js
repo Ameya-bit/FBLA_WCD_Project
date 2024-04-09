@@ -23,7 +23,7 @@ import { SpacingCont } from "./pages/qualityOfLife";
 try {
   ReactDOM.render(
     <React.StrictMode>
-      <OffCanvas/>
+      <OffCanvas />
       <Router>
         <NavBar
           id="navbar"
@@ -43,15 +43,14 @@ try {
         <Footer />
       </Router>
     </React.StrictMode>,
-    document.getElementById("root"),
+    document.getElementById("root")
   );
-} catch(e) {
+} catch (e) {
   console.log(e);
-  const container = document.getElementById('root');
+  const container = document.getElementById("root");
   const root = ReactDOM.createRoot(container);
-  root.render(<Error />)
+  root.render(<Error />);
 }
-
 
 ReactDOM.render(
   <React.StrictMode>
@@ -59,5 +58,5 @@ ReactDOM.render(
       <AIintegrate></AIintegrate>
     </Router>
   </React.StrictMode>,
-  document.getElementById("chatGPTintegrate"),
+  document.getElementById("chatGPTintegrate")
 );

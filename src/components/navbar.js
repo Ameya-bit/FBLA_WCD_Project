@@ -34,12 +34,20 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
           </ul>
           <div class="col-3 d-flex justify-content-end padd">
             <SignInOrOut />
-            <button class="btn glass" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-              <img src="https://i.pinimg.com/originals/a2/cb/9a/a2cb9abc2a55211dda256cd2f3193b17.png" width="25" height="25"/>
+            <button
+              class="btn glass"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <img
+                src="https://i.pinimg.com/originals/a2/cb/9a/a2cb9abc2a55211dda256cd2f3193b17.png"
+                width="25"
+                height="25"
+              />
             </button>
           </div>
-
-
         </div>
       </div>
     </nav>
@@ -71,8 +79,6 @@ function SignInOrOut() {
     );
   }
 }
-
-
 
 function NavBarLinks({ name, link }) {
   return (
@@ -113,7 +119,7 @@ function Card({
   if (button == "no") {
     return (
       <div
-        class={"card round " + clas + " " + shadedOrNot}
+        class={"card round col-lg " + clas + " " + shadedOrNot}
         style={{ height: height }}
       >
         <div class="card-body padd">
@@ -129,7 +135,7 @@ function Card({
   } else {
     return (
       <div
-        class={"card round " + clas + " " + shadedOrNot}
+        class={"card round col-lg " + clas + " " + shadedOrNot}
         style={{ height: height }}
       >
         <div class="card-body padd">
@@ -203,13 +209,13 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
         returnVal.push(
           <option class="shadeWhite breaks" value="">
             {name}
-          </option>,
+          </option>
         );
       }
       returnVal.push(
         <option class="bluetext breaks" value={values[value]}>
           {values[value]}
-        </option>,
+        </option>
       );
     }
     return returnVal;
@@ -218,7 +224,9 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
       <input
         id={ids}
         type={type}
-        class={"form-control shaded round shadeWhite breaks form-control-lg " + clas}
+        class={
+          "form-control shaded round shadeWhite breaks form-control-lg " + clas
+        }
         placeholder={name}
       />
     );
@@ -227,73 +235,65 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
 
 function Footer() {
   return (
-  
     <footer class="text-center text-lg-start shadePurple text-muted">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
 
-      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-     
-  
-      </section>
-      
       <section class="">
         <div class="container text-center text-md-start mt-5">
-    
           <div class="row mt-3">
-        
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-        
-              <h6 class="text-uppercase fw-bold mb-4">
-                MYRYA Co.
-              </h6>
-              <p>
-                We are a company that specializes in many fields.
-              </p>
+              <h6 class="text-uppercase fw-bold mb-4">MYRYA Co.</h6>
+              <p>We are a company that specializes in many fields.</p>
             </div>
-     
-            
+
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-         
-              <h6 class="text-uppercase fw-bold mb-4">
-                Useful links
-              </h6>
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="/SignUp" class="text-reset">Sign Up</a>
+                <a href="/SignUp" class="text-reset">
+                  Sign Up
+                </a>
               </p>
               <p>
-                <a href="/SignIn" class="text-reset">Sign In</a>
+                <a href="/SignIn" class="text-reset">
+                  Sign In
+                </a>
               </p>
               <p>
-                <a href="/Citations" class="text-reset">works cited</a>
+                <a href="/Citations" class="text-reset">
+                  works cited
+                </a>
               </p>
               <p>
-                <a href="/" class="text-reset">Help</a>
+                <a href="/" class="text-reset">
+                  Help
+                </a>
               </p>
             </div>
-           
+
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-         
               <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-              <p><i class="fas fa-home me-3"></i> Some City, SS 00000, Some Country</p>
+              <p>
+                <i class="fas fa-home me-3"></i> Some City, SS 00000, Some
+                Country
+              </p>
               <p>
                 <i class="fas fa-envelope me-3"></i>
                 info@myrya.com
               </p>
-              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+              <p>
+                <i class="fas fa-phone me-3"></i> + 01 234 567 88
+              </p>
+              <p>
+                <i class="fas fa-print me-3"></i> + 01 234 567 89
+              </p>
             </div>
-  
           </div>
-      
         </div>
       </section>
-   
-      <div class="text-center p-4" >
-        Myrya Co.
-      </div>
-    
-    </footer>
 
+      <div class="text-center p-4">Myrya Co.</div>
+    </footer>
   );
 }
 
-export { Card, Image, Inputs,  Button, Footer };
+export { Card, Image, Inputs, Button, Footer };

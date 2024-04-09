@@ -1,9 +1,17 @@
 import { SpacingCont } from "./qualityOfLife";
 import { Card } from "./navbar";
 
-function ReviewCard({ pic1, title, text, rating, employee, clas, contact, condense }) {
+function ReviewCard({
+  pic1,
+  title,
+  text,
+  rating,
+  employee,
+  clas,
+  contact,
+  condense,
+}) {
   return (
-
     <div class={" round transparent padd  " + clas}>
       <hr></hr>
       <div class=" padd">
@@ -14,10 +22,7 @@ function ReviewCard({ pic1, title, text, rating, employee, clas, contact, conden
         </div>
       </div>
     </div>
-
   );
-
-
 }
 
 function ReviewPush({ data, start, len }) {
@@ -39,7 +44,7 @@ function ReviewPush({ data, start, len }) {
         rating={data[i]["Overall ratting"] + " stars"}
         employee="John Doe"
         contact="johnDoe@myrya.com"
-      />,
+      />
     );
   }
   return sendReview;

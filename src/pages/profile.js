@@ -1,6 +1,6 @@
 import React from "react";
 import { SpacingCont } from "../components/qualityOfLife";
-import { generateResponse, createEmbedding } from "../components/myrical.js"
+import { generateResponse, createEmbedding } from "../components/myrical.js";
 import { Inputs, Card } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs";
 const { Configuration, OpenAIApi } = require("openai");
@@ -11,20 +11,72 @@ import {
   setUserData,
   signInUser,
   getCurrentUser,
-  getResume
+  getResume,
 } from "../components/supabase.js";
 import User from "./img/user.jpg";
 
 const jobListings = () => {
+  const [upd, getUpd] = useState();
+  const [app, getApp] = useState();
   var applic = DataPush();
   var user = getCurrentUser();
+  const reviews = RetrieveDataset("JobLIst", 30);
   console.log(user);
-  let reviews = RetrieveDataset("JobLIst", 30);
+
+  var webUpdates =
+    "Generate an update message for the following upcoming features to a job search website: ability to save jobs for later, retrieval augmented generation implemented into a chatbot, " +
+    "resume-based job recommendations, and resume help. Generate a short description for each feature. Keep the message under 100 words in a single paragraph.";
+
+  var yourApp =
+    "In the context of helping a job applicant, named Ameya, with their search and application to several jobs within one company (called MYRYA), this applicant has applied to 8 jobs and needs to submit resumes to 3 of them, needs to attend interviews" +
+    "for 2 of them, missed an interview for one of them and needs to reschedule, and is awaiting interview results of 2 of them. Generate a message for next steps that the applicant should follow and how they." +
+    "can prepare. Keep the message under 100 words in a single paragraph. ";
+
+  async function webUpd(message) {
+    var recommendations = await generateResponse(message);
+    getUpd(recommendations);
+  }
+
+  async function appUpd(message) {
+    var recommendations = await generateResponse(message);
+    getApp(recommendations);
+  }
+
+  useEffect(() => {
+    webUpd(webUpdates);
+    appUpd(yourApp);
+  }, []);
+
   if (user && applic.length > 0) {
     return (
       <div class="main">
-        <SpacingCont amount="7" />
+        <SpacingCont amount="5" />
+        <div class="padd">
+          <div class="d-flex justify-content-center">
+            <div class="col-12">
+              <h1 class="d-flex justify-content-center shaded round">
+                Welcome to your Profile,{" "}
+                {user["first_name"] + " " + user["last_name"]}
+              </h1>
+            </div>
+          </div>
+          <div class=" round padd col">
+            <div class="row mt-3 padd">
+              <div class="shaded round padd col">
+                <h1 class="padd d-flex justify-content-center col-lg">
+                  Your next Steps:{" "}
+                </h1>
+                <h3 class="padd">{app}</h3>
+              </div>
+              <div class="shaded round padd col-lg">
+                <h1 class="padd d-flex justify-content-center">Myrical News</h1>
+                <h3 class="padd">{upd}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <SpacingCont amount="3" />
         <div class="d-flex justify-content-center">
           <div class="col-12">
             <h1 class="d-flex justify-content-center shaded round">
@@ -33,7 +85,7 @@ const jobListings = () => {
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <div class="shaded round padd col-6">
+          <div class="shaded round padd col-8">
             <br></br>
             <div class="d-flex justify-content-center tab">
               <table class="">
@@ -62,7 +114,7 @@ const jobListings = () => {
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <div class="shaded round col-8">
+          <div class="shaded round col-8 padd">
             <SavedJobs user={user} />
           </div>
         </div>
@@ -79,7 +131,6 @@ const jobListings = () => {
             <AIRecom user={user} reviews={reviews} />
           </div>
         </div>
-        <GetResume user={user}></GetResume>
         <SpacingCont amount="3" />
       </div>
     );
@@ -133,46 +184,40 @@ const jobListings = () => {
   }
 };
 
-
-
 function SavedJobs(user) {
   let reviews = RetrieveDataset("JobLIst", 30);
   let retSav = [];
-  let saved_job = user["user"]["savedJobs"]
+  let saved_job = user["user"]["savedJobs"];
 
   if (reviews) {
-
     for (let i = 0; i < saved_job.length; i += 3) {
       retSav.push(
-        <div class="card-columns">
+        <div class="row mt-3 padd">
           <Card
             title={reviews[saved_job[i]]["job_title"]}
             loc={"Location: " + reviews[saved_job[i]]["location"]}
             emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
             desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
-            clas="padd"
+            clas="padd col-lg"
           />
           <Card
             title={reviews[saved_job[i + 1]]["job_title"]}
             loc={"Location: " + reviews[saved_job[i + 1]]["location"]}
             emp={"Job Type: " + reviews[saved_job[i + 1]]["employment_type"]}
             desc={"Description: " + reviews[saved_job[i + 1]]["job_desc"]}
-            clas="padd"
+            clas="padd col-lg"
           />
           <Card
             title={reviews[saved_job[i + 2]]["job_title"]}
             loc={"Location: " + reviews[saved_job[i + 2]]["location"]}
             emp={"Job Type: " + reviews[saved_job[i + 2]]["employment_type"]}
             desc={"Description: " + reviews[saved_job[i + 2]]["job_desc"]}
-            clas="padd"
+            clas="padd col-lg"
           />
         </div>
-
       );
     }
   }
-
-
 
   if (retSav) {
     return retSav;
@@ -228,7 +273,7 @@ function DataPush() {
             {apps[i]["deadline_assoc"]} by {apps[i]["deadlines"]}
           </td>
           <td>{apps[i]["status"]}</td>
-        </tr>,
+        </tr>
       );
     }
   }
@@ -238,120 +283,116 @@ function DataPush() {
   }
 }
 
-function GetResume(user) {
-  let file = user["user"]["Resume"];
+function getTheResume(user) {
+  let file = user["Resume"];
   let filepath = getResume(file);
 
-  return (
-    <embed src={filepath} width="800px" height="2100px" />
-  );
+  return filepath;
 }
 
 const AIRecom = ({ user, reviews }) => {
-  try{
   const [recom, setRecom] = useState("");
   var savedjobs = user["savedJobs"];
   let jobsString = "";
   let totalJobsString = "";
 
-  for (let k = 0; k < reviews.length; k++) {
-    totalJobsString += reviews[k]["job_title"] + ", ";
-  }
-
-  for (let i = 0; i < savedjobs.length; i++) {
-    jobsString += i + ": " + reviews[savedjobs[i]]["job_title"] + ",  ";
-  }
-
-  var getRecommendedJobs = "Based on the applicants saved jobs:  " + jobsString + ", recommend 3 similar jobs from this main list: " + totalJobsString + ", that are not already in the applicants saved jobs." +
-    "Before your response, write only the corresponding numbers, according to the main list, of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon." +
-    "For the response, explain why for each similar job. Label each explanation as 1, 2, 3.";
-
-  async function recomJobs(message) {
-    var recommendations = await generateResponse(message);
-    setRecom(recommendations)
-  }
-
-  useEffect(() => {
-    recomJobs(getRecommendedJobs);
-  }, []);
-
-  if (recom != "") {
-    var recomArr = recom.split(";");
-    var recom1 = recomArr[0];
-    var recom2 = recomArr[1];
-    var recom3 = recomArr[2];
-    var explain = recomArr[3];
-
-    var explain3 = explain.split("3.")[1];
-    var explain1 = explain.split("3.")[0].split("2.")[1];
-    var explain2 = explain.split("3.")[0].split("2.")[0].split("1.")[1];
-
-    if (!explain1 || !explain2 || !explain3) {
-      return (
-        <h3>There was an issue loading recommendations. Please reload the page.</h3>
-      )
+  try {
+    for (let k = 0; k < reviews.length; k++) {
+      totalJobsString += reviews[k]["job_title"] + ", ";
     }
-    else {
+    console.log(reviews);
+    for (let i = 0; i < savedjobs.length; i++) {
+      jobsString += i + ": " + reviews[savedjobs[i]]["job_title"] + ",  ";
+    }
+
+    var getRecommendedJobs =
+      "Based on the applicants saved jobs (which are jobs that the applicant is interested in):  " +
+      jobsString +
+      ", recommend 3 similar jobs from this main list: " +
+      totalJobsString +
+      ", that are not already in the applicants saved jobs." +
+      "Before your response, write only the corresponding numbers, according to the main list, of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon." +
+      "For the response, explain how these jobs are similar to their interests, and why the applicant should consider each job. Label each explanation as 1, 2, 3.";
+
+    async function recomJobs(message) {
+      var recommendations = await generateResponse(message);
+      setRecom(recommendations);
+    }
+
+    useEffect(() => {
+      recomJobs(getRecommendedJobs);
+    }, []);
+
+    if (recom != "") {
+      var recomArr = recom.split(";");
+      var recom1 = recomArr[0];
+      var recom2 = recomArr[1];
+      var recom3 = recomArr[2];
+      var explain = recomArr[3];
+
+      var explain3 = explain.split("3.")[1];
+      var explain1 = explain.split("3.")[0].split("2.")[1];
+      var explain2 = explain
+        .split("3.")[0]
+        .split("2.")[0]
+        .split("1.")[1];
+
+      if (!explain1 || !explain2 || !explain3) {
+        return (
+          <h3>
+            There was an issue loading recommendations. Please reload the page.
+          </h3>
+        );
+      } else {
+        return (
+          <div>
+            <div class="row mt-3 padd">
+              <Card
+                title={reviews[recom1]["job_title"]}
+                loc={"Location: " + reviews[recom1]["location"]}
+                emp={"Job Type: " + reviews[recom1]["employment_type"]}
+                desc={"Description: " + reviews[recom1]["job_desc"]}
+                clas="padd col-lg"
+              />
+              <Card
+                title={reviews[recom2]["job_title"]}
+                loc={"Location: " + reviews[recom2]["location"]}
+                emp={"Job Type: " + reviews[recom2]["employment_type"]}
+                desc={"Description: " + reviews[recom2]["job_desc"]}
+                clas="padd col-lg"
+              />
+              <Card
+                title={reviews[recom3]["job_title"]}
+                loc={"Location: " + reviews[recom3]["location"]}
+                emp={"Job Type: " + reviews[recom3]["employment_type"]}
+                desc={"Description: " + reviews[recom3]["job_desc"]}
+                clas="padd col-lg"
+              />
+            </div>
+            <br />
+            <h3 class=" padd">{explain1}</h3>
+            <br />
+            <h3 class=" padd">{explain2}</h3>
+            <br />
+            <h3 class=" padd">{explain3}</h3>
+          </div>
+        );
+      }
+    } else {
       return (
         <div>
-          <div class="card-columns padd">
-            <Card
-              title={reviews[recom1]["job_title"]}
-              loc={"Location: " + reviews[recom1]["location"]}
-              emp={"Job Type: " + reviews[recom1]["employment_type"]}
-              desc={"Description: " + reviews[recom1]["job_desc"]}
-              clas="padd"
-            />
-            <Card
-              title={reviews[recom2]["job_title"]}
-              loc={"Location: " + reviews[recom2]["location"]}
-              emp={"Job Type: " + reviews[recom2]["employment_type"]}
-              desc={"Description: " + reviews[recom2]["job_desc"]}
-              clas="padd"
-            />
-            <Card
-              title={reviews[recom3]["job_title"]}
-              loc={"Location: " + reviews[recom3]["location"]}
-              emp={"Job Type: " + reviews[recom3]["employment_type"]}
-              desc={"Description: " + reviews[recom3]["job_desc"]}
-              clas="padd"
-            />
-          </div>
-          <br />
-          <h3 class=" padd">
-            {explain1}
-          </h3>
-          <br />
-          <h3 class=" padd">
-            {explain2}
-          </h3>
-          <br />
-          <h3 class=" padd">
-            {explain3}
-          </h3>
+          <h1>Your Recommendations are Loading...</h1>
         </div>
-      )
+      );
     }
-  }
-  else {
+  } catch (e) {
+    console.log(e);
     return (
-      <div>
-        <h1>Your Recommendations are Loading...</h1>
-      </div>
-    )
+      <h3>
+        There was an issue loading recommendations. Please reload the page.
+      </h3>
+    );
   }
-} catch (e) {
-  window.location.assign("/error")
-}
-
-
-
-
-
-}
-
-
-
-
+};
 
 export default jobListings;

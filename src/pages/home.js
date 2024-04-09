@@ -2,7 +2,7 @@ import React from "react";
 import { SpacingCont } from "./qualityOfLife";
 import { Card, Image, OffCanvas, Inputs, Button } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs.js";
-import { getData } from "./jobListings.js"
+import { getData } from "./jobListings.js";
 
 import addedRecom from "./img/addedRecom.jpg";
 import profilePers from "./img/profilePers.jpg";
@@ -11,18 +11,22 @@ import resumeCheck from "./img/resumeCheck.jpg";
 const Home = () => {
   return (
     <div class="main ">
-
-
       <SpacingCont amount="15" />
       <div class="homeheight">
         <div class="shaded hundredWidth padd">
           <div class="">
-            <h2 class="d-flex justify-content-center padd">Welcome to our Offices!</h2>
+            <h2 class="d-flex justify-content-center padd">
+              Start your career at MYRYA!
+            </h2>
           </div>
 
           {/* Greeting with inputs */}
           <div class="containerAdd container padd d-flex justify-content-center">
-            <select name="cars" class="shaded round col-lg shadeWhite" id="filtCat">
+            <select
+              name="cars"
+              class="shaded round col-lg shadeWhite"
+              id="filtCat"
+            >
               <Inputs
                 ids="filtCat"
                 name="Search Titles"
@@ -32,7 +36,11 @@ const Home = () => {
                 value=""
               />
             </select>
-            <select name="cars" class="shaded round shadeWhite col" id="filtType">
+            <select
+              name="cars"
+              class="shaded round shadeWhite col"
+              id="filtType"
+            >
               <Inputs
                 ids="filtType"
                 name="Search Types"
@@ -61,16 +69,16 @@ const Home = () => {
               type="text"
               value=""
             />
-
-
           </div>
           <div class="padd">
             <div class="d-flex justify-content-center padd">
-              <Button name="Start your Search" clas="-primary btn-lg" click={getData} />
-
+              <Button
+                name="Start your Search"
+                clas="-primary btn-lg"
+                click={getData}
+              />
             </div>
           </div>
-
         </div>
         <SpacingCont amount="9" />
         <div class="d-flex justify-content-center">
@@ -78,63 +86,72 @@ const Home = () => {
             <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
             <h3 class="d-flex justify-content-center"> ↓ </h3>
           </div>
-
         </div>
       </div>
-      <SpacingCont amount="5" />
+      <SpacingCont amount="10" />
       <div class="container shaded round col-8">
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center">Explore</h2>
         <SpacingCont amount="2" />
-        <div class="card-columns d-flex justify-content-center ">
-          <Image pic1={addedRecom} imgclas="round breaks" clas="padd" />
-          <div class="col-6 ">
-            <SpacingCont amount="2" />
-            
-            <h3 class="d-flex justify-content-center padd">
-              - Find your perfect job match with ease. 
-              Filter and apply to a diverse range of opportunities that align with your preferences,
-            consult with our dedicated employers and employees, take advantage of our AI assistance,
-             and take the first step towards a rewarding career at MYRYA.
+        <div class="row mt-3 padd">
+          <Image pic1={addedRecom} imgclas="round breaks" clas="padd col-lg" />
+          <div class="col ">
+            <h3 class=" padd col-lg">
+              - Centered Around You: Find your perfect job match with ease.
+              Filter and apply to a diverse range of opportunities that align
+              with your preferences, consult with our dedicated employers and
+              employees, take advantage of our AI assistance, and take the first
+              step towards a rewarding career at MYRYA.
             </h3>
-            
           </div>
         </div>
         <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">
-          Find great jobs!
-        </h2>
+        <h2 class="d-flex justify-content-center padd">Find great jobs!</h2>
         <SpacingCont amount="2" />
         <div class="d-flex justify-content-center padd">
-          <div id="cards" class="card-columns col-12">
+          <div id="cards" class="row mt-3 ">
             <JobPush end="3" moreInfo="true" />
           </div>
         </div>
       </div>
       <SpacingCont amount="7" />
       <div class=" shadePurple  ">
-        <div class="card-columns col-12 d-flex justify-content-center">
+        <div class="row mt-3 col-12 d-flex justify-content-center">
           <Image
             pic1={resumeCheck}
             text=""
-            clas=" newcenter col"
+            clas=" newcenter col-lg"
             imgclas="round"
             textclas=""
           />
-          <div class="col">
+          <div class="col-lg">
             <SpacingCont amount="1" />
             <h2 class="d-flex justify-content-center padd">Discover</h2>
             <h3 class="">
-              We know the importance of finding the right job, and so it is ok to be a little skeptic.
+              We know the importance of finding the right job, and so it is ok
+              to be a little skeptic.
             </h3>
             <h3 class="">
-              Feel free to explore, investigate, and consider us: 
+              Feel free to explore, investigate, and consider us:
             </h3>
             <ul class="padd">
-              <li><h5>Detailed information about your benefits as a MYRYA employee</h5></li>
-              <li><h5>Detailed information about our jobs and departments to inform your decision</h5></li>
-              <li><h5>Converse with existing employees and employers</h5></li>
-              <li><h5>And More!</h5></li>
+              <li>
+                <h5>
+                  Detailed information about your benefits as a MYRYA employee
+                </h5>
+              </li>
+              <li>
+                <h5>
+                  Detailed information about our jobs and departments to inform
+                  your decision
+                </h5>
+              </li>
+              <li>
+                <h5>Converse with existing employees and employers</h5>
+              </li>
+              <li>
+                <h5>And More!</h5>
+              </li>
             </ul>
           </div>
         </div>
@@ -144,18 +161,19 @@ const Home = () => {
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">Dashboard</h2>
         <SpacingCont amount="2" />
-        <div class="card-columns col-12 d-flex justify-content-center">
-          <div class="col-6">
+        <div class="row mt-3 col-12 d-flex justify-content-center">
+          <div class="col-lg-6">
             <h3 class="d-flex justify-content-center padd">
-              - As a MYRYA applicant, you can keep track of application updates in your profile.
+              - As a MYRYA applicant, you can keep track of application updates
+              in your profile.
             </h3>
             <h3 class="d-flex justify-content-center padd">
-              - As a MYRYA employee, we offer salary raises and promotions frequently to encourage
-              our workers to do their best. We want you to realize your true
-              potential!
+              - As a MYRYA employee, we offer salary raises and promotions
+              frequently to encourage our workers to do their best. We want you
+              to realize your true potential!
             </h3>
           </div>
-          <Image pic1={profilePers} imgclas="round" clas="padd" />
+          <Image pic1={profilePers} imgclas="round" clas="padd col-lg" />
         </div>
         <SpacingCont amount="2" />
         <h2 class="d-flex justify-content-center padd">
@@ -180,22 +198,19 @@ const Home = () => {
                   <th scope="row">1</th>
                   <td>Content Creator</td>
                   <td>5/23/2020</td>
-                  <td>
-                    Steve Bobs: stevebobs@company.com
-                  </td>
-                  <td>
-                    Resume due by 5/29/2020
-                  </td>
+                  <td>Steve Bobs: stevebobs@company.com</td>
+                  <td>Resume due by 5/29/2020</td>
                   <td>Ongoing</td>
                 </tr>
               </tbody>
               <br />
             </div>
           </div>
-
         </div>
-        <h3 class="newcenter padd">Know exactly where you are in your application, next steps, and more through our comprehensive table</h3>
-
+        <h3 class="newcenter padd">
+          Know exactly where you are in your application, next steps, and more
+          through our comprehensive table
+        </h3>
       </div>
 
       <div id="footer"></div>
