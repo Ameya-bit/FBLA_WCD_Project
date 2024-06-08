@@ -13,10 +13,14 @@
 .itemtext {
   display: none;
 
+
   .item:hover {
-    display: block;
+    display: block
   }
+
 }
+
+
 
 .shadedEdit {
   background-color: rgba(0, 0, 0, 0.5);
@@ -37,9 +41,17 @@
   &:hover {
     flex: 7;
     .itemtext {
+      animation: fadeIn 1s;
+      opacity: 100%;
       display: block;
     }
+    
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .item-1 {

@@ -3,6 +3,14 @@ import { SpacingCont } from "./qualityOfLife";
 import { Card, Image, OffCanvas, Inputs, Button } from "../components/navbar";
 import { JobPush, StatusCard } from "../components/jobs.js";
 import { getData } from "./jobListings.js";
+import {
+  supabase,
+  RetrieveDataset,
+  setUserData,
+  signInUser,
+  getCurrentUser,
+  getResume,
+} from "../components/supabase.js";
 
 import addedRecom from "./img/addedRecom.jpg";
 import profilePers from "./img/profilePers.jpg";
@@ -11,7 +19,7 @@ import resumeCheck from "./img/resumeCheck.jpg";
 const Home = () => {
   return (
     <div class="main ">
-      <SpacingCont amount="15" />
+      <SpacingCont amount="16" />
       <div class="homeheight">
         <div class="shaded hundredWidth padd">
           <div class="">
@@ -80,43 +88,72 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <SpacingCont amount="9" />
+      </div>
+      <SpacingCont amount="15" />
+      <div class=" round col-12">
+        <SpacingCont amount="2" />
+        <div class="newcenter round shaded col">
+          <h1 class="">Featured Departments: </h1>
+        </div>
+       
         <div class="d-flex justify-content-center">
-          <div class="col-3 shaded round ">
-            <h3 class="d-flex justify-content-center">Or Explore Downwards</h3>
-            <h3 class="d-flex justify-content-center"> ↓ </h3>
+        <div class="row mt-3 padd col-10">
+          <div class=" round padd">
+            <div class="md-3 row">
+              <div class="col padd">
+                <Card
+                  title="Software "
+                  img="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  desc="Join our Software Department, where innovation meets
+                          expertise in a dynamic environment. Dive into
+                          developing cutting-edge software solutions with a team
+                          that values creativity, agility, and pushing
+                          technological boundaries. Embrace the opportunity to
+                          be at the forefront of tech, continuously learning and
+                          redefining what's possible in the digital world."
+                  link="0"
+                  keys="Software"
+                />
+              </div>
+              <div class="col padd">
+                <Card
+                title="Healthcare "
+                  img="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  desc="Be part of our Healthcare Department, where technology
+                          and healthcare converge to improve lives. This team is
+                          pioneering new ways to enhance patient care and
+                          accessibility, offering you a chance to contribute to
+                          meaningful advancements in health outcomes. Your work
+                          here will directly impact creating a healthier future
+                          for everyone."
+                  link="0"
+                  keys="Healthcare"
+                />
+              </div>
+              <div class="col padd">
+                <Card
+                title="Marketing "
+                  img="https://images.unsplash.com/photo-1541537103745-ea3429c65dc4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  desc="Our Marketing Department is a creative powerhouse,
+                          where strategy and storytelling come together to
+                          amplify our brand's voice. Work on compelling
+                          campaigns and digital experiences that engage and
+                          inspire our global audience. If you're driven by
+                          innovation and connecting with people, join us to
+                          shape how the world sees our brand."
+                  link="0"
+                  keys="Marketing"
+                />
+              </div>
+            </div>
           </div>
         </div>
+        </div>
+
       </div>
-      <SpacingCont amount="10" />
-      <div class="container shaded round col-8">
-        <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center">Explore</h2>
-        <SpacingCont amount="2" />
-        <div class="row mt-3 padd">
-          <Image pic1={addedRecom} imgclas="round breaks" clas="padd col-lg" />
-          <div class="col ">
-            <h3 class=" padd col-lg">
-              - Centered Around You: Find your perfect job match with ease.
-              Filter and apply to a diverse range of opportunities that align
-              with your preferences, consult with our dedicated employers and
-              employees, take advantage of our AI assistance, and take the first
-              step towards a rewarding career at MYRYA.
-            </h3>
-          </div>
-        </div>
-        <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">Find great jobs!</h2>
-        <SpacingCont amount="2" />
-        <div class="d-flex justify-content-center padd">
-          <div id="cards" class="row mt-3 ">
-            <JobPush end="3" moreInfo="true" />
-          </div>
-        </div>
-      </div>
-      <SpacingCont amount="7" />
-      <div class=" shadePurple  ">
-        <div class="row mt-3 col-12 d-flex justify-content-center">
+      <SpacingCont amount="15" />
+      <div class=" shaded  ">
+        <div class="row mt-3 col-12 padd d-flex justify-content-center">
           <Image
             pic1={resumeCheck}
             text=""
@@ -124,94 +161,23 @@ const Home = () => {
             imgclas="round"
             textclas=""
           />
-          <div class="col-lg">
+          <div class="col-lg padd">
             <SpacingCont amount="1" />
-            <h2 class="d-flex justify-content-center padd">Discover</h2>
+            <h2 class="d-flex justify-content-center padd">Why Us?</h2>
             <h3 class="">
-              We know the importance of finding the right job, and so it is ok
-              to be a little skeptic.
+            At MYRYA, we offer a dynamic and innovative environment where your career can thrive. 
+            Join our diverse and inclusive team, benefit from robust professional development programs, and 
+            enjoy a healthy work-life balance with flexible arrangements. Make a meaningful impact with your
+            work while growing in a supportive and forward-thinking company. Apply today and discover the exciting 
+            opportunities that await you at MYRYA .
             </h3>
-            <h3 class="">
-              Feel free to explore, investigate, and consider us:
-            </h3>
-            <ul class="padd">
-              <li>
-                <h5>
-                  Detailed information about your benefits as a MYRYA employee
-                </h5>
-              </li>
-              <li>
-                <h5>
-                  Detailed information about our jobs and departments to inform
-                  your decision
-                </h5>
-              </li>
-              <li>
-                <h5>Converse with existing employees and employers</h5>
-              </li>
-              <li>
-                <h5>And More!</h5>
-              </li>
-            </ul>
+            
+            
           </div>
         </div>
       </div>
-      <SpacingCont amount="7" />
-      <div class="container shaded round col-8">
-        <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">Dashboard</h2>
-        <SpacingCont amount="2" />
-        <div class="row mt-3 col-12 d-flex justify-content-center">
-          <div class="col-lg-6">
-            <h3 class="d-flex justify-content-center padd">
-              - As a MYRYA applicant, you can keep track of application updates
-              in your profile.
-            </h3>
-            <h3 class="d-flex justify-content-center padd">
-              - As a MYRYA employee, we offer salary raises and promotions
-              frequently to encourage our workers to do their best. We want you
-              to realize your true potential!
-            </h3>
-          </div>
-          <Image pic1={profilePers} imgclas="round" clas="padd col-lg" />
-        </div>
-        <SpacingCont amount="2" />
-        <h2 class="d-flex justify-content-center padd">
-          View Applications online
-        </h2>
-        <div class="d-flex justify-content-center padd">
-          <div class="padd col-8">
-            <div class="padd glass round black tab">
-              <br />
-              <thead class="">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Application Name</th>
-                  <th scope="col">Start Date</th>
-                  <th scope="col">Contact Info</th>
-                  <th scope="col">DeadLines</th>
-                  <th scope="col">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Content Creator</td>
-                  <td>5/23/2020</td>
-                  <td>Steve Bobs: stevebobs@company.com</td>
-                  <td>Resume due by 5/29/2020</td>
-                  <td>Ongoing</td>
-                </tr>
-              </tbody>
-              <br />
-            </div>
-          </div>
-        </div>
-        <h3 class="newcenter padd">
-          Know exactly where you are in your application, next steps, and more
-          through our comprehensive table
-        </h3>
-      </div>
+
+      
 
       <div id="footer"></div>
       <SpacingCont amount="12" />

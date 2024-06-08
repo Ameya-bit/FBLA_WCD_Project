@@ -5,15 +5,23 @@ import { JobPush, StatusCard } from "../components/jobs";
 import { ReviewCard, ReviewPush } from "../components/reviewComp";
 import { useEffect, useState } from "react";
 import { supabase, RetrieveDataset } from "../components/supabase.js";
+import Home from "./img/addedRecom.jpg";
 
 const Review = () => {
   let reviews = RetrieveDataset("JobReviews", 9);
   return (
     <div class="main">
       <div>
-        <SpacingCont amount="6" />
+        <SpacingCont amount="12" />
         <div class="shadedEdit  padd d-flex justify-content-center row mt-3">
-          <div class="col-lg-6 newcenter">
+          <div class="col-lg newcenter padd">
+            <Image
+              pic1={Home}
+              text=""
+              clas=" newcenter"
+              imgclas="round"
+              textclas=""
+            />
             <h2>We are MYRYA!</h2>
             <h3 class="padd">
               Specializing in many fields to better the world!
@@ -34,272 +42,159 @@ const Review = () => {
           </div>
         </div>
       </div>
-      <SpacingCont amount="2" />
+
+      <SpacingCont amount="7" />
       <div class="">
         <div class=" d-flex justify content padd">
           <div class="padd col">
-            <div class="shadePurple round padd">
-              <h1 class="d-flex justify-content-center padd">
-                Our various Benefits
-              </h1>
+            <div class=" round padd">
+              <div class="newcenter round shaded col">
+                <h1 class="">Work With Us</h1>
+              </div>
               <div class="padd">
-                <div class="gallery-wrap tab ">
-                  <div class="item item-5 padd col">
-                    <div class="shadedEdit round ">
-                      <h3 class="padd   ">
-                        Competitive Salary & Robust Benefits
-                      </h3>
-                      <div class="itemtext  round">
-                        <ul>
-                          <li>
-                            Salary: 80th percentile for your experience level.
-                          </li>
-                          <li>
-                            Medical, Dental, & Vision Insurance (80% individual,
-                            70% family coverage).
-                          </li>
-                          <li>401(k) with 6% employer match.</li>
-                          <li>
-                            Life & Disability Insurance (details vary by
-                            position).
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                <div class="md-3 row">
+                  <div class="col padd">
+                    <Card
+                      img="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      desc="At MYRYA, we offer competitive compensation, 
+                  with salaries in the 80th percentile for your experience level. Our comprehensive 
+                  benefits package includes medical, dental, and vision insurance (80% individual, 70% family coverage), 
+                  a 401(k) plan with a 6% employer match, and life and disability insurance tailored to your position."
+                      title="Competitive Salary & Robust Benefits"
+                    />
                   </div>
-                  <div class="item item-6 padd col">
-                    <div class="shadedEdit round">
-                      <h3 class="padd   ">Work-Life Balance & Well-being</h3>
-                      <div class="itemtext   ">
-                        <ul>
-                          <li>
-                            Flexible work arrangements (remote work, compressed
-                            weeks, flexible hours).
-                          </li>
-                          <li>
-                            25 days PTO (15 vacation, 5 sick, 5 personal).
-                          </li>
-                          <li>On-site fitness classes & wellness programs.</li>
-                          <li>Employee Assistance Program (EAP).</li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div class="col padd">
+                    <Card
+                      img="https://images.unsplash.com/photo-1530977875151-aae9742fde19?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      desc="At MYRYA, we offer flexible work arrangements, including remote work, 
+                      compressed weeks, and flexible hours. Our benefits include 25 days of PTO (15 vacation, 5 sick, 5 personal), 
+                      on-site fitness classes and wellness programs, and access to an Employee Assistance Program (EAP)."
+                      title="Work-Life Balance and Well-Being"
+                    />
                   </div>
-                  <div class="item item-7 padd col">
-                    <div class="shadedEdit round">
-                      <h3 class="padd   ">Professional Development & Growth</h3>
-                      <div class="itemtext  ">
-                        <ul>
-                          <li>$3,000 annual training & development budget.</li>
-                          <li>Mentorship program.</li>
-                          <li>Tuition reimbursement program (details vary).</li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div class="col padd">
+                    <Card
+                      img="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      desc="At MYRYA, we invest in your growth with a $3,000 annual training and development budget, 
+                      a comprehensive mentorship program, and a tuition reimbursement program tailored to your needs."
+                      title="Professional Development & Growth"
+                    />
                   </div>
-                  <div class="item item-8 padd col">
-                    <div class="shadedEdit round ">
-                      <h3 class="padd   ">
-                        Modern Work Environment & Company Culture
-                      </h3>
-                      <div class="itemtext  ">
-                        <ul>
-                          <li>State-of-the-art equipment & technology.</li>
-                          <li>Collaborative & inspiring workspace.</li>
-                          <li>
-                            Fun & engaging culture (outings, social events, free
-                            food).
-                          </li>
-                          <li>Recognition & rewards programs.</li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div class="col padd">
+                    <Card
+                      img="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      desc="At MYRYA, you'll have access to state-of-the-art equipment and technology 
+                        in a collaborative and inspiring workspace. Our fun and engaging culture includes outings, social events,
+                        and free food, alongside recognition and rewards programs to celebrate your achievements."
+                      title="Modern Work Environment & Company Culture"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <SpacingCont amount="2" />
-            <div class="shaded round padd">
-              <div>
-                <h1 class="d-flex justify-content-center  padd round">
-                  Our various departments
-                </h1>
-              </div>
-              <div class="containerNew">
-                <div class="gallery-wrap padd tab">
-                  <div class="item item-1 padd">
-                    <div class="shaded round">
-                      <h3 class="bluetext  padd round">Software</h3>
-                      <div class="itemtext  round">
-                        <p class="padd ">
-                          Join our Software Department, where innovation meets
-                          expertise in a dynamic environment. Dive into
-                          developing cutting-edge software solutions with a team
-                          that values creativity, agility, and pushing
-                          technological boundaries. Embrace the opportunity to
-                          be at the forefront of tech, continuously learning and
-                          redefining what's possible in the digital world.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item item-2 padd">
-                    <div class="shaded round">
-                      <h3 class="bluetext  padd round">Healthcare</h3>
-                      <div class="itemtext  round">
-                        <p class="padd ">
-                          Be part of our Healthcare Department, where technology
-                          and healthcare converge to improve lives. This team is
-                          pioneering new ways to enhance patient care and
-                          accessibility, offering you a chance to contribute to
-                          meaningful advancements in health outcomes. Your work
-                          here will directly impact creating a healthier future
-                          for everyone.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item item-3 padd">
-                    <div class="shaded round">
-                      <h3 class="bluetext  padd round">Marketing</h3>
-                      <div class="itemtext  round">
-                        <p class="padd ">
-                          Our Marketing Department is a creative powerhouse,
-                          where strategy and storytelling come together to
-                          amplify our brand's voice. Work on compelling
-                          campaigns and digital experiences that engage and
-                          inspire our global audience. If you're driven by
-                          innovation and connecting with people, join us to
-                          shape how the world sees our brand.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item item-4 padd">
-                    <div class="shaded round">
-                      <h3 class="bluetext  padd round">Content Creation</h3>
-                      <div class="itemtext  round">
-                        <p class="padd ">
-                          Step into the Content Creation Department, a creative
-                          haven for storytellers and visionaries. Here, your
-                          ideas are transformed into captivating narratives
-                          across various mediums. In a collaborative and
-                          supportive atmosphere, you'll create content that not
-                          only reaches but resonates and influences our diverse
-                          audience. Join us to make your mark and inspire action
-                          through your creativity.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <SpacingCont amount="10" />
+            <div class="newcenter round shaded col">
+              <h1 class="">Our Employees</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class=" mt-3 row col-8">
+                <ReviewPush data={reviews} condense="yes" len="3" start="0" />
               </div>
             </div>
-            <SpacingCont amount="2" />
-            <div class="shadePurple round padd">
-              <div class="d-flex justify-content-center">
-                <div class="d-flex justify-content-center padd col-8">
-                  <h1 class="">Commonly asked questions: </h1>
-                </div>
-              </div>
-
-              <SpacingCont amount="2" />
-              <div
-                class="accordion accordion-flush padd "
-                id="accordionPanelsStayOpenExample"
-              >
-                <div class="accordion-item transparent">
-                  <h3 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#panelsStayOpen-collapseOne"
-                      aria-expanded="true"
-                      aria-controls="panelsStayOpen-collapseOne"
-                    >
-                      What if all the employers and employees don't answer my
-                      email questions?
-                    </button>
-                  </h3>
-                  <div
-                    id="panelsStayOpen-collapseOne "
-                    class="accordion-collapse collapse show padd shaded"
-                    aria-labelledby="panelsStayOpen-headingOne"
-                  >
-                    <div class="accordion-body whitetext ">
-                      Our employers and employees are hard working, so they
-                      might not always have time. However, we always try our
-                      best to answer questions. In the meantime, you may direct
-                      your questions to Myrical AI!
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item transparent">
-                  <h3 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#panelsStayOpen-collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="panelsStayOpen-collapseTwo"
-                    >
-                      What are my opportunities for growth?
-                    </button>
-                  </h3>
-                  <div
-                    id="panelsStayOpen-collapseTwo"
-                    class="accordion-collapse collapse padd shaded"
-                    aria-labelledby="panelsStayOpen-headingTwo"
-                  >
-                    <div class="accordion-body whitetext">
-                      We value internal growth and provide opportunities for
-                      advancement based on performance and merit. Employees can
-                      expect to grow within their role and take on additional
-                      responsibilities as they demonstrate their capabilities.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item transparent">
-                  <h3
-                    class="accordion-header "
-                    id="panelsStayOpen-headingThree"
-                  >
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#panelsStayOpen-collapseThree"
-                      aria-expanded="false"
-                      aria-controls="panelsStayOpen-collapseThree"
-                    >
-                      How is the company culture?
-                    </button>
-                  </h3>
-                  <div
-                    id="panelsStayOpen-collapseThree"
-                    class="accordion-collapse collapse padd shaded"
-                    aria-labelledby="panelsStayOpen-headingThree"
-                  >
-                    <div class="accordion-body whitetext">
-                      Our company culture is collaborative, innovative, and
-                      inclusive. We prioritize teamwork, open communication, and
-                      a supportive environment where employees can thrive and
-                      contribute to the company's success.
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
+          </div>
+        </div>
+        <SpacingCont amount="10" />
+        <div class="shaded ">
+          <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center padd col-8">
+              <h1 class="">Commonly asked questions: </h1>
             </div>
           </div>
 
-          <div class="padd col-3 hid">
-            <div class="shadedEdit round padd">
-              <h3 class="d-flex justify-content-center padd">
-                Hear from our Employees!
+          <SpacingCont amount="2" />
+          <div
+            class="accordion accordion-flush padd "
+            id="accordionPanelsStayOpenExample"
+          >
+            <div class="accordion-item transparent">
+              <h3 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  What if all the employers and employees don't answer my email
+                  questions?
+                </button>
               </h3>
-              <ReviewPush data={reviews} condense="yes" len="9" start="4" />
+              <div
+                id="panelsStayOpen-collapseOne "
+                class="accordion-collapse collapse show padd shaded"
+                aria-labelledby="panelsStayOpen-headingOne"
+              >
+                <div class="accordion-body whitetext ">
+                  Our employers and employees are hard working, so they might
+                  not always have time. However, we always try our best to
+                  answer questions. In the meantime, you may direct your
+                  questions to Myrical AI!
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item transparent">
+              <h3 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  What are my opportunities for growth?
+                </button>
+              </h3>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse padd shaded"
+                aria-labelledby="panelsStayOpen-headingTwo"
+              >
+                <div class="accordion-body whitetext">
+                  We value internal growth and provide opportunities for
+                  advancement based on performance and merit. Employees can
+                  expect to grow within their role and take on additional
+                  responsibilities as they demonstrate their capabilities.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item transparent">
+              <h3 class="accordion-header " id="panelsStayOpen-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  How is the company culture?
+                </button>
+              </h3>
+              <div
+                id="panelsStayOpen-collapseThree"
+                class="accordion-collapse collapse padd shaded"
+                aria-labelledby="panelsStayOpen-headingThree"
+              >
+                <div class="accordion-body whitetext">
+                  Our company culture is collaborative, innovative, and
+                  inclusive. We prioritize teamwork, open communication, and a
+                  supportive environment where employees can thrive and
+                  contribute to the company's success.
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -7,9 +7,12 @@ import {
   signOutUser,
 } from "../components/supabase.js";
 
+
+
 export default function NavBar({ id, name, clas, link1, link2, link3 }) {
+  
   return (
-    <nav id={id} class={"navbar navbar-expand-sm " + clas}>
+    <nav id={id} class={" navbar navbar-expand-sm " + clas}>
       <div class="container-fluid">
         <a class="navbar-brand col-4 goldtext" href="/" id="navname">
           MYRYA Jobs
@@ -90,17 +93,21 @@ function NavBarLinks({ name, link }) {
   );
 }
 
+
+
 function Card({
   title,
   loc,
   emp,
   desc,
+  img,
   clas,
   link,
   height,
   button,
   ids,
   shadedOrNot,
+  keys
 }) {
   const queryParameters = new URLSearchParams(window.location.search);
   var i = queryParameters.get("jobNum");
@@ -110,12 +117,53 @@ function Card({
   var type = queryParameters.get("type");
   var keyword = queryParameters.get("keyword");
   category = isUnd(category, "");
+
   if (shadedOrNot != "shaded") {
     shadedOrNot = "glass";
   }
   location = isUnd(location, "");
   type = isUnd(type, "");
   keyword = isUnd(keyword, "");
+
+  if(img){
+    console.log(keys);
+    return (
+      <div
+        class={"card round h-100 col-lg " + clas + " " + shadedOrNot}
+        style={{ height: height }}
+      >
+        <img class={"card-img-top round "} width="100" height="300" src={img} alt="" />
+        <div class="card-body padd">
+          
+          <h3 class="card-title">{title}</h3>
+          <div class="">
+            <p class="card-text">{desc}</p>
+          </div>
+          <br></br>
+          <div class="d-flex justify-content-center">
+          <Button
+              link={
+                "/jobListings?jobNum=" +
+                link +
+                "&category=" +
+                category +
+                "&type=" +
+                type +
+                "&location=" +
+                location +
+                "&keyword=" +
+                keys
+              }
+              clas="-outline-primary col-4 select"
+              name="Explore"
+            />
+          </div>
+          
+          </div>
+        </div>
+    )
+  }
+
   if (button == "no") {
     return (
       <div
@@ -151,7 +199,8 @@ function Card({
             role="group"
             aria-label="Basic example"
           >
-            <Button link={linkNext} clas="-primary col-8" name="Apply Now" />
+            <Button link={linkNext} clas="-primary col-4" name="Apply Now" />
+            
             <Button
               link={
                 "/jobListings?jobNum=" +
@@ -183,6 +232,9 @@ function Button({ link, name, clas, click, ids }) {
   );
 }
 
+
+
+
 function Image({ pic1, text, clas, imgclas, textclas }) {
   return (
     <div class={" breaks " + clas}>
@@ -193,6 +245,7 @@ function Image({ pic1, text, clas, imgclas, textclas }) {
     </div>
   );
 }
+
 
 function Inputs({ name, clas, type, ids, select, selectType }) {
   let reviews = RetrieveDataset("JobLIst", 200);

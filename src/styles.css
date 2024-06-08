@@ -70,6 +70,10 @@ nav#navbar {
     display: none !important;
     width: 0% !important;
   }
+  [class*="grid3"] {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .dodgerblue {
@@ -106,6 +110,10 @@ h1 {
   float: none;
 }
 
+.card-img-top {
+  object-fit: cover;
+}
+
 nav#footer {
   background-color: rgba(90, 27, 199, 0.5);
   height: 100px;
@@ -128,7 +136,7 @@ td {
 
 .main {
   background-image: url("./pages/img/hom.jpg");
-  filter: brightness(80%);
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -214,8 +222,31 @@ div.card {
   font-family: "Nunito";
 }
 
+
+
+.cards {
+  position: relative;
+  top: -840px;
+  z-index: 1000;  
+}
+
+.navbar {
+  transition: top 0.5s ease;
+}
+
+.navbar-hide {
+  top: -106px;
+}
+
 .homeheight {
   height: 100%;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 213px !important;
+  z-index: 100;
 }
 
 .padd {
@@ -238,8 +269,22 @@ div.card {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
+/* dark shade
+ background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(0, 0, 0, 0.3); 
+  
+  light shade
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(0, 0, 0, 0.3);*/
+
+
+
 .shaded {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   backdrop-filter: blur(7px);
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -250,6 +295,7 @@ div.card {
   backdrop-filter: blur(7px);
   border: 1px solid rgba(90, 27, 199, 0.5);
 }
+
 .shadeWhite {
   color: white;
 }
@@ -293,6 +339,11 @@ div.card {
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid4 {

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 function getResume(file) {
@@ -11,7 +12,7 @@ function getResume(file) {
   console.log(data.publicUrl);
 }
 
-function RetrieveDataset(dataset, range) {
+const RetrieveDataset = (dataset, range) => {
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
@@ -20,7 +21,12 @@ function RetrieveDataset(dataset, range) {
       .select()
       .range(0, range);
     setReviews(data);
+    if(error){
+      console.log(error);
+    }
   }
+
+  
 
   useEffect(() => {
     getReviews();
@@ -28,6 +34,10 @@ function RetrieveDataset(dataset, range) {
 
   return reviews;
 }
+
+
+
+
 
 async function setUserData(input) {
   let firstName = document.getElementById("firstName").value;

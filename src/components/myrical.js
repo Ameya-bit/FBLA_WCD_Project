@@ -33,6 +33,8 @@ function OffCanvas() {
   );
 }
 
+
+
 const config = {
   initialMessages: [
     createChatBotMessage("I am Myrical, your job finding assistant!"),
@@ -110,6 +112,9 @@ const generateResponse = async (query, req, res) => {
     throw error;
   }
 };
+
+
+
 
 export default OffCanvas;
 export { generateResponse };
