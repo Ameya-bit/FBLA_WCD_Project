@@ -16,36 +16,12 @@ import {
 import User from "./img/user.jpg";
 
 const jobListings = () => {
-  const [upd, getUpd] = useState();
-  const [app, getApp] = useState();
   var applic = DataPush();
   var user = getCurrentUser();
   const reviews = RetrieveDataset("JobLIst", 30);
-  console.log(user);
 
-  var webUpdates =
-    "Generate an update message for the following upcoming features to a job search website: ability to save jobs for later, retrieval augmented generation implemented into a chatbot, " +
-    "resume-based job recommendations, and resume help. Generate a short description for each feature. Keep the message under 100 words in a single paragraph.";
-
-  var yourApp =
-    "In the context of helping a job applicant, named Ameya, with their search and application to several jobs within one company (called MYRYA), this applicant has applied to 8 jobs and needs to submit resumes to 3 of them, needs to attend interviews" +
-    "for 2 of them, missed an interview for one of them and needs to reschedule, and is awaiting interview results of 2 of them. Generate a message for next steps that the applicant should follow and how they." +
-    "can prepare. Keep the message under 100 words in a single paragraph. ";
-
-  async function webUpd(message) {
-    var recommendations = await generateResponse(message);
-    getUpd(recommendations);
-  }
-
-  async function appUpd(message) {
-    var recommendations = await generateResponse(message);
-    getApp(recommendations);
-  }
-
-  useEffect(() => {
-    webUpd(webUpdates);
-    appUpd(yourApp);
-  }, []);
+  var apps = getData("applications");
+  var app;
 
   if (user && applic.length > 0) {
     return (
@@ -60,18 +36,12 @@ const jobListings = () => {
               </h1>
             </div>
           </div>
-          <div class=" round padd col">
-            <div class="row mt-3 padd">
-              <div class="shaded round padd col">
-                <h1 class="padd d-flex justify-content-center col-lg">
-                  Your next Steps:{" "}
-                </h1>
-                <h3 class="padd">{app}</h3>
-              </div>
-              <div class="shaded round padd col-lg">
-                <h1 class="padd d-flex justify-content-center">Myrical News</h1>
-                <h3 class="padd">{upd}</h3>
-              </div>
+          <div class="d-flex justify-content-center round padd col">
+            <div class="shaded round padd col-8">
+              <h1 class="padd d-flex justify-content-center col-lg">
+                Your next Steps:{" "}
+              </h1>
+              <UserSummary user={user} apps={apps} />
             </div>
           </div>
         </div>
@@ -113,8 +83,8 @@ const jobListings = () => {
             </h1>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <div class="shaded round col-8 padd">
+        <div class="d-flex justify-content-center padd">
+          <div class="row mt-3 shaded round col-8 padd grid3">
             <SavedJobs user={user} />
           </div>
         </div>
@@ -127,7 +97,7 @@ const jobListings = () => {
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <div class="shaded round col-8">
+          <div class="col-8">
             <AIRecom user={user} reviews={reviews} />
           </div>
         </div>
@@ -184,37 +154,81 @@ const jobListings = () => {
   }
 };
 
+const UserSummary = ({user, apps}) => {
+  var applications = "";
+  const [app, setApp] = useState("");
+
+
+  try {
+    for (let i = 0; i < apps.length; i++) {
+      applications = applications.concat(apps[i]["application_name"] +  ": " + apps[i]["deadline_assoc"] + ". ");
+    }
+
+    var yourApp =
+      "In the context of helping a job applicant, named " +
+      user["first_name"] +
+      ", with their search and application to several jobs within one company (called MYRYA), this applicant " +
+      "has " +
+      apps.length +
+      " different job applications to keep track of. Summarize this list of applications to the job applicant, suggesting actions to make sure each application is complete: " + applications + 
+      ". End each section of your response with a semicolon.";
+
+    async function appUpd(message) {
+      var recommendations = await generateResponse(message);
+      setApp(recommendations)
+    }
+
+    useEffect(() => {
+      appUpd(yourApp);
+    }, []);
+
+    if(app != "") {
+      var appArr = app.split(";");
+      var realRet = [];
+
+      for(let i = 0; i < appArr.length; i++){
+        realRet.push(
+          <h3>{appArr[i]}</h3>
+        );
+      }
+      return (
+        <div class="padd  ">
+          {realRet}
+        </div>
+      )
+    }else {
+      return (
+        <div class="padd newcenter">
+          <h3>Your Summary is Loading...</h3>
+        </div>
+      );
+    }
+    
+  } catch (e) {
+    console.log(e);
+    return (
+      <h3 class="padd newcenter">
+        There was an issue loading summary. Please reload the page.
+      </h3>
+    );
+  }
+}
+
 function SavedJobs(user) {
   let reviews = RetrieveDataset("JobLIst", 30);
   let retSav = [];
   let saved_job = user["user"]["savedJobs"];
 
-  if (reviews) {
-    for (let i = 0; i < saved_job.length; i += 3) {
+  if (reviews && reviews != null && reviews[0]) {
+    for (let i = 0; i < saved_job.length; i++) {
       retSav.push(
-        <div class="row mt-3 padd">
-          <Card
-            title={reviews[saved_job[i]]["job_title"]}
-            loc={"Location: " + reviews[saved_job[i]]["location"]}
-            emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
-            desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
-            clas="padd col-lg"
-          />
-          <Card
-            title={reviews[saved_job[i + 1]]["job_title"]}
-            loc={"Location: " + reviews[saved_job[i + 1]]["location"]}
-            emp={"Job Type: " + reviews[saved_job[i + 1]]["employment_type"]}
-            desc={"Description: " + reviews[saved_job[i + 1]]["job_desc"]}
-            clas="padd col-lg"
-          />
-          <Card
-            title={reviews[saved_job[i + 2]]["job_title"]}
-            loc={"Location: " + reviews[saved_job[i + 2]]["location"]}
-            emp={"Job Type: " + reviews[saved_job[i + 2]]["employment_type"]}
-            desc={"Description: " + reviews[saved_job[i + 2]]["job_desc"]}
-            clas="padd col-lg"
-          />
-        </div>
+        <Card
+          title={reviews[saved_job[i]]["job_title"]}
+          loc={"Location: " + reviews[saved_job[i]]["location"]}
+          emp={"Job Type: " + reviews[saved_job[i]]["employment_type"]}
+          desc={"Description: " + reviews[saved_job[i]]["job_desc"]}
+          clas="padd col-lg"
+        />
       );
     }
   }
@@ -298,21 +312,22 @@ const AIRecom = ({ user, reviews }) => {
 
   try {
     for (let k = 0; k < reviews.length; k++) {
-      totalJobsString += reviews[k]["job_title"] + ", ";
+      totalJobsString += k + ": " + reviews[k]["job_title"] + ", ";
     }
-    console.log(reviews);
+
     for (let i = 0; i < savedjobs.length; i++) {
-      jobsString += i + ": " + reviews[savedjobs[i]]["job_title"] + ",  ";
+      jobsString += reviews[savedjobs[i]]["job_title"] + ",  ";
     }
 
     var getRecommendedJobs =
       "Based on the applicants saved jobs (which are jobs that the applicant is interested in):  " +
-      jobsString +
-      ", recommend 3 similar jobs from this main list: " +
       totalJobsString +
+      ", recommend 3 similar jobs from this main list: " +
+      jobsString +
       ", that are not already in the applicants saved jobs." +
       "Before your response, write only the corresponding numbers, according to the main list, of the top three choices, with ; separating them (for example: '1;2;3;'), end this section with a semicolon." +
-      "For the response, explain how these jobs are similar to their interests, and why the applicant should consider each job. Label each explanation as 1, 2, 3.";
+      "For the response, explain how those top three choices in the previous section are similar to their interests, and why the applicant should consider each job. Label each explanation as 1, 2, 3. Address this entire response" + 
+      " to the job applicant.";
 
     async function recomJobs(message) {
       var recommendations = await generateResponse(message);
@@ -323,7 +338,10 @@ const AIRecom = ({ user, reviews }) => {
       recomJobs(getRecommendedJobs);
     }, []);
 
+    console.log(getRecommendedJobs);
+
     if (recom != "") {
+      console.log(recom);
       var recomArr = recom.split(";");
       var recom1 = recomArr[0];
       var recom2 = recomArr[1];
@@ -331,8 +349,8 @@ const AIRecom = ({ user, reviews }) => {
       var explain = recomArr[3];
 
       var explain3 = explain.split("3.")[1];
-      var explain1 = explain.split("3.")[0].split("2.")[1];
-      var explain2 = explain
+      var explain2 = explain.split("3.")[0].split("2.")[1];
+      var explain1 = explain
         .split("3.")[0]
         .split("2.")[0]
         .split("1.")[1];
@@ -346,35 +364,45 @@ const AIRecom = ({ user, reviews }) => {
       } else {
         return (
           <div>
-            <div class="row mt-3 padd">
+            <div class="row mt-3 padd shaded round">
               <Card
                 title={reviews[recom1]["job_title"]}
                 loc={"Location: " + reviews[recom1]["location"]}
                 emp={"Job Type: " + reviews[recom1]["employment_type"]}
                 desc={"Description: " + reviews[recom1]["job_desc"]}
-                clas="padd col-lg"
+                clas="padd col-4"
+                link={reviews[recom1]["job_id"]}
               />
+              <h3 class="col-6 padd">{explain1}</h3>
+            </div>
+            <div class="row mt-3 padd shaded round">
               <Card
                 title={reviews[recom2]["job_title"]}
                 loc={"Location: " + reviews[recom2]["location"]}
                 emp={"Job Type: " + reviews[recom2]["employment_type"]}
                 desc={"Description: " + reviews[recom2]["job_desc"]}
-                clas="padd col-lg"
+                clas="padd col-4"
+                link={reviews[recom2]["job_id"]}
               />
+              <h3 class="col padd">{explain2}</h3>
+            </div>
+            <div class="row mt-3 padd shaded round">
               <Card
                 title={reviews[recom3]["job_title"]}
                 loc={"Location: " + reviews[recom3]["location"]}
                 emp={"Job Type: " + reviews[recom3]["employment_type"]}
                 desc={"Description: " + reviews[recom3]["job_desc"]}
-                clas="padd col-lg"
+                clas="padd col-4"
+                link={reviews[recom3]["job_id"]}
               />
+              <h3 class="col padd">{explain3}</h3>
             </div>
             <br />
-            <h3 class=" padd">{explain1}</h3>
+            
             <br />
-            <h3 class=" padd">{explain2}</h3>
+            
             <br />
-            <h3 class=" padd">{explain3}</h3>
+            
           </div>
         );
       }

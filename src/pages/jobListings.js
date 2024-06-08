@@ -4,7 +4,7 @@ import { Inputs, Card, Button } from "../components/navbar";
 import { JobPush } from "../components/jobs";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../components/supabase.js";
+import { supabase, getCurrentUser } from "../components/supabase.js";
 
 const queryParameters = new URLSearchParams(window.location.search);
 var i = queryParameters.get("jobNum");
@@ -33,88 +33,94 @@ const jobListings = () => {
     return (
       <div class="main ">
         <SpacingCont amount="5" />
-        <div class="shaded hundredWidth padd">
-          <div class="">
-            <h1 class="d-flex justify-content-center padd">
-              Search and Filter Jobs:{" "}
-            </h1>
-          </div>
+        <div class=" sticky-top ">
+          <div class="shaded hundredWidth padd">
+            <div class="filtertext">
+              <h1 id="filterstitle" class="newcenter padd">
+                Search and Filter Jobs:{" "}
+              </h1>
+            </div>
 
-          <div class="containerAdd container padd d-flex justify-content-center">
-            <select
-              name="cars"
-              class="shaded round shadeWhite col"
-              id="filtCat"
+            <div
+              id="filters"
+              class="containerAdd container padd d-flex justify-content-center"
             >
+              <select
+                name="cars"
+                class="shaded round shadeWhite col"
+                id="filtCat"
+              >
+                <Inputs
+                  ids="filtCat"
+                  name="Job Title"
+                  type="text"
+                  select="true"
+                  selectType="job_title"
+                  value=""
+                />
+              </select>
+              <select
+                name="cars"
+                class="shaded round shadeWhite col"
+                id="filtType"
+              >
+                <Inputs
+                  ids="filtType"
+                  name="Type"
+                  type="text"
+                  select="true"
+                  selectType="employment_type"
+                />
+              </select>
+              <select
+                name="cars"
+                class="shaded round shadeWhite col"
+                id="filtLoc"
+              >
+                <Inputs
+                  ids="filtLoc"
+                  name="Location"
+                  type="text"
+                  select="true"
+                  selectType="location"
+                />
+              </select>
               <Inputs
-                ids="filtCat"
-                name="Job Title"
+                ids="filtKey"
+                name="Keyword"
+                clas="shaded round shadeWhite col"
                 type="text"
-                select="true"
-                selectType="job_title"
                 value=""
               />
-            </select>
-            <select
-              name="cars"
-              class="shaded round shadeWhite col"
-              id="filtType"
-            >
-              <Inputs
-                ids="filtType"
-                name="Type"
-                type="text"
-                select="true"
-                selectType="employment_type"
-              />
-            </select>
-            <select
-              name="cars"
-              class="shaded round shadeWhite col"
-              id="filtLoc"
-            >
-              <Inputs
-                ids="filtLoc"
-                name="Location"
-                type="text"
-                select="true"
-                selectType="location"
-              />
-            </select>
-            <Inputs
-              ids="filtKey"
-              name="Keyword"
-              clas="shaded round shadeWhite col"
-              type="text"
-              value=""
-            />
 
-            <div>
-              <Button name="Update" clas="-primary btn-lg" click={getData} />
-            </div>
-          </div>
-        </div>
-        <div class="row mt-3 padd standheight">
-          <div class="col-xl-4 mx-auto mb-4">
-            <SpacingCont amount="1" />
-            <div class="shadePurple container round standHeight">
-              <div id="jobslist" class=" container round scroll padd">
-                <JobPush
-                  end="199"
-                  category={category}
-                  location={location}
-                  type={type}
-                  keyword={keyword}
-                />
+              <div>
+                <Button name="Update" clas="-primary btn-lg" click={getData} />
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-xl-8  mx-auto mb-4">
+        <div class="d-flex justify-content-end sticky">
+          <div class="col-xl-9 ">
             <SpacingCont amount="1" />
             <JobFullData />
           </div>
         </div>
+        <div class="cards col-xl-3">
+          <SpacingCont amount="1" />
+          <div class="shadePurple round">
+            <div id="jobslist" class="  ">
+              <JobPush
+                end="30"
+                category={category}
+                location={location}
+                type={type}
+                keyword={keyword}
+              />
+            </div>
+          </div>
+        </div>
+
         <SpacingCont amount="15" />
       </div>
     );
@@ -144,6 +150,8 @@ const getData = () => {
 };
 
 function JobFullData() {
+  var user = getCurrentUser();
+
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
@@ -158,9 +166,34 @@ function JobFullData() {
     getReviews();
   }, []);
 
+  const addSaved = async () => {
+    console.log(user);
+    if (user) {
+      let saved_job = user["savedJobs"];
+      let userid = user["id"];
+
+      saved_job[saved_job.length] = parseInt(i);
+      console.log(saved_job.length);
+      console.log(saved_job);
+      const { data, error } = await supabase
+        .from("profiles")
+        .update({ savedJobs: saved_job })
+        .eq("id", userid)
+        .select();
+
+      console.log(data);
+      if (error) {
+        console.log(error);
+      }
+
+      document.getElementById("saved").innerHTML +=
+        "<div id='' class='alert alert-success round' role='alert'> Saved! </div>";
+    }
+  };
+
   if (i == 0 || reviews == []) {
     return (
-      <div id="filters" class="standheight container round shaded padd">
+      <div id="filters" class="round  shaded">
         <h1 class="centered">Please select a Job Card from the left</h1>
         <SpacingCont amount="33" />
       </div>
@@ -168,7 +201,7 @@ function JobFullData() {
   } else {
     var act = i - 1;
     return (
-      <div id="filters" class=" container round shaded padd">
+      <div id="filters" class=" scroll round  shaded ">
         <div class="padd">
           <h1 class="d-flex justify-content-center padd">
             {reviews[act]["job_title"]}
@@ -195,13 +228,19 @@ function JobFullData() {
           </h3>
           <h3> - {reviews[act]["job_requirement"]}</h3>
           <SpacingCont amount="3" />
-          <div class="d-flex justify-content-center">
+          <div class="row mt-3">
             <Button
               link={"/SignUp?applicationNumber=" + i}
-              clas="-primary btn-lg col-8 "
+              clas="-primary btn-lg col "
               name="Apply Now"
             />
+            <Button
+              click={addSaved}
+              clas="-outline-primary btn-lg col "
+              name="Save for Later"
+            />
           </div>
+          <div id="saved"></div>
         </div>
       </div>
     );

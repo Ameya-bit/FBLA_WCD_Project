@@ -12,8 +12,8 @@ function ReviewCard({
   condense,
 }) {
   return (
-    <div class={" round transparent padd  " + clas}>
-      <hr></hr>
+    <div class="padd col">
+      <div class={"card h-100 round glass " + clas}>
       <div class=" padd">
         <div class="padd">
           <p class="">{'"' + text + '"'}</p>
@@ -22,6 +22,8 @@ function ReviewCard({
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
 
