@@ -12,14 +12,17 @@ function getResume(file) {
   console.log(data.publicUrl);
 }
 
-const RetrieveDataset = (dataset, range) => {
+const RetrieveDataset = (dataset, range, start) => {
+  if(!start || start == null){
+    start = 0;
+  }
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
     let { data, error } = await supabase
       .from(dataset)
       .select()
-      .range(0, range);
+      .range(start, range);
     setReviews(data);
     if(error){
       console.log(error);

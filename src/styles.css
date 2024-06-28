@@ -1,11 +1,18 @@
+:root {
+  --accent: white;
+  --otheraccent: #2d2c7b;
+
+  /*  #D68FD6  #04E762*/
+}
+
 nav#navbar {
-  background-color: rgba(90, 27, 199, 0.2);
-  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(15, 24, 53, 0.2);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
   font-family: "Nunito";
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(15, 24, 53, 0.2);
 }
 
 .hundredWidth {
@@ -13,16 +20,24 @@ nav#navbar {
 }
 
 .btn-primary {
-  background-color: rgb(255, 119, 0);
-  border-color: rgb(255, 119, 0);
+  background-color: var(--otheraccent);
+  border-color: var(--otheraccent);
+  color: #b2c4c8;
+}
+
+.btn-success {
+  background-color: rgb(226, 201, 145);
+  border-color: #e2c991;
+  color: black;
+
 }
 
 .gold {
-  background-color: rgb(255, 119, 0);
+  background-color: var(--accent);
 }
 
 .goldtext {
-  color: rgb(255, 119, 0);
+  color: var(--otheraccent);
 }
 
 .bluetext {
@@ -30,16 +45,14 @@ nav#navbar {
 }
 
 .whitetext {
-  color: white;
+  color: #0f1835;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.offcanvas {
-  width: 25% !important;
-}
+
 
 ::-webkit-scrollbar {
   display: none;
@@ -55,7 +68,7 @@ nav#navbar {
   display: block;
 }
 
-@media only screen and (max-width: 1320px) {
+@media only screen and (max-width: 1220px) {
   /* For mobile phones: */
   [class*="col"] {
     width: 100% !important;
@@ -74,10 +87,46 @@ nav#navbar {
     display: grid;
     grid-template-columns: 1fr !important;
   }
+
+  [class*="scroll"] {
+    
+    margin: 4px, 4px;
+    padding: 20px;
+    height: 70vw;
+    max-height: 820px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    
+  }
+  [class*="stiky"] {
+    position: relative !important;
+    z-index: 0  ;
+    top: 0 !important;
+    width: 100% !important;
+  }
+  [class*="contain"] {
+    width: 100% !important;
+  }
 }
 
 .dodgerblue {
   background-color: dodgerblue;
+}
+
+.otherscrll {
+  margin: 4px, 4px;
+    padding: 20px;
+    height: 70vw;
+    max-height: 820px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: "Nunito";
 }
 
 .black {
@@ -88,7 +137,7 @@ h2 {
   font-size: 5vw;
   border-radius: 30px;
   padding: 20px;
-  color: rgb(255, 119, 0);
+  color: var(--accent);
 }
 .shaded-gold {
   background-color: rgba(255, 215, 0, 0.3);
@@ -96,8 +145,18 @@ h2 {
 }
 
 h1 {
-  color: rgb(255, 119, 0);
+  color: var(--accent);
   font-size: 5vmin;
+}
+
+.columns {
+  width: 50%;
+}
+
+.contan {
+  display: inline-block;
+  vertical-align: top;
+  width: 50% !important;
 }
 
 .horizontal-scrollable {
@@ -114,12 +173,9 @@ h1 {
   object-fit: cover;
 }
 
-nav#footer {
-  background-color: rgba(90, 27, 199, 0.5);
-  height: 100px;
-  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: "Nunito";
-  color: white;
+.footer {
+  background-color: #a2b5e0;
+  color: white !important;
 }
 body {
   font-family: "Nunito";
@@ -134,9 +190,18 @@ td {
   padding: 10px;
 }
 
+.filter {
+  filter: grayscale(100%);
+}
+
+div#root {
+  filter: none !important;
+}
+
 .main {
-  background-image: url("./pages/img/hom.jpg");
-  
+  background-image: url("https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-color: #f6f6fa;
+  filter: none !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,7 +220,7 @@ td {
 a#navname {
   font-size: 2vw;
 
-  color: rgb(255, 119, 0);
+  color: var(--accent);
   font-family: "Nunito";
 }
 a#linkname {
@@ -173,13 +238,12 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+
 }
 
 .newcenter {
   text-align: center;
   margin: auto;
-  width: 50%;
 }
 
 .leftbottom {
@@ -242,22 +306,50 @@ div.card {
   height: 100%;
 }
 
-.sticky {
+
+.containe  {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+
+
+}
+
+.newHeight {
+  height: 650px;
+}
+
+.goUp {
+  top: -850px;
+  z-index: 1;
+}
+
+.stiky {
+  display: inline-block;
+  vertical-align: top;
   position: -webkit-sticky;
   position: sticky;
-  top: 213px !important;
-  z-index: 100;
+  top: 250px ;
+  width: 70% ;
+}
+
+.notstiky {
+  position: relative;
 }
 
 .padd {
   padding: 20px;
+}
+
+.newpadd {
+  padding-top: 0px !important;
 }
 .round {
   border-radius: 50px;
 }
 
 .glass {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(226, 201, 145, .7);
   padding: 10px;
   backdrop-filter: blur(7px);
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -267,6 +359,10 @@ div.card {
   padding: 10px;
   box-shadow: 5px 15px 15px 5px rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.tab {
+  tab-size: 3;
 }
 
 /* dark shade
@@ -281,10 +377,30 @@ div.card {
   backdrop-filter: blur(7px);
   border: 1px solid rgba(0, 0, 0, 0.3);*/
 
+  .thumbnail {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 80%, transparent);
+  }
 
+  .thumbnail2 {
+    mask-image: linear-gradient(270deg, rgba(0, 0, 0, 1) 80%, transparent);
+  }
+  
 
+ hr {
+  border-width: 2px;
+  color: var(--accent);
+  border-radius: 10px;
+  opacity: 100;
+ }
 .shaded {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(15, 24, 53, 0.2);
+  padding: 10px;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(15, 24, 53, 0.2);
+}
+
+.shadedVar {
+  background-color: rgba(0, 0, 0, 0.0);
   padding: 10px;
   backdrop-filter: blur(7px);
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -312,19 +428,11 @@ div.card {
   border-radius: 20px;
 }
 
-.scroll {
-  margin: 4px, 4px;
-  padding: 20px;
-  height: 70vw;
-  max-height: 820px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: justify;
-}
+
 
 .standHeight {
   height: 75vw;
-  max-height: 850px;
+  max-height: 820px;
 }
 
 .side {

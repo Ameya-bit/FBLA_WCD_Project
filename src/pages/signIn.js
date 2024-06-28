@@ -18,7 +18,7 @@ const SignIn = () => {
     let password = document.getElementById("password").value;
     const user = await signInUser(email, password);
     if (user != 0) {
-      if (appNum) {
+      if (appNum >= 0 && appNum != null) {
         window.location.assign("/Apply?applicationNumber=" + appNum);
       } else {
         window.location.assign("/Profile");
@@ -38,12 +38,12 @@ const SignIn = () => {
         <div class="d-flex justify-content-center">
           <div class="padd col-6">
             <SpacingCont amount="1" />
-            <Inputs ids="email" name="Email " clas=" padd" type="text" />
+            <Inputs ids="email" name="Email " clas="shaded padd" type="text" />
             <SpacingCont amount="2" />
             <Inputs
               ids="password"
               name="Password "
-              clas=" padd"
+              clas="shaded padd"
               type="password"
             />
             <SpacingCont amount="3" />

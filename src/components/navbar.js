@@ -32,7 +32,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
         <div class="collapse navbar-collapse col-7" id="navbarNav">
           <ul class="navbar-nav col-9">
             <NavBarLinks name="Discover" link="/Review" />
-            <NavBarLinks name="Explore" link="/jobListings?jobNum=0" />
+            <NavBarLinks name="Explore" link="/jobListings?jobNum=0&page=1" />
             <NavBarLinks name="Dashboard" link="/profile" />
           </ul>
           <div class="col-3 d-flex justify-content-end padd">
@@ -113,6 +113,7 @@ function Card({
   var i = queryParameters.get("jobNum");
   var linkNext = "/SignUp?applicationNumber=" + link;
   var category = queryParameters.get("category");
+  var k = queryParameters.get("page");
   var location = queryParameters.get("location");
   var type = queryParameters.get("type");
   var keyword = queryParameters.get("keyword");
@@ -125,11 +126,10 @@ function Card({
   type = isUnd(type, "");
   keyword = isUnd(keyword, "");
 
-  if(img){
-    console.log(keys);
+  if(img && link){
     return (
       <div
-        class={"card round h-100 col-lg " + clas + " " + shadedOrNot}
+        class={"card round h-100 col " + clas + " " + shadedOrNot}
         style={{ height: height }}
       >
         <img class={"card-img-top round "} width="100" height="300" src={img} alt="" />
@@ -145,6 +145,8 @@ function Card({
               link={
                 "/jobListings?jobNum=" +
                 link +
+                "&page=" +
+                k +
                 "&category=" +
                 category +
                 "&type=" +
@@ -152,11 +154,34 @@ function Card({
                 "&location=" +
                 location +
                 "&keyword=" +
-                keys
+                keys 
               }
               clas="-outline-primary col-4 select"
               name="Explore"
             />
+          </div>
+          
+          </div>
+        </div>
+    )
+  }
+
+  if(img){
+    return (
+      <div
+        class={"card round h-100 col-lg " + clas + " " + shadedOrNot}
+        style={{ height: height }}
+      >
+        <img class={"card-img-top round "} width="100" height="300" src={img} alt="" />
+        <div class="card-body padd">
+          
+          <h3 class="card-title">{title}</h3>
+          <div class="">
+            <p class="card-text">{desc}</p>
+          </div>
+          <br></br>
+          <div class="d-flex justify-content-center">
+          
           </div>
           
           </div>
@@ -187,9 +212,9 @@ function Card({
         style={{ height: height }}
       >
         <div class="card-body padd">
-          <h3 class="card-title  d-flex justify-content-end padd">{title}</h3>
+          <h3 class="card-title  d-flex justify-content-center padd">{title}</h3>
           <div class="padd">
-            <p class="card-text">{loc}</p>
+            <p class="card-text ">{loc}</p>
             <p class="card-text">{emp}</p>
             <p class="card-text">{desc}</p>
           </div>
@@ -205,6 +230,8 @@ function Card({
               link={
                 "/jobListings?jobNum=" +
                 link +
+                "&page=" +
+                k +
                 "&category=" +
                 category +
                 "&type=" +
@@ -260,13 +287,13 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
     for (let value in values) {
       if (value == 0) {
         returnVal.push(
-          <option class="shadeWhite breaks" value="">
+          <option class="shadeWhite breaks " value="">
             {name}
           </option>
         );
       }
       returnVal.push(
-        <option class="bluetext breaks" value={values[value]}>
+        <option class="bluetext breaks " value={values[value]}>
           {values[value]}
         </option>
       );
@@ -288,7 +315,7 @@ function Inputs({ name, clas, type, ids, select, selectType }) {
 
 function Footer() {
   return (
-    <footer class="text-center text-lg-start shadePurple text-muted">
+    <footer class="text-center text-lg-start footer text-muted">
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
 
       <section class="">
