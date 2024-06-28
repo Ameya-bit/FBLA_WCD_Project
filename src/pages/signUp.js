@@ -9,12 +9,14 @@ import {
   signInUser,
   getCurrentUser,
 } from "../components/supabase.js";
+import {v4 as uuidv4} from 'uuid';
 
 const queryParameters = new URLSearchParams(window.location.search);
 let reroute = queryParameters.get("reroute");
 let appNum = queryParameters.get("applicationNumber");
 
 const Review = () => {
+  const [file, setFile] = useState()
   let userData = getCurrentUser();
   if (userData && userData != null) {
     window.location.assign("/Apply?applicationNumber=" + appNum);
@@ -46,22 +48,38 @@ const Review = () => {
       } else if (data) {
         setUser(data);
         setUserData(data);
-        if (appNum) {
-          window.location.assign("/Apply?applicationNumber=" + appNum);
-        } else {
-          window.location.assign("/");
-        }
+        upload(data);
+        
       }
+      
     } else if (phoneNum != -1 && pass != -1) {
       errorMessage("Missing Inputs!");
     } else {
       return 0;
     }
   }
+
+  async function upload(user) {
+    const { data, error } = await supabase
+      .storage
+      .from('Resumes')
+      .upload(user["user"]["id"] + "/" + uuidv4(), file);
+
+    if(error){
+      console.log(error);
+    } else {
+      console.log(data);
+    }
+  }
+
+  function resumeTest(event) {
+    setFile(event.target.files[0])
+  }
+
   function signInTheUser() {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    signInUser(email, password);
+    return signInUser(email, password);
   }
   const link = "/SignIn?applicationNumber=" + appNum;
   return (
@@ -110,7 +128,8 @@ const Review = () => {
             <h3 class="d-flex justify-content-center padd">
               Enter Your Resume:{" "}
             </h3>
-            <Inputs ids="resume" name="" clas=" padd" type="file" />
+            <input type="file" onChange={resumeTest} class="form-control"/>
+            
             <SpacingCont amount="4" />
             <div class="d-flex justify-content-center">
               <button

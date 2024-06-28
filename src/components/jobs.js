@@ -8,19 +8,18 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
   location = isUnd(location, "");
   type = isUnd(type, "");
   keyword = isUnd(keyword, "");
-  console.log(keyword);
   const [reviews, setReviews] = useState("");
 
   async function getReviews() {
     let query = supabase.from("JobLIst").select();
 
-    if (category != "") {
+    if (category != "" ) {
       query.eq("job_title", category);
     }
     if (location != "") {
       query.eq("location", location);
     }
-    if (type != "") {
+    if (type != "" ) {
       query.eq("employment_type", type);
     }
     if (keyword != "") {
@@ -30,6 +29,9 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
     query.range(0, 199);
     const { data, error } = await query;
     setReviews(data);
+    if(error){
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -37,12 +39,11 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
   }, []);
 
   let send = [];
-
   let dataset = reviews;
   start = isUnd(start, 0);
   moreInfo = isUnd(moreInfo, false);
   end = isUnd2(end, dataset.length, dataset.length);
-
+  
   for (var i = start; i < end; i++) {
     var iInc = i + 1;
     if (moreInfo == "true") {
@@ -55,6 +56,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
           link={dataset[i]["job_id"]}
         />
       );
+      send.push(<br/>);
     } else {
       send.push(
         <Card
@@ -63,6 +65,7 @@ function JobPush({ start, end, moreInfo, category, location, keyword, type }) {
           link={dataset[i]["job_id"]}
         />
       );
+      send.push(<br/>);
     }
   }
   if (send.length > 0) {

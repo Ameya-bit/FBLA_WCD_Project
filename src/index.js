@@ -23,8 +23,9 @@ import { SpacingCont } from "./pages/qualityOfLife";
 try {
   ReactDOM.render(
     <React.StrictMode>
-      <OffCanvas />
+      
       <Router>
+      <OffCanvas />
         <NavBar
           id="navbar"
           clas="navbar navbar-expand-lg navbar-dark fixed-top"
@@ -52,11 +53,4 @@ try {
   root.render(<Error />);
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <AIintegrate></AIintegrate>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("chatGPTintegrate")
-);
+
