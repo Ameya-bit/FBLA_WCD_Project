@@ -58,7 +58,7 @@ const Apply = () => {
   }
 
   function resumeDue() {
-    var day = date.getDate() + 5;
+    var day = date.getDate() + 5 > 30 ? date.getDate() - 31 : date.getDate + 5;
     var month = day > 30 ? date.getMonth() + 2 : date.getMonth() + 1;
     var year = date.getFullYear();
 
