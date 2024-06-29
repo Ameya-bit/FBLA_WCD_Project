@@ -24,9 +24,9 @@ const Home = () => {
       <div class="shaded  homeheight row mt-3">
         <div class=" col-lg-8 newcenter">
           <div class="">
-            <h2 class="d-flex justify-content-center ">
+            <h1 class="d-flex justify-content-center ">
               Work Passionately!
-            </h2>
+            </h1>
             <h5 class="newcenter padd">Search through our catalog, aided by simple yet powerful AI, and find your career. </h5>
           </div>
 
