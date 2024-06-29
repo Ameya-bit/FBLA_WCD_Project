@@ -83,18 +83,26 @@ function OffCanvas() {
     );
   };
   return (
-    <div
-      className="offcanvas offcanvas-end transparent"
-      tabIndex="-1"id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel"
-    >
-      <ChatBot
+    
+      <div
+          class="modal fade bd-example-modal shaded"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myLargeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg ">
+            <div class="modal-content transparent">
+            <ChatBot
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
       />
+            </div>
+          </div>
+        </div>
       
-    </div>
+      
   );
 }
 

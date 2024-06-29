@@ -422,7 +422,6 @@ function JobFullData() {
     return (
       <div id="filters" class="round standHeight shaded">
         <h1 class="centered">Please select a Job Card from the left</h1>
-        <SpacingCont amount="33" />
       </div>
     );
   } else {
