@@ -23,10 +23,9 @@ if (k < 1 || !k || k == null) {
 }
 
 
-console.log(i);
 const jobListings = () => {
   var user = getCurrentUser();
-  const reviews = RetrieveDataset("JobLIst", 30);
+  const reviews = RetrieveDataset("JobLIst", 200);
   var next = k + 1;
   var prev = k - 1;
   var start = 10 * (k - 1);
@@ -201,7 +200,10 @@ const jobListings = () => {
 
           <div class="stiky ">
             <JobFullData />
+        <div id="saved"></div>
+
           </div>
+          
         </div>
 
         <SpacingCont amount="2" />
@@ -261,9 +263,7 @@ const AIRecom = ({ user, reviews }) => {
       useEffect(() => {
         recomJobs(getRecommendedJobs);
       }, []);
-      console.log("here");
       if (recom != "") {
-        console.log(recom);
         var recomArr = recom.split(";");
         var recom1 = recomArr[0];
         var recom2 = recomArr[1];
@@ -415,6 +415,9 @@ function JobFullData() {
 
       document.getElementById("saved").innerHTML +=
         "<div id='' class='alert alert-success round' role='alert'> Saved! </div>";
+    } else {
+      document.getElementById("saved").innerHTML +=
+        "<div id='' class='alert alert-danger round' role='alert'> Please Sign In to save jobs! </div>";
     }
   };
 
@@ -474,7 +477,7 @@ function JobFullData() {
               name="Save for Later"
             />
           </div>
-          <div id="saved"></div>
+          
         </div>
       </div>
     );
