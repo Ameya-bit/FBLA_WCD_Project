@@ -5,18 +5,24 @@
   /*  #D68FD6  #04E762*/
 }
 
-.react-chatbot-kit-chat-inner-container {
-  height: 100% !important;
-  width: 130% !important;
+.react-chatbot-kit-chat-container {
+  height: 1000px !important;
+  width: 100% !important;
+  font-family: "Nunito" !important;
 }
 
 .react-chatbot-kit-chat-message-container {
-  height: 90vh !important;
+  height: 800px !important;
+  font-family: "Nunito" !important;
+  font-size: 20px !important;
+
 }
 
 .react-chatbot-kit-chat-bot-message {
   width: 75% !important;
   background-color: var(--otheraccent) !important;
+  font-size: 20px !important;
+
 }
 .react-chatbot-kit-chat-inner-container {
   background-color: rgba(255, 255, 255, 0) !important;
@@ -28,17 +34,30 @@
 .react-chatbot-kit-chat-header {
   background-color: var(--accent1) !important;
   color: black !important;
-  font-size: 15px !important;
+  font-size: 25px !important;
+  font-weight: normal !important;
+  font-family: "Nunito" !important;
 }
 
 .react-chatbot-kit-chat-input {
   background-color: var(--accent1) !important;
   color: black !important;
-  font-size: 15px !important;
+  font-size: 25px !important;
+  font-weight: normal !important;
 }
 
-.react-chatbot-kit-chat-input-container {
-  width: 130% !important;
+.react-chatbot-kit-chat-btn-send {
+  background-color: var(--otheraccent) !important;
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+  border-right-color: var(--otheraccent) !important;
+
+}
+
+.react-chatbot-kit-user-chat-message {
+  font-size: 25px !important;
+  font-weight: normal !important;
 }
 
 .bouncing-loader {

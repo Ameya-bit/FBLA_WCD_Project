@@ -357,11 +357,12 @@ const UserSummary = ({ user, apps }) => {
 
 function SavedJobs(user) {
   try {
-    let reviews = RetrieveDataset("JobLIst", 30);
+    let reviews = RetrieveDataset("JobLIst", 200);
     let retSav = [];
     let saved_job = user["user"]["savedJobs"];
   
     if(saved_job == [] || saved_job.length < 1 || saved_job == null) {
+      console.log("here we are", saved_job, saved_job.length);
       return(
         <div class="container  round col-8">
               <SpacingCont amount="2" />
@@ -399,6 +400,7 @@ function SavedJobs(user) {
       return retSav;
     }
   } catch (e) {
+    console.log(e);
     return(
       <div class="container  round col-8">
             <SpacingCont amount="2" />
