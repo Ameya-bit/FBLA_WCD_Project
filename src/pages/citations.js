@@ -80,6 +80,7 @@ const Citations = () => {
             <br />
             <h3 class="">Additional resources: </h3>
             <p>Project used ChatGPT API</p>
+            <p>Project used Tensorflow machine learning models</p>
           </div>
         </div>
       </div>
