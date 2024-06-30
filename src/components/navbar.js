@@ -15,7 +15,7 @@ export default function NavBar({ id, name, clas, link1, link2, link3 }) {
     <nav id={id} class={" navbar navbar-expand-sm " + clas}>
       <div class="container-fluid">
         <a class="navbar-brand col-4 goldtext" href="/" id="navname">
-          MYRYA Jobs
+          MYRYA Careers
         </a>
         <button
           class="navbar-toggler navbar-toggler-right"
