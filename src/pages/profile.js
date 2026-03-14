@@ -212,7 +212,7 @@ function GetResume({ userData }) {
           
           <embed
             src={
-              "https://blrlevxupfhqzfmanjla.supabase.co/storage/v1/object/public/Resumes/" + userData["id"] + "/" +
+              process.env.REACT_APP_SUPABASE_URL + "/storage/v1/object/public/Resumes/" + userData["id"] + "/" +
               media[0]["name"] 
             }
             width="100%"
