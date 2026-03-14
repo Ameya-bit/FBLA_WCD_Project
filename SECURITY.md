@@ -29,7 +29,55 @@ This PR has already:
 > **No.** GitHub's web interface cannot rewrite git history. You must run
 > `git filter-repo` locally and then force-push.
 
-Run these commands on your machine (copy-paste the whole block):
+Pick the tab that matches your operating system.
+
+---
+
+#### 🪟 Windows (PowerShell)
+
+Open **PowerShell** (not CMD), then run each block one at a time:
+
+```powershell
+# 1. Clone a fresh copy of the current main
+git clone https://github.com/Ameya-bit/FBLA_WCD_Project.git
+cd FBLA_WCD_Project
+```
+
+```powershell
+# 2. Install git-filter-repo (Python 3.6+ required)
+pip install git-filter-repo
+```
+
+```powershell
+# 3. Extract the key from git history and write the replacements file
+$key = git log --all -p |
+    Select-String -Pattern 'eyJhbGci[A-Za-z0-9._-]+' -AllMatches |
+    ForEach-Object { $_.Matches } |
+    ForEach-Object { $_.Value } |
+    Sort-Object -Unique |
+    Select-Object -First 1
+"${key}==>SUPABASE_KEY_REDACTED" | Out-File -FilePath "$env:TEMP\replacements.txt" -Encoding ascii
+```
+
+```powershell
+# 4. Verify the file looks right (should start with eyJhbGci...==>SUPABASE_KEY_REDACTED)
+Get-Content "$env:TEMP\replacements.txt"
+```
+
+```powershell
+# 5. Rewrite all history on main
+git filter-repo --replace-text "$env:TEMP\replacements.txt" --force
+```
+
+```powershell
+# 6. Re-add origin (filter-repo removes it) and force-push
+git remote add origin https://github.com/Ameya-bit/FBLA_WCD_Project.git
+git push --force origin main
+```
+
+---
+
+#### 🍎 macOS / Linux (bash/zsh)
 
 ```bash
 # 1. Clone a fresh copy of the current main
@@ -39,29 +87,35 @@ cd FBLA_WCD_Project
 # 2. Install git-filter-repo (Python 3.6+ required)
 pip install git-filter-repo
 
-# 3. Auto-extract the key from git history and build the replacements file
-#    (this finds the JWT wherever it appears — .env, .js, or anywhere else)
-git log --all -p | grep -oE 'eyJhbGci[A-Za-z0-9._-]+' | sort -u | head -1 \
-  | awk '{print $0 "==>SUPABASE_KEY_REDACTED"}' > /tmp/replacements.txt
+# 3. Extract the key from git history and write the replacements file
+KEY=$(git log --all -p | grep -oE 'eyJhbGci[A-Za-z0-9._-]+' | sort -u | head -1)
+echo "${KEY}==>SUPABASE_KEY_REDACTED" > /tmp/replacements.txt
 
-# Verify the replacements file has exactly one line and looks right:
+# 4. Verify the file looks right
 cat /tmp/replacements.txt
-# Expected output starts with: eyJhbGci...==>SUPABASE_KEY_REDACTED
+# Expected: eyJhbGci...==>SUPABASE_KEY_REDACTED
 
-# 4. Rewrite all history on main
+# 5. Rewrite all history on main
 git filter-repo --replace-text /tmp/replacements.txt --force
 
-# 5. Re-add origin (filter-repo removes it)
+# 6. Re-add origin and force-push
 git remote add origin https://github.com/Ameya-bit/FBLA_WCD_Project.git
-
-# 6. Force-push cleaned main
 git push --force origin main
 ```
 
+---
+
 ### Step 3 — Verify the cleanup worked
 
-After force-pushing, run this to confirm zero JWT tokens remain:
+After force-pushing, run this to confirm zero JWT tokens remain.
 
+**Windows (PowerShell):**
+```powershell
+(git log --all -p | Select-String -Pattern 'eyJhbGci').Count
+# Must output: 0
+```
+
+**macOS / Linux:**
 ```bash
 git log --all -p | grep -cE 'eyJhbGci'
 # Must output: 0
