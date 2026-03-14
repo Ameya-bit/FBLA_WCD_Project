@@ -21,4 +21,7 @@ The goal of the project was to implement AI in a way that could help job applica
 ## Results
 The project placed first in States and qualified for Nationals
 
+## Setup
+Copy `.env.example` to `.env` and fill in your Supabase and OpenAI credentials before running the project.
+
 
